@@ -1,0 +1,56 @@
+:root {
+    --main-colour: #004ebb;
+    --main-complimentary: #BA7B00;
+    --main-soft: #0088BA;
+    --main-hard: #0A31A6;
+    --main-cool: #05F2AF;
+    --main-hot: #F23005;
+}
+
+.bg-soft{
+    background-color: var(--main-soft);
+}
+
+.txt-soft{
+    color: var(--main-soft);
+}
+
+.bg-hot{
+    background-color: var(--main-hot);
+}
+
+.txt-hot{
+    color: var(--main-hot);
+}
+
+.bg-cool{
+    background-color: var(--main-cool);
+}
+
+.txt-cool{
+    color: var(--main-cool);
+}
+
+.bg-hard {
+    background-color: var(--main-hard);
+}
+
+.txt-hard {
+    color: var(--main-hard);
+}
+
+.bg-complimentary {
+    background-color: var(--main-complimentary);
+}
+
+.txt-complimentary {
+    color: var(--main-complimentary);
+}
+
+.bg-main {
+    background-color: var(--main-colour);
+}
+
+.txt-main {
+    color: var(--main-colour);
+}

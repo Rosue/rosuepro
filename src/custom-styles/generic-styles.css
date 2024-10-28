@@ -1,0 +1,20 @@
+.menu-text {
+    text-decoration: none;
+    display: block;
+    color: #05F2AF;
+    text-align: center;
+}
+
+.nav-link {
+    color: var(--main-hard)!important;
+}
+
+.nav-link.active {
+    color: var(--main-complimentary)!important;
+}
+
+body{
+    background-color: var(--main-soft)!important;
+}
+
+
