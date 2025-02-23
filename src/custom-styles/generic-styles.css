@@ -17,4 +17,15 @@ body{
     background-color: var(--main-soft)!important;
 }
 
+.main-content {
+    margin-top: 200px; /* Adjust this value based on your navbar height */
+  }
+
+  .carousel-caption-custom{
+    position: static; /* Removes absolute positioning */
+    padding: 1rem;    /* Optional: add padding */
+    background: none; /* Remove any background if added by default */
+    text-align: center;
+  }
+
 

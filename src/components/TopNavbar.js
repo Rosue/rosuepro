@@ -14,8 +14,8 @@ export default function TopNavbar() {
                 <Navbar.Toggle aria-controls="navbarScroll"/>
 
                 <Navbar.Collapse id="navbarScroll">
-                    <Nav className="me-auto">
-                        <Navbar.Text>
+                    <Nav className="me-auto justify-content-center">
+                        <Navbar.Text className="flex-grow-1 text-center">
                             {location.pathname === "/" ? 
                                 <Link style={location.pathname.startsWith("/") ? {fontWeight: 'bolder'} : {}} className='m-option text-decoration-none nav-link active text-center'  to="/">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"  width="30" height="30" className="bi active m-icon" viewBox="0 0 16 16">
@@ -32,7 +32,7 @@ export default function TopNavbar() {
                                 </Link>
                             }
                         </Navbar.Text>
-                        <Navbar.Text>     
+                        <Navbar.Text className="flex-grow-1 text-center">     
                         {location.pathname.startsWith("/portfolio") ?
                             <Link style={location.pathname.startsWith("/portfolio") ? {fontWeight: 'bolder'} : {}} className='m-option text-decoration-none ms-auto nav-link active text-center'  to="/portfolio">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="30" height="30" viewBox="0 0 576 512">
@@ -49,7 +49,7 @@ export default function TopNavbar() {
                             </Link>
                         }
                         </Navbar.Text>
-                        <Navbar.Text>     
+                        <Navbar.Text className="flex-grow-1 text-center">     
                         {location.pathname.startsWith("/resume") ?
                             <Link style={location.pathname.startsWith("/resume") ? {fontWeight: 'bolder'} : {}} className='m-option text-decoration-none ms-auto nav-link active text-center'  to="/resume">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="30" height="30" viewBox="0 0 512 512">
@@ -66,7 +66,7 @@ export default function TopNavbar() {
                             </Link>
                         }
                         </Navbar.Text>
-                        <Navbar.Text>     
+                        <Navbar.Text className="flex-grow-1 text-center">     
                         {location.pathname.startsWith("/blog") ?
                             <Link style={location.pathname.startsWith("/blog") ? {fontWeight: 'bolder'} : {}} className='m-option text-decoration-none ms-auto nav-link active text-center'  to="/blog">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="30" height="30" viewBox="0 0 512 512">
