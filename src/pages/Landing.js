@@ -1,6 +1,7 @@
 import React from 'react'
 import TopNavbar from '../components/TopNavbar'
 import Carousel from '../components/HomeCarousel'
+import Footer from '../components/Footer'
 
 
 export default function Landing() {
@@ -32,13 +33,14 @@ export default function Landing() {
         <li class="list-group-item bg-main txt-cool"><strong>Consultation &amp; Training:</strong> Strategic insights and hands-on training to empower your team.</li>
       </ul>
       <div class="text-center">
-        <a href="/contact" class="btn btn-primary btn-lg">
-          Contact Us for a Free Consultation
-        </a>
+      <a href="mailto:rosuepro@gmail.com?subject=New%20RosuePro%20Customer%20Contact" className="btn bg-complimentary btn-lg">
+        Contact RosuePro
+      </a>
       </div>
     </div>
   </div>
 </div>
+<Footer />
     </>
   )
 }
