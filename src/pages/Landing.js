@@ -14,6 +14,7 @@ export default function Landing() {
 
       <div class="container my-5">
   <div class="card shadow" style={{ backgroundColor: 'transparent', border: 'none' }}>
+    <img src="\ChatGPTImageApr14202509_38_38PM.png" class="card-img-top" alt="..."/>
     <div class="card-body" >
       <h2 class="card-title text-center text-white">
         Elevate Your Online Presence with Our All-In-One Website Development Services
