@@ -35,7 +35,7 @@ export default function Landing() {
       </ul>
       <div class="text-center">
       <a href="mailto:rosuepro@gmail.com?subject=New%20RosuePro%20Customer%20Contact" className="btn bg-complimentary btn-lg">
-        Contact RosuePro
+        <b>Contact RosuePro</b>
       </a>
       </div>
     </div>
