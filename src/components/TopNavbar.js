@@ -5,10 +5,10 @@ import { Link, useLocation } from 'react-router-dom';
 export default function TopNavbar() {
     const location = useLocation();
   return (
-        <Navbar collapseOnSelect expand="sm" fixed="top" className='mh-10 px-3 bg-main'>
+        <Navbar collapseOnSelect expand="sm" fixed="top" className='mh-10 bg-main'>
             <Container fluid>
                 <Navbar.Brand href="/">
-                    <img height={'33px'} src='/logo.png' alt='logo' />
+                    <img className='my-4' height={'45px'} src='/logo.png' alt='logo' />
                 </Navbar.Brand>
 
                 <Navbar.Toggle aria-controls="navbarScroll"/>
