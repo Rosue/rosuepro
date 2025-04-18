@@ -1,6 +1,6 @@
 import React from 'react'
 import TopNavbar from '../components/TopNavbar'
-import { Accordion, Container, Table } from 'react-bootstrap'
+import { Accordion, Container } from 'react-bootstrap'
 import Footer from '../components/Footer'
 
 export default function Resume() {

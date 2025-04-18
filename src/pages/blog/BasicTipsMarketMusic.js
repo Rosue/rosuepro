@@ -11,7 +11,7 @@ export default function BasicTipsMarketMusic() {
       <h1 className='text-center txt-cool'>Basic Tips on how to Market your Music</h1>
    
       <Container className='p-3 px-5 bg-light rounded mt-5'>
-          <img src="../headphones-4595492_1280.jpg" className="card-img-top mb-4" alt="Basic Tips on how to Market your music image"/>
+          <img src="../headphones-4595492_1280.jpg" className="card-img-top mb-4" alt="Market_your_music"/>
           <div className="card-body">
             
           <p className="lead">In the fast paced and constantly evolving music world we currently live in, and one which boasts of thousands and thousands of music artistes, the success of nowadays musicians especially the upcoming ones is almost not guaranteed unless some pertinent things are put into consideration. In this article, I have decided to put together a few tips for upcoming musicians like you that will definitely help your career push.</p>
