@@ -2,6 +2,7 @@ import React from 'react'
 import TopNavbar from '../components/TopNavbar'
 import { Container } from 'react-bootstrap'
 import Footer from '../components/Footer'
+import { Link } from 'react-router-dom'
 
 export default function Portforlio() {
   return (
@@ -17,6 +18,7 @@ export default function Portforlio() {
           <div className="card-body">
             <h5 className="card-title">Reggae Wheels Website</h5>
             <p className="card-text">This website books and advertises tours, trips and  rentals</p>
+            <Link to="https://reggaewheels-2482a.web.app/" target="_blank" className="btn btn-primary">Visit</Link>
           </div>
         </div>
 
@@ -25,6 +27,7 @@ export default function Portforlio() {
           <div className="card-body">
             <h5 className="card-title">Shynz By Onyx Website</h5>
             <p className="card-text">This is an appointment website where users can set and see the schedule</p>
+            <Link to="https://rj-detailing.web.app/" target="_blank" className="btn btn-primary">Visit</Link>
           </div>
         </div>
 
