@@ -8,7 +8,7 @@ export default function BasicTipsMarketMusic() {
     <>
     <TopNavbar/>
     <Container className='main-content mb-5'>
-      <h1 className='text-center txt-cool'>Basic Tips on how to Market your Music</h1>
+      <h1 className='text-center txt-dark'>Basic Tips on how to Market your Music</h1>
    
       <Container className='p-3 px-5 bg-light rounded mt-5'>
           <img src="../headphones-4595492_1280.jpg" className="card-img-top mb-4" alt="Market_your_music"/>
