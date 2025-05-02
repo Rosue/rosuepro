@@ -9,7 +9,7 @@ export default function Blog() {
     <>
     <TopNavbar/>
     <Container className='main-content'>
-      <h1 className='text-center txt-cool'>Blog</h1>
+      <h1 className='text-center txt-dark'>Blog</h1>
       <div className='d-flex justify-content-center w-100'>
         <div className="card mt-5 mb-5" style={{"width": "18rem"}}>
           <img src="headphones-4595492_1280.jpg" className="card-img-top" alt="Market_your_music"/>

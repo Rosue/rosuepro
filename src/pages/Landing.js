@@ -16,10 +16,10 @@ export default function Landing() {
   <div class="card shadow" style={{ backgroundColor: 'transparent', border: 'none' }}>
     <img src="\ChatGPTImageApr14202509_38_38PM.png" class="card-img-top" alt="..."/>
     <div class="card-body" >
-      <h2 class="card-title text-center text-white">
+      <h2 class="card-title text-center text-dark">
         Elevate Your Online Presence with Our All-In-One Website Development Services
       </h2>
-      <p class="card-text text-center text-white">
+      <p class="card-text text-center text-dark">
         Unlock the full potential of your digital business with our comprehensive website development consultancy. We offer everything you need to create, optimize, and maintain an engaging online experience that drives results.
       </p>
       <ul class="list-group list-group-flush my-4">

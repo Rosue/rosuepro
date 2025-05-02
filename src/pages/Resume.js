@@ -8,7 +8,7 @@ export default function Resume() {
     <>
     <TopNavbar/>
     <Container className="main-content">
-    <h1 className="text-center mt-5  mb-5 txt-cool">Resume</h1>
+    <h1 className="text-center mt-5  mb-5 txt-dark">Resume</h1>
 
       <Accordion defaultActiveKey="0" className='mb-5'>
       <Accordion.Item eventKey="0">

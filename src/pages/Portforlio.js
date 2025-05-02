@@ -11,8 +11,8 @@ export default function Portforlio() {
 
       <Container className="main-content">
 
-        <h1 className="text-center mt-5  txt-cool">Portfolio</h1>
-        <p className="text-center"><sm className="txt-cool mb-5">A showcase of some of our work</sm></p>
+        <h1 className="text-center mt-5  txt-dark">Portfolio</h1>
+        <p className="text-center"><sm className="txt-dark mb-5">A showcase of some of our work</sm></p>
         <div className="card mb-5 ">
           <img src="reggaewheels-2482a.web.app_ (1).png" className="card-img-top" alt="Reggae_Wheels_Website"/>
           <div className="card-body">

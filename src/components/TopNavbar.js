@@ -14,7 +14,7 @@ export default function TopNavbar() {
                 <Navbar.Toggle aria-controls="navbarScroll"/>
 
                 <Navbar.Collapse id="navbarScroll">
-                    <Nav className="me-auto justify-content-center">
+                    <Nav className="d-flex justify-content-between align-items-center flex-grow-1">
                         <Navbar.Text className="flex-grow-1 text-center">
                             {location.pathname === "/" ? 
                                 <Link style={location.pathname.startsWith("/") ? {fontWeight: 'bolder'} : {}} className='m-option text-decoration-none nav-link active text-center'  to="/">

@@ -5,6 +5,9 @@
     --main-hard: #0A31A6;
     --main-cool: #05F2AF;
     --main-hot: #F23005;
+    --main-yellow: #FFF685;
+    --bright-green: #beef00;
+    --main-gray: 	#ccd0d8;
 }
 
 .bg-soft{
@@ -49,6 +52,10 @@
 
 .bg-main {
     background-color: var(--main-colour);
+}
+
+.bg-yellow {
+    background-color: var(--main-yellow);
 }
 
 .txt-main {
