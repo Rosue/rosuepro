@@ -32,7 +32,7 @@ export default function Portforlio() {
         </div>
 
         <div className="card mb-3 mt-5 ">
-          <img src="Screenshot 2025-08-03 155329.png" className="card-img-top" alt="Pack_My_Cart"/>
+          <img src="Screenshot 2025-08-03 160451.png" className="card-img-top" alt="Pack_My_Cart"/>
           <div className="card-body">
             <h5 className="card-title">Pack My Cart Website</h5>
             <p className="card-text">This is a new Supermarket Platform</p>
