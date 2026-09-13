@@ -12,14 +12,49 @@ export default function Landing() {
         <Carousel />
       </div>
 
-      <div class="container my-5">
-  <div class="card shadow" style={{ backgroundColor: 'transparent', border: 'none' }}>
-    <img src="\ChatGPTImageApr14202509_38_38PM.jpg" class="card-img-top" alt="..."/>
-    <div class="card-body" >
-      <h2 class="card-title text-center text-dark">
+      <section className="container my-5" aria-labelledby="featured-projects-heading">
+        <div className="card shadow featured-projects">
+          <div className="card-body">
+            <h2 id="featured-projects-heading" className="card-title text-center text-dark">
+              Featured Projects
+            </h2>
+            <p className="card-text text-center text-dark">
+              Explore two of our latest live web experiences.
+            </p>
+            <div className="row row-cols-1 row-cols-md-2 g-4 mt-1">
+              <div className="col">
+                <article className="card h-100 project-promo-card">
+                  <div className="card-body d-flex flex-column text-center">
+                    <i className="bi bi-music-note-beamed fs-1 mb-3 txt-main" aria-hidden="true"></i>
+                    <h3 className="h4 card-title">Vybz Meter</h3>
+                    <p className="card-text flex-grow-1">Visit Vybz Meter and experience the project for yourself.</p>
+                    <a href="https://vybz-meter.web.app/" target="_blank" rel="noreferrer" className="btn btn-primary align-self-center">Visit Vybz Meter</a>
+                  </div>
+                </article>
+              </div>
+              <div className="col">
+                <article className="card h-100 project-promo-card">
+                  <div className="card-body d-flex flex-column text-center">
+                    <i className="bi bi-flower1 fs-1 mb-3 txt-main" aria-hidden="true"></i>
+                    <h3 className="h4 card-title">Funeral Template</h3>
+                    <p className="card-text flex-grow-1">See a thoughtful, polished funeral website template in action.</p>
+                    <a href="https://funeral-template.web.app/" target="_blank" rel="noreferrer" className="btn btn-primary align-self-center">Visit Funeral Template</a>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="container my-5">
+  <div className="card shadow" style={{ backgroundColor: 'transparent', border: 'none' }}>
+    <img src="/ChatGPTImageApr14202509_38_38PM.jpg" className="card-img-top" alt="Digital illustration of a person working at a computer"/>
+    <div className="card-body" >
+      <h2 className="card-title text-center text-dark">
         Elevate Your Online Presence with Our All-In-One Website Development Services
       </h2>
-      <p class="card-text text-center text-dark">
+      <p className="card-text text-center text-dark">
         Unlock the full potential of your digital business with our comprehensive website development consultancy. We offer everything you need to create, optimize, and maintain an engaging online experience that drives results.
       </p>
       <ul className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 my-4 list-unstyled">
@@ -105,7 +140,7 @@ export default function Landing() {
     </div>
   </li>
 </ul>
-      <div class="text-center">
+      <div className="text-center">
       <a href="mailto:rosuepro@gmail.com?subject=New%20RosuePro%20Customer%20Contact" className="btn bg-complimentary btn-lg">
         <b>Contact RosuePro</b>
       </a>
