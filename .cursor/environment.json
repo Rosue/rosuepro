@@ -1,0 +1,16 @@
+{
+  "name": "rosuepro",
+  "install": "npm ci",
+  "terminals": [
+    {
+      "name": "dev server",
+      "command": "BROWSER=none PORT=3000 npm start"
+    }
+  ],
+  "ports": [
+    {
+      "name": "web server",
+      "port": 3000
+    }
+  ]
+}
