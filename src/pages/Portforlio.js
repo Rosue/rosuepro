@@ -2,7 +2,6 @@ import React from 'react'
 import TopNavbar from '../components/TopNavbar'
 import { Container } from 'react-bootstrap'
 import Footer from '../components/Footer'
-import { Link } from 'react-router-dom'
 
 export default function Portforlio() {
   return (
@@ -12,13 +11,39 @@ export default function Portforlio() {
       <Container className="main-content">
 
         <h1 className="text-center mt-5  txt-dark">Portfolio</h1>
-        <p className="text-center"><sm className="txt-dark mb-5">A showcase of some of our work</sm></p>
+        <p className="text-center"><small className="txt-dark mb-5">A showcase of some of our work</small></p>
+        <div className="card mb-5 portfolio-project-card">
+          <div className="card-body">
+            <div className="d-flex align-items-center gap-3">
+              <i className="bi bi-music-note-beamed fs-1 txt-main" aria-hidden="true"></i>
+              <div>
+                <h2 className="h5 card-title mb-1">Vybz Meter</h2>
+                <p className="card-text mb-3">A live music-focused web experience.</p>
+                <a href="https://vybz-meter.web.app/" target="_blank" rel="noreferrer" className="btn btn-primary">Visit Vybz Meter</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="card mb-5 portfolio-project-card">
+          <div className="card-body">
+            <div className="d-flex align-items-center gap-3">
+              <i className="bi bi-flower1 fs-1 txt-main" aria-hidden="true"></i>
+              <div>
+                <h2 className="h5 card-title mb-1">Funeral Template</h2>
+                <p className="card-text mb-3">A respectful and polished funeral website template.</p>
+                <a href="https://funeral-template.web.app/" target="_blank" rel="noreferrer" className="btn btn-primary">Visit Funeral Template</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className="card mb-5 ">
           <img src="reggaewheels-2482a.web.app_ (1).webp" className="card-img-top" alt="Reggae_Wheels_Website"/>
           <div className="card-body">
             <h5 className="card-title">Reggae Wheels Website</h5>
             <p className="card-text">This website books and advertises tours, trips and  rentals</p>
-            <Link to="https://reggaewheels-2482a.web.app/" target="_blank" className="btn btn-primary">Visit</Link>
+            <a href="https://reggaewheels-2482a.web.app/" target="_blank" rel="noreferrer" className="btn btn-primary">Visit</a>
           </div>
         </div>
 
@@ -27,7 +52,7 @@ export default function Portforlio() {
           <div className="card-body">
             <h5 className="card-title">Shynz By Onyx Website</h5>
             <p className="card-text">This is an appointment website where users can set and see the schedule</p>
-            <Link to="https://rj-detailing.web.app/" target="_blank" className="btn btn-primary">Visit</Link>
+            <a href="https://rj-detailing.web.app/" target="_blank" rel="noreferrer" className="btn btn-primary">Visit</a>
           </div>
         </div>
 
@@ -36,7 +61,7 @@ export default function Portforlio() {
           <div className="card-body">
             <h5 className="card-title">Pack My Cart Website</h5>
             <p className="card-text">This is a new Supermarket Platform</p>
-            <Link to="https://pack-my-cart.web.app/" target="_blank" className="btn btn-primary">Visit</Link>
+            <a href="https://pack-my-cart.web.app/" target="_blank" rel="noreferrer" className="btn btn-primary">Visit</a>
           </div>
         </div>
 
