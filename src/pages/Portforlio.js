@@ -13,12 +13,12 @@ export default function Portforlio() {
         <h1 className="text-center mt-5  txt-dark">Portfolio</h1>
         <p className="text-center"><small className="txt-dark mb-5">A showcase of some of our work</small></p>
         <div className="card mb-5 portfolio-project-card">
+          <img src="/projects/vybz-meter.webp" className="card-img-top project-preview" alt="Vybz Meter website showing its interactive Jamaica hotspots map" width="1280" height="720" loading="lazy" decoding="async" />
           <div className="card-body">
             <div className="d-flex align-items-center gap-3">
-              <i className="bi bi-music-note-beamed fs-1 txt-main" aria-hidden="true"></i>
               <div>
                 <h2 className="h5 card-title mb-1">Vybz Meter</h2>
-                <p className="card-text mb-3">A live music-focused web experience.</p>
+                <p className="card-text mb-3">An interactive map for discovering and sharing hotspots across Jamaica.</p>
                 <a href="https://vybz-meter.web.app/" target="_blank" rel="noreferrer" className="btn btn-primary">Visit Vybz Meter</a>
               </div>
             </div>
@@ -26,9 +26,9 @@ export default function Portforlio() {
         </div>
 
         <div className="card mb-5 portfolio-project-card">
+          <img src="/projects/funeral-template.webp" className="card-img-top project-preview" alt="Funeral Template website showing its memorial homepage with white doves" width="1280" height="720" loading="lazy" decoding="async" />
           <div className="card-body">
             <div className="d-flex align-items-center gap-3">
-              <i className="bi bi-flower1 fs-1 txt-main" aria-hidden="true"></i>
               <div>
                 <h2 className="h5 card-title mb-1">Funeral Template</h2>
                 <p className="card-text mb-3">A respectful and polished funeral website template.</p>

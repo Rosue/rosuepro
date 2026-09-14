@@ -51,3 +51,14 @@ body{
   }
 
 
+
+/* Preserve the complete website previews, including map attribution. */
+.project-preview {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background-color: #0d1523;
+  border-bottom: 1px solid rgba(0, 78, 187, 0.2);
+}

@@ -24,18 +24,18 @@ export default function Landing() {
             <div className="row row-cols-1 row-cols-md-2 g-4 mt-1">
               <div className="col">
                 <article className="card h-100 project-promo-card">
+          <img src="/projects/vybz-meter.webp" className="card-img-top project-preview" alt="Vybz Meter website showing its interactive Jamaica hotspots map" width="1280" height="720" loading="lazy" decoding="async" />
                   <div className="card-body d-flex flex-column text-center">
-                    <i className="bi bi-music-note-beamed fs-1 mb-3 txt-main" aria-hidden="true"></i>
                     <h3 className="h4 card-title">Vybz Meter</h3>
-                    <p className="card-text flex-grow-1">Visit Vybz Meter and experience the project for yourself.</p>
+                    <p className="card-text flex-grow-1">Explore Jamaica’s hotspots with Vybz Meter’s interactive map.</p>
                     <a href="https://vybz-meter.web.app/" target="_blank" rel="noreferrer" className="btn btn-primary align-self-center">Visit Vybz Meter</a>
                   </div>
                 </article>
               </div>
               <div className="col">
                 <article className="card h-100 project-promo-card">
+          <img src="/projects/funeral-template.webp" className="card-img-top project-preview" alt="Funeral Template website showing its memorial homepage with white doves" width="1280" height="720" loading="lazy" decoding="async" />
                   <div className="card-body d-flex flex-column text-center">
-                    <i className="bi bi-flower1 fs-1 mb-3 txt-main" aria-hidden="true"></i>
                     <h3 className="h4 card-title">Funeral Template</h3>
                     <p className="card-text flex-grow-1">See a thoughtful, polished funeral website template in action.</p>
                     <a href="https://funeral-template.web.app/" target="_blank" rel="noreferrer" className="btn btn-primary align-self-center">Visit Funeral Template</a>
