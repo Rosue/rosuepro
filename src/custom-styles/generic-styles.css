@@ -21,9 +21,13 @@ body{
     margin-top: 200px; /* Adjust this value based on your navbar height */
   }
 
-/* The navbar expands into its horizontal layout at the `sm` breakpoint. */
+/* Keep the expanded landing navbar in the page flow so it cannot cover the carousel. */
 @media (min-width: 576px) {
-  .main-content {
+  .landing-navbar.fixed-top {
+    position: sticky;
+  }
+
+  .landing-carousel {
     margin-top: 0;
   }
 }
