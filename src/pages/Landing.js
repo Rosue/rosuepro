@@ -7,8 +7,8 @@ import Footer from '../components/Footer'
 export default function Landing() {
   return (
     <>
-      <TopNavbar/>
-      <div className="main-content txt-hard">
+      <TopNavbar className="landing-navbar" />
+      <div className="main-content landing-carousel txt-hard">
         <Carousel />
       </div>
 

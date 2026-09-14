@@ -21,6 +21,17 @@ body{
     margin-top: 200px; /* Adjust this value based on your navbar height */
   }
 
+/* Keep the expanded landing navbar in the page flow so it cannot cover the carousel. */
+@media (min-width: 576px) {
+  .landing-navbar.fixed-top {
+    position: sticky;
+  }
+
+  .landing-carousel {
+    margin-top: 0;
+  }
+}
+
   .carousel-caption-custom{
     position: static; /* Removes absolute positioning */
     padding: 1rem;    /* Optional: add padding */

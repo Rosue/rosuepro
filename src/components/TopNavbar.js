@@ -2,10 +2,10 @@ import React from 'react'
 import { Container, Nav, Navbar } from 'react-bootstrap'
 import { Link, useLocation } from 'react-router-dom';
 
-export default function TopNavbar() {
+export default function TopNavbar({ className = '' }) {
     const location = useLocation();
   return (
-        <Navbar collapseOnSelect expand="sm" fixed="top" className='mh-10 bg-main'>
+        <Navbar collapseOnSelect expand="sm" fixed="top" className={`mh-10 bg-main ${className}`.trim()}>
             <Container fluid>
                 <Navbar.Brand href="/">
                     <img className='my-4' height={'45px'} src='/logo.png' alt='logo' />
