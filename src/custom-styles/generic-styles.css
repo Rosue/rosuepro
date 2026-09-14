@@ -39,4 +39,15 @@ body{
     text-align: center;
   }
 
+  .featured-projects {
+    border: 0;
+    background-color: transparent;
+  }
+
+  .project-promo-card,
+  .portfolio-project-card {
+    border-color: rgba(0, 78, 187, 0.2);
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.12);
+  }
+
 
