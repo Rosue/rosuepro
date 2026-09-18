@@ -32,6 +32,21 @@ body{
   }
 }
 
+.service-offerings {
+  background: linear-gradient(135deg, #eef5ff, #f3fcf8);
+  color: #172b46;
+}
+
+.services-intro { max-width: 780px; }
+.services-intro h1 { font-weight: 750; font-size: clamp(2rem, 4vw, 3.5rem); }
+.service-eyebrow { color: #245080; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em; }
+.service-availability { color: #205a49; font-weight: 600; }
+.service-card { border: 1px solid #cedbec; border-radius: 1rem; box-shadow: 0 8px 24px #172b4610; }
+.service-card h2 { min-height: 2.5em; font-weight: 700; }
+.service-price { font-size: 1.8rem; font-weight: 750; color: #164e94; }
+.service-next-steps { background: #fff; border-radius: 1rem; border: 1px solid #cedbec; }
+.service-offerings a:focus-visible { outline: 3px solid #172b46; outline-offset: 4px; }
+
   .carousel-caption-custom{
     position: static; /* Removes absolute positioning */
     padding: 1rem;    /* Optional: add padding */
