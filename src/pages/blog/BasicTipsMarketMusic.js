@@ -7,13 +7,13 @@ export default function BasicTipsMarketMusic() {
   return (
     <>
     <TopNavbar/>
-    <Container className='main-content mb-5'>
+    <Container as="main" id="main-content" className='main-content mb-5'>
       <h1 className='text-center txt-dark'>Basic Tips on how to Market your Music</h1>
-   
+
       <Container className='p-3 px-5 bg-light rounded mt-5'>
-          <img src="../headphones-4595492_1280.jpg" className="card-img-top mb-4" alt="Market_your_music"/>
+          <img src="/headphones-4595492_1280.jpg" className="card-img-top mb-4" alt="Headphones for music and online promotion" width="1280" height="853" loading="lazy" decoding="async" />
           <div className="card-body">
-            
+
           <p className="lead">In the fast paced and constantly evolving music world we currently live in, and one which boasts of thousands and thousands of music artistes, the success of nowadays musicians especially the upcoming ones is almost not guaranteed unless some pertinent things are put into consideration. In this article, I have decided to put together a few tips for upcoming musicians like you that will definitely help your career push.</p>
 <h2>Advice No 1: Quality</h2>
 <p className='mb-4'>To begin with, you need high quality music. Except if you desire to be the second Slim Jesus or perhaps Rebecca Black, you will need high quality music that is definitely truly worth listening to. Not alone should the songs offer high-quality content, but it surely needs to sound experienced and then captivating. Just in case you have already got top quality music, then let's proceed to the subsequent suggestions!</p>
@@ -28,18 +28,18 @@ export default function BasicTipsMarketMusic() {
 </ul>
 <p className='mb-4'>Again, it can be pretty challenging to stay on top each one of these websites! That is the reason I suggest you opt for about 2-3 and stick with these, which takes us to my final suggestion</p>
 <h2>Advice No 3: Consistency</h2>
-<figure class="text-center mb-4">
-  <blockquote class="blockquotes">
+<figure className="text-center mb-4">
+  <blockquote className="blockquotes">
     <p>My <b>‘sudden’</b> accomplishments took me sixteen years</p>
   </blockquote>
-  <figcaption class="blockquote-footer">
+  <figcaption className="blockquote-footer">
     Alicia Keys <cite title="Source Title">Singer</cite>
   </figcaption>
 </figure>
 <p><u>Here is the most difficult but then most crucial step.</u> You need to be persistent. On social media site, it is advisable to upload contents on a regular basis; therefore you really should try to post songs/videos each and every week. We are now living in a fast paced society and you will need to get hold of people’s undivided attention. And so just how do we accomplish that? By truly being consistent! Keep in mind; nothing at all just happens instantaneously. However if you remain consistent and then utilize these pointers, you may start to observe results in no time at all. Be persistent, and for those who are waiting for overnight results, it won't happen at all. <b>Alicia Keys declared,</b> "My <b>‘sudden’</b> accomplishments took me sixteen years." Promoting all of your tunes on the web will certainly facilitate the process however. </p>
 <p>There are plenty of other tips however these are only just a couple of hassle-free ones. In addition, <b>creating remixes</b> to well known songs which are out on radio stations will surely enable you to have more views!</p>
 <p>I sincerely hope that these guidelines about how to market your songs on line will help your career… Good Luck.</p>
-          
+
           </div>
       </Container>
     </Container>
