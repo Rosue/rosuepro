@@ -9,7 +9,7 @@ export default function About() {
     <main className="container main-content mb-5">
       <h1>About RosuePro</h1>
       <p className="lead">Java tutoring and practical website support for learners and small businesses in Jamaica.</p>
-      <p>RosuePro provides online Java tutoring and guided debugging, scoped website repairs, and template-based business landing pages. Appointments are available evenings and Saturdays, with scope and price agreed before work begins.</p>
+      <p>RosuePro provides online Java tutoring and guided debugging, scoped website repairs, template-based business landing pages, and practical AI automations and chatbots for small businesses. Appointments are available evenings and Saturdays, with scope and price agreed before work begins.</p>
       <h2>Development experience</h2>
       <p>Our work draws on experience with Java, Spring Boot, React, databases, and API integrations. <Link to="/resume">Explore our software development experience and skills.</Link></p>
       <h2>See our work</h2>
