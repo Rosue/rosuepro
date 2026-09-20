@@ -34,6 +34,28 @@ const offers = [
     subject: 'Business landing page enquiry',
     body: 'Hi RosuePro,\n\nI would like a business landing page.\nBusiness name and services: \nDo you have text, a logo, and images ready? \nPreferred deadline: ',
   },
+  {
+    title: 'AI automations',
+    price: 'From J$35,000',
+    unit: 'per agreed workflow or integration',
+    description: 'Reduce repetitive admin with a focused automation connected to the tools your business already uses.',
+    includes: ['One business process mapped and automated (e.g. intake, follow-ups, reminders, data entry)', 'Connections between email, forms, spreadsheets, or your website where needed', 'Testing, simple documentation, and a walkthrough when it goes live'],
+    note: 'Tell us what you do manually today. Scope, tools, and price are confirmed before build; hosting fees and ongoing changes are quoted separately.',
+    action: 'Discuss an automation',
+    subject: 'AI automation enquiry',
+    body: 'Hi RosuePro,\n\nI would like help automating a task.\nWhat happens today (step by step): \nTools involved (email, WhatsApp, website, Excel, etc.): \nHow often: \nPreferred deadline: ',
+  },
+  {
+    title: 'AI chatbots',
+    price: 'From J$28,000',
+    unit: 'for a scoped website or WhatsApp bot',
+    description: 'Handle common customer questions, capture leads, or support staff—with clear rules on when a person takes over.',
+    includes: ['Answers based on your FAQs and business details', 'Lead capture or handoff to email or WhatsApp', 'Setup for a website chat widget or WhatsApp Business (where supported)'],
+    note: 'You supply FAQs, tone, and when to escalate to a human. Extra languages, deep integrations, or high-volume support are quoted separately.',
+    action: 'Request a chatbot quote',
+    subject: 'AI chatbot enquiry',
+    body: 'Hi RosuePro,\n\nI would like a chatbot.\nBusiness and main questions it should answer: \nWebsite, WhatsApp, or both: \nWhen should it hand off to a person? \nPreferred deadline: ',
+  },
 ];
 
 export default function ServiceOfferings() {
