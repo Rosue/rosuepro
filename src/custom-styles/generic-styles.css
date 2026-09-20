@@ -77,3 +77,6 @@ body{
   background-color: #0d1523;
   border-bottom: 1px solid rgba(0, 78, 187, 0.2);
 }
+
+/* Keep intrinsic image dimensions responsive after reserving layout space. */
+main .card-img-top { height: auto; }

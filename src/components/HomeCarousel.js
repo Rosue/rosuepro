@@ -8,8 +8,7 @@ export default function HomeCarousel() {
         <img
           className="d-block mx-auto img-fluid rounded"
           src="/Slide1.webp"
-          alt="First slide"
-        />
+          alt="RosuePro website development services" width="1983" height="793" loading="lazy" decoding="async" />
         {/* <Carousel.Caption className="carousel-caption-custom">
           <h3>Welcome to RosuePro</h3>
           <p>Best in the business</p>
@@ -19,8 +18,7 @@ export default function HomeCarousel() {
         <img
           className="d-block mx-auto img-fluid rounded"
           src="/Slide2.webp"
-          alt="Second slide"
-        />
+          alt="RosuePro business website solutions" width="2048" height="768" loading="lazy" decoding="async" />
         {/* <Carousel.Caption>
           <h3>Our Services</h3>
           <p>Contact Us Today</p>

@@ -42,7 +42,7 @@ export default function ServiceOfferings() {
       <div className="container">
         <div className="services-intro mx-auto text-center mb-4">
           <p className="service-eyebrow">ROSUEPRO · JAVA &amp; WEB DEVELOPMENT</p>
-          <h1 id="services-heading">Java help. Website fixes.<br />A stronger start for your business.</h1>
+          <h1 id="services-heading">Java tutoring &amp; website services<br />for businesses in Jamaica.</h1>
           <p className="lead mt-3">Practical support for learners and small businesses in Kingston and across Jamaica.</p>
           <p className="service-availability">Evenings &amp; Saturdays · By appointment · Jamaica time</p>
         </div>
@@ -66,6 +66,7 @@ export default function ServiceOfferings() {
           ))}
         </div>
         <p className="text-center small mt-4 mb-0">All prices in Jamaican dollars. Enquiries open your email app; appointments are confirmed personally.</p>
+        <p className="text-center mt-4"><a href="/portfolio">Explore our website projects</a> or <a href="/about-us">learn more about RosuePro</a>.</p>
         <div className="service-next-steps mt-4 p-4">
           <h2 className="h4">A simple way to get started</h2>
           <p className="mb-2">Choose an offer and describe what you need. We’ll agree on the scope, price, and an available evening or Saturday before booking.</p>

@@ -8,7 +8,7 @@ export default function TopNavbar({ className = '' }) {
         <Navbar collapseOnSelect expand="sm" fixed="top" className={`mh-10 bg-main ${className}`.trim()}>
             <Container fluid>
                 <Navbar.Brand href="/">
-                    <img className='my-4' height={'45px'} src='/logo.png' alt='logo' />
+                    <img className='my-4' style={{height:45,width:"auto"}} src="/logo.png" alt='RosuePro Website Development' width="713" height="149" />
                 </Navbar.Brand>
 
                 <Navbar.Toggle aria-controls="navbarScroll"/>
@@ -16,7 +16,7 @@ export default function TopNavbar({ className = '' }) {
                 <Navbar.Collapse id="navbarScroll">
                     <Nav className="d-flex justify-content-between align-items-center flex-grow-1">
                         <Navbar.Text className="flex-grow-1 text-center">
-                            {location.pathname === "/" ? 
+                            {location.pathname === "/" ?
                                 <Link style={location.pathname.startsWith("/") ? {fontWeight: 'bolder'} : {}} className='m-option text-decoration-none nav-link active text-center'  to="/">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"  width="30" height="30" className="bi active m-icon" viewBox="0 0 16 16">
                                         <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5Z"/>
@@ -32,7 +32,7 @@ export default function TopNavbar({ className = '' }) {
                                 </Link>
                             }
                         </Navbar.Text>
-                        <Navbar.Text className="flex-grow-1 text-center">     
+                        <Navbar.Text className="flex-grow-1 text-center">
                         {location.pathname.startsWith("/portfolio") ?
                             <Link style={location.pathname.startsWith("/portfolio") ? {fontWeight: 'bolder'} : {}} className='m-option text-decoration-none ms-auto nav-link active text-center'  to="/portfolio">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="30" height="30" viewBox="0 0 576 512">
@@ -49,7 +49,7 @@ export default function TopNavbar({ className = '' }) {
                             </Link>
                         }
                         </Navbar.Text>
-                        <Navbar.Text className="flex-grow-1 text-center">     
+                        <Navbar.Text className="flex-grow-1 text-center">
                         {location.pathname.startsWith("/resume") ?
                             <Link style={location.pathname.startsWith("/resume") ? {fontWeight: 'bolder'} : {}} className='m-option text-decoration-none ms-auto nav-link active text-center'  to="/resume">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="30" height="30" viewBox="0 0 512 512">
@@ -66,7 +66,7 @@ export default function TopNavbar({ className = '' }) {
                             </Link>
                         }
                         </Navbar.Text>
-                        <Navbar.Text className="flex-grow-1 text-center">     
+                        <Navbar.Text className="flex-grow-1 text-center">
                         {location.pathname.startsWith("/blog") ?
                             <Link style={location.pathname.startsWith("/blog") ? {fontWeight: 'bolder'} : {}} className='m-option text-decoration-none ms-auto nav-link active text-center'  to="/blog">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="30" height="30" viewBox="0 0 512 512">
