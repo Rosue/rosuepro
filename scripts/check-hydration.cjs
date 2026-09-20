@@ -18,6 +18,17 @@ class BuildResources extends ResourceLoader {
     const dom = new JSDOM(fs.readFileSync(file,'utf8'), {
       url: 'https://rosue.pro' + route, runScripts:'dangerously', resources:new BuildResources(), pretendToBeVisual:true, virtualConsole:log,
       beforeParse(window) {
+        // An older build must still hydrate when the visitor's calendar year differs.
+        const BrowserDate = window.Date;
+        const future = new BrowserDate().getFullYear() + 10;
+        const timestamp = BrowserDate.UTC(future, 0, 1, 12);
+        window.Date = class extends BrowserDate {
+          constructor(...args) {
+            if (args.length) super(...args);
+            else super(timestamp);
+          }
+          static now() { return timestamp; }
+        };
         window.matchMedia = () => ({matches:false,addListener(){},removeListener(){},addEventListener(){},removeEventListener(){}});
       }
     });
@@ -34,5 +45,5 @@ class BuildResources extends ResourceLoader {
     dom.window.close();
   }
   if (errors.length) { console.error(JSON.stringify(errors,null,2)); process.exitCode=1; }
-  else console.log('Production bundle hydrated all six routes and navigated successfully in JSDOM. This does not verify visual layout.');
+  else console.log('Production bundle hydrated all six routes with a future browser year and navigated successfully in JSDOM. This does not verify visual layout.');
 })().catch(error => {console.error(error);process.exit(1);});
