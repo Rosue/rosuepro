@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const { JSDOM } = require('jsdom');
-const routes = ['/', '/portfolio', '/resume', '/blog', '/blog/basic-tips-market-music', '/blog/pack-my-cart-helps-jamaican-supermarkets', '/about-us'];
+const routes = ['/', '/portfolio', '/resume', '/blog', '/blog/basic-tips-market-music', '/blog/pack-my-cart-helps-jamaican-supermarkets', '/blog/websites-and-ai-for-jamaican-salons-barbershops', '/about-us'];
 const origin = 'https://rosue.pro';
 const local = process.argv.includes('--local');
 async function read(url) {

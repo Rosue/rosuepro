@@ -10,8 +10,8 @@ export default function Blog() {
     <TopNavbar/>
     <Container as="main" id="main-content" className='main-content'>
       <h1 className='text-center txt-dark'>Digital Marketing Blog</h1>
-      <div className='d-flex flex-wrap justify-content-center gap-4 w-100'>
-        <div className="card mt-5 mb-5" style={{"width": "18rem"}}>
+      <div className='d-flex flex-wrap justify-content-center gap-4 w-100 mt-5 mb-5'>
+        <div className="card" style={{"width": "18rem"}}>
           <img src="/Screenshot 2025-08-03 160451.png" className="card-img-top" alt="Pack My Cart online supermarket platform for Jamaica" width="1895" height="863" loading="lazy" decoding="async" />
           <div className="card-body">
             <h5 className="card-title">How Pack My Cart helps Jamaican supermarket owners sell online</h5>
@@ -19,7 +19,15 @@ export default function Blog() {
             <Link to={"/blog/pack-my-cart-helps-jamaican-supermarkets"} className="btn btn-primary">Read Pack My Cart article</Link>
           </div>
         </div>
-        <div className="card mt-5 mb-5" style={{"width": "18rem"}}>
+        <div className="card" style={{"width": "18rem"}}>
+          <img src="/social-preview.png" className="card-img-top" alt="Websites and AI for Jamaican salons and barbershops" width="1200" height="630" loading="lazy" decoding="async" />
+          <div className="card-body">
+            <h5 className="card-title">How Jamaican salon and barbershop owners can win more bookings with a website and AI</h5>
+            <p className="card-text">If you run a salon or barbershop in Jamaica, your phone is probably a second workplace. A simple business website, an AI chatbot for common questions, and light automations give customers a clear place to learn about you — and give you fewer of the same messages to answer by hand.</p>
+            <Link to={"/blog/websites-and-ai-for-jamaican-salons-barbershops"} className="btn btn-primary">Read salon and barbershop tips</Link>
+          </div>
+        </div>
+        <div className="card" style={{"width": "18rem"}}>
           <img src="/headphones-4595492_1280.jpg" className="card-img-top" alt="Headphones for music and online promotion" width="1280" height="853" loading="lazy" decoding="async" />
           <div className="card-body">
             <h5 className="card-title">Basic Tips on how to Market your music</h5>
