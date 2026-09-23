@@ -8,6 +8,7 @@ import Portforlio from '../pages/Portforlio';
 import Resume from '../pages/Resume';
 import Blog from '../pages/Blog';
 import BasicTipsMarketMusic from '../pages/blog/BasicTipsMarketMusic';
+import PackMyCartHelpsJamaicanSupermarkets from '../pages/blog/PackMyCartHelpsJamaicanSupermarkets';
 import WebsitesAndAiForJamaicanSalonsBarbershops from '../pages/blog/WebsitesAndAiForJamaicanSalonsBarbershops';
 
 export default function Router() {
@@ -19,6 +20,7 @@ export default function Router() {
         <Route path='/resume' element={<Resume />} />
         <Route path='/blog' element={<Blog />} />
         <Route path='/blog/basic-tips-market-music' element={<BasicTipsMarketMusic />} />
+        <Route path='/blog/pack-my-cart-helps-jamaican-supermarkets' element={<PackMyCartHelpsJamaicanSupermarkets />} />
         <Route path='/blog/websites-and-ai-for-jamaican-salons-barbershops' element={<WebsitesAndAiForJamaicanSalonsBarbershops />} />
         <Route path="/about-us" element={<About />} />
         <Route path="*" element={<NotFound />} />
