@@ -11,7 +11,7 @@ export default function WebsitesAndAiForJamaicanSalonsBarbershops() {
       <h1 className='text-center txt-dark'>How Jamaican salon and barbershop owners can win more bookings with a website and AI</h1>
 
       <Container className='p-3 px-5 bg-light rounded mt-5'>
-          <img src="/social-preview.png" className="card-img-top mb-4" alt="RosuePro websites and AI for Jamaican salons and barbershops" width="1200" height="630" loading="lazy" decoding="async" />
+          <img src="/jamaican-salon-barbershop-blog.png" className="card-img-top mb-4" alt="Jamaican salon and barbershop interior" width="1200" height="630" loading="lazy" decoding="async" />
           <div className="card-body">
 
           <p className="lead">If you run a salon or barbershop in Jamaica, your phone is probably a second workplace. Clients ask if you are open, what a wash and set costs, whether you take walk-ins, and when the next Saturday slot is free — often while you are mid-cut or mid-colour. That energy keeps the chair full. It also burns hours that should stay on the client in front of you.</p>
