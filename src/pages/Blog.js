@@ -20,6 +20,14 @@ export default function Blog() {
           </div>
         </div>
         <div className="card" style={{"width": "18rem"}}>
+          <img src="/social-preview.png" className="card-img-top" alt="Websites and AI for Jamaican restaurants and cook shops" width="1200" height="630" loading="lazy" decoding="async" />
+          <div className="card-body">
+            <h5 className="card-title">How Jamaican restaurants and cook shops can fill more tables with a website and AI</h5>
+            <p className="card-text">If you run a restaurant or cook shop in Jamaica, your phone is part of the kitchen. A simple business website, an AI chatbot for common questions, and light automations give customers a clear place to see your menu — and give you fewer of the same messages to answer by hand.</p>
+            <Link to={"/blog/websites-and-ai-for-jamaican-restaurants-cookshops"} className="btn btn-primary">Read restaurant and cook shop tips</Link>
+          </div>
+        </div>
+        <div className="card" style={{"width": "18rem"}}>
           <img src="/social-preview.png" className="card-img-top" alt="Websites and AI for Jamaican salons and barbershops" width="1200" height="630" loading="lazy" decoding="async" />
           <div className="card-body">
             <h5 className="card-title">How Jamaican salon and barbershop owners can win more bookings with a website and AI</h5>
