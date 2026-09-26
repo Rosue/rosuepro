@@ -11,7 +11,7 @@ export default function WebsitesAndAiForJamaicanRestaurantsCookshops() {
       <h1 className='text-center txt-dark'>How Jamaican restaurants and cook shops can fill more tables with a website and AI</h1>
 
       <Container className='p-3 px-5 bg-light rounded mt-5'>
-          <img src="/social-preview.png" className="card-img-top mb-4" alt="RosuePro websites and AI for Jamaican restaurants and cook shops" width="1200" height="630" loading="lazy" decoding="async" />
+          <img src="/jamaican-restaurant-cookshop-blog.png" className="card-img-top mb-4" alt="Jamaican cook shop with food trays and phone orders" width="1200" height="630" loading="lazy" decoding="async" />
           <div className="card-body">
 
           <p className="lead">If you run a restaurant, cook shop, or food stall in Jamaica, your phone is part of the kitchen. Customers ask if you have curry goat today, what time lunch ready, whether you deliver to Mona or Portmore, and how much for a party tray — often while you are plating, frying, or taking cash at the counter. That chatter keeps the food moving. It also steals attention from the stove and the people already waiting.</p>
