@@ -28,6 +28,14 @@ export default function Blog() {
           </div>
         </div>
         <div className="card" style={{"width": "18rem"}}>
+          <img src="/social-preview.png" className="card-img-top" alt="Websites and AI for Jamaican restaurants and cook shops" width="1200" height="630" loading="lazy" decoding="async" />
+          <div className="card-body">
+            <h5 className="card-title">How Jamaican restaurants and cook shops can fill more seats with a website and AI</h5>
+            <p className="card-text">If you run a restaurant or cook shop in Jamaica, your phone is probably as busy as the kitchen. A simple business website, an AI chatbot for common questions, and light automations give customers a clear place to see your menu — and give you fewer of the same messages to answer by hand.</p>
+            <Link to={"/blog/websites-and-ai-for-jamaican-restaurants-cookshops"} className="btn btn-primary">Read restaurant and cook shop tips</Link>
+          </div>
+        </div>
+        <div className="card" style={{"width": "18rem"}}>
           <img src="/headphones-4595492_1280.jpg" className="card-img-top" alt="Headphones for music and online promotion" width="1280" height="853" loading="lazy" decoding="async" />
           <div className="card-body">
             <h5 className="card-title">Basic Tips on how to Market your music</h5>
