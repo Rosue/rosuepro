@@ -47,6 +47,20 @@ body{
 .service-next-steps { background: #fff; border-radius: 1rem; border: 1px solid #cedbec; }
 .service-offerings a:focus-visible { outline: 3px solid #172b46; outline-offset: 4px; }
 
+.btn-whatsapp {
+  background-color: #25d366;
+  border-color: #1da851;
+  color: #fff;
+  font-weight: 600;
+}
+.btn-whatsapp:hover,
+.btn-whatsapp:focus {
+  background-color: #1ebe57;
+  border-color: #189945;
+  color: #fff;
+}
+.contact-actions .btn { min-height: 2.75rem; }
+
   .carousel-caption-custom{
     position: static; /* Removes absolute positioning */
     padding: 1rem;    /* Optional: add padding */

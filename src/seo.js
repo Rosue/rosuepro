@@ -5,7 +5,25 @@ function pageFor(pathname) {
   return { path, ...(pages[path] || { title: 'Page Not Found | RosuePro', description: 'This page could not be found. Explore RosuePro services, view our portfolio, or contact us for help.', label: 'Page not found', noindex: true }) };
 }
 function schemaFor(page) {
-  const organization = { '@type': 'Organization', '@id': origin + '/#organization', name: 'RosuePro', url: origin + '/', logo: origin + '/logo.png', email: 'rosuepro@gmail.com', areaServed: { '@type': 'Country', name: 'Jamaica' }, sameAs: ['https://www.facebook.com/RosuePro','https://www.instagram.com/rosuepro','https://www.linkedin.com/in/rosuepro/'] };
+  const organization = {
+    '@type': 'Organization',
+    '@id': origin + '/#organization',
+    name: 'RosuePro',
+    url: origin + '/',
+    logo: origin + '/logo.png',
+    email: 'rosuepro@gmail.com',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Discovery Bay',
+      addressRegion: 'St. Ann',
+      addressCountry: 'JM',
+    },
+    areaServed: [
+      { '@type': 'City', name: 'Kingston' },
+      { '@type': 'Country', name: 'Jamaica' },
+    ],
+    sameAs: ['https://www.facebook.com/RosuePro', 'https://www.instagram.com/rosuepro', 'https://www.linkedin.com/in/rosuepro/'],
+  };
   const graph = [organization, { '@type': 'WebSite', '@id': origin + '/#website', name: 'RosuePro', url: origin + '/', publisher: { '@id': organization['@id'] } }, { '@type': page.type === 'article' ? 'Article' : 'WebPage', '@id': origin + page.path + '#page', url: origin + page.path, name: page.title, ...(page.type === 'article' ? { headline: page.label } : {}), description: page.description, inLanguage: 'en', isPartOf: { '@id': origin + '/#website' }, publisher: { '@id': organization['@id'] } }];
   if (page.path !== '/' && !page.noindex) {
     const crumbs = [{ name: 'Home', item: origin + '/' }];

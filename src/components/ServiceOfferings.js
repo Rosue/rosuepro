@@ -1,17 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { EmailWhatsAppActions } from './ContactActions';
 
 const offers = [
-  {
-    title: 'Java tutoring & guided debugging',
-    price: 'J$3,500',
-    unit: 'per 60-minute online session',
-    description: 'Get comfortable with Java, understand your code, and work through problems with a developer.',
-    includes: ['Java fundamentals and object-oriented programming', 'Guided debugging and practical explanations', 'A focused session built around your questions'],
-    note: 'Bring your code or questions. Sessions focus on learning and solving problems together.',
-    action: 'Request a Java session',
-    subject: 'Java tutoring enquiry',
-    body: 'Hi RosuePro,\n\nI would like a Java session.\nTopics or problem: \nExperience level: \nPreferred evening or Saturday time (Jamaica): ',
-  },
   {
     title: 'Website fixes',
     price: 'From J$8,000',
@@ -58,15 +49,27 @@ const offers = [
   },
 ];
 
+const defaultMailto = `mailto:rosuepro@gmail.com?subject=${encodeURIComponent('RosuePro enquiry')}&body=${encodeURIComponent("Hi RosuePro,\n\nI'm interested in a landing page + WhatsApp chatbot for my business.\n")}`;
+
 export default function ServiceOfferings() {
   return (
     <section className="service-offerings py-5" id="services" aria-labelledby="services-heading">
       <div className="container">
         <div className="services-intro mx-auto text-center mb-4">
-          <p className="service-eyebrow">ROSUEPRO · JAVA &amp; WEB DEVELOPMENT</p>
-          <h1 id="services-heading">Java tutoring &amp; website services<br />for businesses in Jamaica.</h1>
-          <p className="lead mt-3">Practical support for learners and small businesses in Kingston and across Jamaica.</p>
+          <p className="service-eyebrow">ROSUEPRO · JAMAICAN SMALL BUSINESS WEBSITES</p>
+          <h1 id="services-heading">
+            Landing page + WhatsApp chatbot packages<br />for Jamaican small businesses.
+          </h1>
+          <p className="lead mt-3">
+            Get a professional landing page and a WhatsApp chatbot that answers common questions and captures leads — built for businesses in Kingston and across Jamaica.
+          </p>
           <p className="service-availability">Evenings &amp; Saturdays · By appointment · Jamaica time</p>
+          <EmailWhatsAppActions
+            className="contact-actions d-flex flex-column flex-sm-row flex-wrap gap-2 justify-content-center mt-4"
+            mailtoHref={defaultMailto}
+            mailLabel="Email enquiry"
+            whatsappLabel="WhatsApp enquiry"
+          />
         </div>
         <div className="row row-cols-1 row-cols-lg-3 g-4">
           {offers.map((offer) => (
@@ -79,20 +82,38 @@ export default function ServiceOfferings() {
                   <p>{offer.description}</p>
                   <ul className="ps-3">{offer.includes.map((item) => <li className="mb-2" key={item}>{item}</li>)}</ul>
                   <p className="small text-secondary">{offer.note}</p>
-                  <a className="btn btn-primary mt-auto" href={`mailto:rosuepro@gmail.com?subject=${encodeURIComponent(offer.subject)}&body=${encodeURIComponent(offer.body)}`}>
-                    {offer.action}
-                  </a>
+                  <EmailWhatsAppActions
+                    className="contact-actions d-flex flex-column gap-2 mt-auto"
+                    mailtoHref={`mailto:rosuepro@gmail.com?subject=${encodeURIComponent(offer.subject)}&body=${encodeURIComponent(offer.body)}`}
+                    mailLabel={offer.action}
+                    buttonClassEmail="btn btn-primary w-100"
+                    buttonClassWhatsApp="btn btn-whatsapp w-100"
+                  />
                 </div>
               </article>
             </div>
           ))}
         </div>
-        <p className="text-center small mt-4 mb-0">All prices in Jamaican dollars. Enquiries open your email app; appointments are confirmed personally.</p>
-        <p className="text-center mt-4"><a href="/portfolio">Explore our website projects</a> or <a href="/about-us">learn more about RosuePro</a>.</p>
+        <p className="text-center small mt-4 mb-0">
+          All prices in Jamaican dollars. Enquiries open your email app or WhatsApp; appointments are confirmed personally.
+        </p>
+        <p className="text-center mt-4">
+          <a href="/#portfolio">View portfolio examples</a> or <Link to="/about-us">learn more about RosuePro</Link>.
+        </p>
         <div className="service-next-steps mt-4 p-4">
           <h2 className="h4">A simple way to get started</h2>
-          <p className="mb-2">Choose an offer and describe what you need. We’ll agree on the scope, price, and an available evening or Saturday before booking.</p>
-          <p className="mb-0">Need a Java backend fix, API integration, or ongoing website support? <a href="mailto:rosuepro@gmail.com?subject=Custom%20development%20enquiry">Ask for a custom quote.</a></p>
+          <p className="mb-2">
+            Choose an offer and describe what you need. We’ll agree on the scope, price, and an available evening or Saturday before booking.
+          </p>
+          <EmailWhatsAppActions
+            className="contact-actions d-flex flex-column flex-sm-row flex-wrap gap-2 mb-3"
+            mailtoHref="mailto:rosuepro@gmail.com?subject=Custom%20development%20enquiry"
+            mailLabel="Ask for a custom quote"
+            whatsappMessage="Hi RosuePro,\n\nI need a custom quote for website or chatbot work.\nWhat I need: \n"
+          />
+          <p className="mb-0 small text-secondary">
+            Also offering <Link to="/tutoring">Java tutoring for learners</Link> — separate from our business website packages.
+          </p>
         </div>
       </div>
     </section>
