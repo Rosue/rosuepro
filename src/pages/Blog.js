@@ -12,6 +12,14 @@ export default function Blog() {
       <h1 className='text-center txt-dark'>Digital Marketing Blog</h1>
       <div className='d-flex flex-wrap justify-content-center gap-4 w-100 mt-5 mb-5'>
         <div className="card" style={{"width": "18rem"}}>
+          <img src="/website-design-jamaica-price.webp" className="card-img-top" alt="Kingston business owner reviewing a landing page on a laptop with WhatsApp open on her phone" width="1280" height="720" loading="lazy" decoding="async" />
+          <div className="card-body">
+            <h5 className="card-title">Website Design Jamaica Price: What a Website Really Costs in 2026</h5>
+            <p className="card-text">If you have searched for website design Jamaica price, you have probably noticed that the answers are all over the place. This guide sets out what drives website cost in Jamaica, what a landing page is, and what RosuePro charges in Kingston.</p>
+            <Link to={"/blog/website-design-jamaica-price"} className="btn btn-primary">Read website design price guide</Link>
+          </div>
+        </div>
+        <div className="card" style={{"width": "18rem"}}>
           <img src="/Screenshot 2025-08-03 160451.png" className="card-img-top" alt="Pack My Cart online supermarket platform for Jamaica" width="1895" height="863" loading="lazy" decoding="async" />
           <div className="card-body">
             <h5 className="card-title">How Pack My Cart helps Jamaican supermarket owners sell online</h5>
