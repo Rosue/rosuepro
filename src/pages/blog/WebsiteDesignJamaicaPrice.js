@@ -3,6 +3,8 @@ import TopNavbar from '../../components/TopNavbar'
 import { Container } from 'react-bootstrap'
 import Footer from '../../components/Footer'
 
+const rosueProWhatsAppQuoteHref = 'https://wa.me/18765667328' // pragma: allowlist secret
+
 export default function WebsiteDesignJamaicaPrice() {
   return (
     <>
@@ -94,7 +96,7 @@ export default function WebsiteDesignJamaicaPrice() {
 
 <h2>Get a clear quote on WhatsApp</h2>
 <p>If you want a straight answer on what your website will cost, the quickest way is to message us. Tell us about your business and what you need, and we will come back with a clear, scope-based quote.</p>
-<p><a href={'https://wa.me/' + '1' + '8765667328'} target="_blank" rel="noreferrer"><b>Message RosuePro on WhatsApp: +1 876 566 7328</b></a></p> {/* pragma: allowlist secret */}
+<p><a href={rosueProWhatsAppQuoteHref} target="_blank" rel="noreferrer"><b>Message RosuePro on WhatsApp: +1 876 566 7328</b></a></p>
 <p>Or find out more at <a href="https://rosue.pro" target="_blank" rel="noreferrer">rosue.pro</a>.</p>
 
           </div>
