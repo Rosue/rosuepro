@@ -1,8 +1,33 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { EmailWhatsAppActions } from './ContactActions';
+import {
+  LEAD_PACKAGE_CHATBOT_SERVICE_NOTE,
+  LEAD_PACKAGE_PRICE_SUMMARY,
+  LEAD_PACKAGE_TITLE,
+} from '../constants/leadPackage';
+import { WHATSAPP_DEFAULT_MESSAGE } from '../constants/whatsapp';
 
 const offers = [
+  {
+    title: LEAD_PACKAGE_TITLE,
+    leadPackage: true,
+    price: 'J$45,000',
+    unit: 'one-time setup · chatbot service J$4,000/month',
+    description:
+      'Our lead package for Jamaican small businesses: a template-based landing page plus WhatsApp chatbot setup so customers can learn about you and start a conversation 24/7.',
+    includes: [
+      'Responsive landing page with your services, details, and supplied images',
+      'WhatsApp chatbot wired to your FAQs and enquiry flow',
+      'Handoff rules so a person takes over when needed',
+    ],
+    note: `${LEAD_PACKAGE_CHATBOT_SERVICE_NOTE} Standalone landing pages without a chatbot remain available from J$25,000 — ask if you only need the page.`,
+    action: 'Enquire about this package',
+    subject: 'Landing page + WhatsApp chatbot package',
+    body:
+      'Hi RosuePro,\n\nI am interested in the landing page + WhatsApp chatbot package (J$45,000 setup + J$4,000/month chatbot service).\nBusiness name and services: \nMain questions for the chatbot: \nDo you have text, logo, and images ready? \nPreferred deadline: ',
+    whatsappMessage: WHATSAPP_DEFAULT_MESSAGE,
+  },
   {
     title: 'Website fixes',
     price: 'From J$8,000',
@@ -13,17 +38,6 @@ const offers = [
     action: 'Request a repair quote',
     subject: 'Website repair enquiry',
     body: 'Hi RosuePro,\n\nI need help with a website issue.\nWebsite URL: \nWhat is happening: \nExpected result: \nPreferred deadline: ',
-  },
-  {
-    title: 'Business landing page',
-    price: 'From J$25,000',
-    unit: 'for a template-based single page',
-    description: 'Give customers a clear place to learn about your business and contact you.',
-    includes: ['Responsive single-page layout', 'Your services, business details, and supplied images', 'Email or WhatsApp enquiry link'],
-    note: 'You supply the text, logo, and images. Delivery is agreed once content is ready. Domain, hosting, and extra features are quoted separately.',
-    action: 'Discuss a landing page',
-    subject: 'Business landing page enquiry',
-    body: 'Hi RosuePro,\n\nI would like a business landing page.\nBusiness name and services: \nDo you have text, a logo, and images ready? \nPreferred deadline: ',
   },
   {
     title: 'AI automations',
@@ -49,7 +63,7 @@ const offers = [
   },
 ];
 
-const defaultMailto = `mailto:rosuepro@gmail.com?subject=${encodeURIComponent('RosuePro enquiry')}&body=${encodeURIComponent("Hi RosuePro,\n\nI'm interested in a landing page + WhatsApp chatbot for my business.\n")}`;
+const defaultMailto = `mailto:rosuepro@gmail.com?subject=${encodeURIComponent('Landing page + WhatsApp chatbot package')}&body=${encodeURIComponent(WHATSAPP_DEFAULT_MESSAGE)}`;
 
 export default function ServiceOfferings() {
   return (
@@ -63,18 +77,24 @@ export default function ServiceOfferings() {
           <p className="lead mt-3">
             Get a professional landing page and a WhatsApp chatbot that answers common questions and captures leads — built for businesses in Kingston and across Jamaica.
           </p>
-          <p className="service-availability">Evenings &amp; Saturdays · By appointment · Jamaica time</p>
+          <p className="service-lead-price fw-semibold mt-2">{LEAD_PACKAGE_PRICE_SUMMARY}.</p>
+          <p className="small text-secondary mb-0">{LEAD_PACKAGE_CHATBOT_SERVICE_NOTE}</p>
+          <p className="service-availability mt-3">Evenings &amp; Saturdays · By appointment · Jamaica time</p>
           <EmailWhatsAppActions
             className="contact-actions d-flex flex-column flex-sm-row flex-wrap gap-2 justify-content-center mt-4"
             mailtoHref={defaultMailto}
             mailLabel="Email enquiry"
             whatsappLabel="WhatsApp enquiry"
+            whatsappMessage={WHATSAPP_DEFAULT_MESSAGE}
           />
         </div>
         <div className="row row-cols-1 row-cols-lg-3 g-4">
           {offers.map((offer) => (
             <div className="col" key={offer.title}>
-              <article className="card service-card h-100">
+              <article className={`card service-card h-100${offer.leadPackage ? ' service-card-lead' : ''}`}>
+                {offer.leadPackage ? (
+                  <div className="service-card-lead-badge text-center py-2">Lead package</div>
+                ) : null}
                 <div className="card-body p-4 d-flex flex-column">
                   <h2 className="h4">{offer.title}</h2>
                   <p className="service-price mt-3 mb-0">{offer.price}</p>
@@ -86,6 +106,7 @@ export default function ServiceOfferings() {
                     className="contact-actions d-flex flex-column gap-2 mt-auto"
                     mailtoHref={`mailto:rosuepro@gmail.com?subject=${encodeURIComponent(offer.subject)}&body=${encodeURIComponent(offer.body)}`}
                     mailLabel={offer.action}
+                    whatsappMessage={offer.whatsappMessage}
                     buttonClassEmail="btn btn-primary btn-whatsapp-pair w-100"
                     buttonClassWhatsApp="btn btn-whatsapp btn-whatsapp-pair w-100"
                   />

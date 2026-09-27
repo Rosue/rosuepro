@@ -4,6 +4,8 @@ const projects = [
   {
     name: 'Pack My Cart',
     description: 'Online supermarket platform for Jamaican shops — product listings, carts, and checkout.',
+    demoText: 'Live chatbot demo: try Blacka chat on pack-my-cart.web.app',
+    demoUrl: 'https://pack-my-cart.web.app/',
     url: 'https://pack-my-cart.web.app/',
     image: '/portfolio/pack-my-cart.webp',
     imageAlt: 'Pack My Cart supermarket website homepage',
@@ -42,6 +44,13 @@ export default function PortfolioShowcase({ id = 'portfolio', headingId = 'portf
                   <div className="card-body d-flex flex-column text-center">
                     <h3 className="h4 card-title">{project.name}</h3>
                     <p className="card-text flex-grow-1">{project.description}</p>
+                    {project.demoUrl ? (
+                      <p className="small mb-2">
+                        <a href={project.demoUrl} target="_blank" rel="noreferrer">
+                          {project.demoText}
+                        </a>
+                      </p>
+                    ) : null}
                     <a
                       href={project.url}
                       target="_blank"
