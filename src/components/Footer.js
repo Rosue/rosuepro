@@ -61,7 +61,13 @@ export default function Footer() {
                     </h6>
 
                     <p>
-                        <a href="https://yahsonice.com/bar-map" className="text-reset" target="_blank" rel="noreferrer">Find Bars for a drink</a>
+                        <a href="https://pack-my-cart.web.app" className="text-reset" target="_blank" rel="noopener noreferrer">Pack My Cart</a>
+                    </p>
+                    <p>
+                        <a href="https://vybz-meter.web.app" className="text-reset" target="_blank" rel="noopener noreferrer">Vybz Meter</a>
+                    </p>
+                    <p>
+                        <a href="https://funeral-template.web.app" className="text-reset" target="_blank" rel="noopener noreferrer">Funeral Template</a>
                     </p>
                     </div>
 
