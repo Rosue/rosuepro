@@ -86,8 +86,8 @@ export default function ServiceOfferings() {
                     className="contact-actions d-flex flex-column gap-2 mt-auto"
                     mailtoHref={`mailto:rosuepro@gmail.com?subject=${encodeURIComponent(offer.subject)}&body=${encodeURIComponent(offer.body)}`}
                     mailLabel={offer.action}
-                    buttonClassEmail="btn btn-primary w-100"
-                    buttonClassWhatsApp="btn btn-whatsapp w-100"
+                    buttonClassEmail="btn btn-primary btn-whatsapp-pair w-100"
+                    buttonClassWhatsApp="btn btn-whatsapp btn-whatsapp-pair w-100"
                   />
                 </div>
               </article>
