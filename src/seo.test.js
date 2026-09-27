@@ -5,7 +5,7 @@ import { applyMetadata } from './seo';
 
 test('updates metadata during client navigation without leaving duplicate tags', async () => {
   render(<MemoryRouter initialEntries={['/']}><Router /></MemoryRouter>);
-  await waitFor(() => expect(document.title).toBe('Java Tutoring & Website Services in Jamaica | RosuePro'));
+  await waitFor(() => expect(document.title).toBe('Landing Page + WhatsApp Chatbot for Jamaican Small Businesses | RosuePro'));
   fireEvent.click(screen.getByRole('link', { name: 'Portfolio', exact: true }));
   await waitFor(() => expect(document.title).toBe('Website Development Portfolio | RosuePro Jamaica'));
   expect(document.querySelectorAll('link[rel="canonical"]')).toHaveLength(1);

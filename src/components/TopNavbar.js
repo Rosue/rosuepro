@@ -50,6 +50,23 @@ export default function TopNavbar({ className = '' }) {
                         }
                         </Navbar.Text>
                         <Navbar.Text className="flex-grow-1 text-center">
+                        {location.pathname.startsWith("/tutoring") ?
+                            <Link style={location.pathname.startsWith("/tutoring") ? {fontWeight: 'bolder'} : {}} className='m-option text-decoration-none ms-auto nav-link active text-center' to="/tutoring">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="28" height="28" viewBox="0 0 16 16" aria-hidden="true">
+                                    <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.071-.76-1.016-.165-1.84-.305-2.805-.437V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-1.96-.692-2.805-.747-1.072-.062-2.069-.187-3.186-.416v-9.912z"/>
+                                </svg>
+                                <span className='menu-text'>Tutoring</span>
+                            </Link>
+                            :
+                            <Link style={location.pathname.startsWith("/tutoring") ? {fontWeight: 'bolder'} : {}} className='m-option text-decoration-none ms-auto nav-link text-center' to="/tutoring">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="24" height="24" viewBox="0 0 16 16" aria-hidden="true">
+                                    <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.071-.76-1.016-.165-1.84-.305-2.805-.437V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-1.96-.692-2.805-.747-1.072-.062-2.069-.187-3.186-.416v-9.912z"/>
+                                </svg>
+                                <span className='menu-text'>Tutoring</span>
+                            </Link>
+                        }
+                        </Navbar.Text>
+                        <Navbar.Text className="flex-grow-1 text-center">
                         {location.pathname.startsWith("/resume") ?
                             <Link style={location.pathname.startsWith("/resume") ? {fontWeight: 'bolder'} : {}} className='m-option text-decoration-none ms-auto nav-link active text-center'  to="/resume">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="30" height="30" viewBox="0 0 512 512">

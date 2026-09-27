@@ -3,13 +3,13 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import Portforlio from './pages/Portforlio';
 
-test('promotes Vybz Meter and Funeral Template on the home page', () => {
+test('promotes Pack My Cart and Funeral Template on the home page', () => {
   render(<App />);
-  expect(screen.getByRole('link', { name: 'Visit Vybz Meter' })).toHaveAttribute(
+  expect(screen.getByRole('link', { name: 'Visit Pack My Cart' })).toHaveAttribute(
     'href',
-    'https://vybz-meter.web.app/'
+    'https://pack-my-cart.web.app/'
   );
-  expect(screen.getByRole('link', { name: 'Visit Funeral Template' })).toHaveAttribute(
+  expect(screen.getByRole('link', { name: /Visit Funeral site template/i })).toHaveAttribute(
     'href',
     'https://funeral-template.web.app/'
   );
