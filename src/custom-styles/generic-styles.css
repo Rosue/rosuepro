@@ -41,11 +41,62 @@ body{
 .services-intro h1 { font-weight: 750; font-size: clamp(2rem, 4vw, 3.5rem); }
 .service-eyebrow { color: #245080; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em; }
 .service-availability { color: #205a49; font-weight: 600; }
+.service-lead-price { color: #164e94; font-size: 1.1rem; }
 .service-card { border: 1px solid #cedbec; border-radius: 1rem; box-shadow: 0 8px 24px #172b4610; }
+.service-card-lead { border-color: #164e94; box-shadow: 0 12px 32px #164e9420; }
+.service-card-lead-badge { background: #164e94; color: #fff; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; border-radius: 1rem 1rem 0 0; }
 .service-card h2 { min-height: 2.5em; font-weight: 700; }
 .service-price { font-size: 1.8rem; font-weight: 750; color: #164e94; }
 .service-next-steps { background: #fff; border-radius: 1rem; border: 1px solid #cedbec; }
 .service-offerings a:focus-visible { outline: 3px solid #172b46; outline-offset: 4px; }
+
+/* WhatsApp CTA — match Bootstrap .btn-primary sizing; beat inherited link colors in hero/footer */
+.contact-actions a.btn-whatsapp,
+a.btn.btn-whatsapp {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 600;
+  text-decoration: none !important;
+  border-radius: 0.375rem;
+  border: 1px solid #1ebe5d !important;
+  background-color: #25d366 !important;
+  color: #fff !important;
+  box-shadow: none;
+  vertical-align: middle;
+}
+.contact-actions a.btn-whatsapp.btn-sm {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+}
+.contact-actions a.btn-whatsapp:hover,
+.contact-actions a.btn-whatsapp:focus,
+.contact-actions a.btn-whatsapp:active,
+a.btn.btn-whatsapp:hover,
+a.btn.btn-whatsapp:focus,
+a.btn.btn-whatsapp:active {
+  background-color: #1ebe5d !important;
+  border-color: #189945 !important;
+  color: #fff !important;
+  text-decoration: none !important;
+}
+.contact-actions .btn-whatsapp-pair,
+.contact-actions a.btn-primary.btn-whatsapp-pair {
+  min-height: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.contact-actions .btn-whatsapp-icon {
+  flex-shrink: 0;
+}
+.service-offerings .contact-actions a.btn-whatsapp {
+  color: #fff !important;
+}
 
   .carousel-caption-custom{
     position: static; /* Removes absolute positioning */

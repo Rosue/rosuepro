@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { WhatsAppButton } from './ContactActions'
 
 export default function Footer() {
   return (
@@ -69,7 +70,8 @@ export default function Footer() {
                     <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
                     <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-house" viewBox="0 0 16 16">
                         <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"/>
-                        </svg> Discovery Bay, Jamaica</p>
+                        </svg> Kingston, Jamaica — services by appointment</p>
+                    <p className="small mb-3">Registered business address: Discovery Bay, St. Ann</p>
                     <p>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-envelope-at" viewBox="0 0 16 16">
                         <path d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2H2Zm3.708 6.208L1 11.105V5.383l4.708 2.825ZM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2-7-4.2Z"/>
@@ -78,6 +80,9 @@ export default function Footer() {
                         &nbsp;<a href="mailto:rosuepro@gmail.com?subject=New%20RosuePro%20Customer%20Contact" style={{ textDecoration: "none", color: "inherit"}}>
                             RosuePro@gmail.com
                         </a>
+                    </p>
+                    <p className="mt-2">
+                      <WhatsAppButton className="btn btn-whatsapp btn-sm">WhatsApp enquiry</WhatsAppButton>
                     </p>
                     {/* <p>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-telephone" viewBox="0 0 16 16">

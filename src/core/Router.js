@@ -12,6 +12,7 @@ import PackMyCartHelpsJamaicanSupermarkets from '../pages/blog/PackMyCartHelpsJa
 import WebsitesAndAiForJamaicanSalonsBarbershops from '../pages/blog/WebsitesAndAiForJamaicanSalonsBarbershops';
 import WebsitesAndAiForJamaicanRestaurantsCookshops from '../pages/blog/WebsitesAndAiForJamaicanRestaurantsCookshops';
 import WebsiteDesignJamaicaPrice from '../pages/blog/WebsiteDesignJamaicaPrice';
+import Tutoring from '../pages/Tutoring';
 
 export default function Router() {
     const location = useLocation();
@@ -27,6 +28,7 @@ export default function Router() {
         <Route path='/blog/websites-and-ai-for-jamaican-restaurants-cookshops' element={<WebsitesAndAiForJamaicanRestaurantsCookshops />} />
         <Route path='/blog/website-design-jamaica-price' element={<WebsiteDesignJamaicaPrice />} />
         <Route path="/about-us" element={<About />} />
+        <Route path="/tutoring" element={<Tutoring />} />
         <Route path="*" element={<NotFound />} />
     </Routes></>
   )

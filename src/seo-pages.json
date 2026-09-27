@@ -1,8 +1,13 @@
 {
   "/": {
-    "title": "Java Tutoring & Website Services in Jamaica | RosuePro",
-    "description": "Get online Java tutoring, website repairs, business landing pages, AI automations, and AI chatbots with RosuePro in Jamaica. View clear service prices and request an appointment.",
+    "title": "Landing Page + WhatsApp Chatbot for Jamaican Small Businesses | RosuePro",
+    "description": "RosuePro landing page + WhatsApp chatbot setup for Jamaican small businesses: J$45,000 one-time, then J$4,000/month chatbot service (not hosting). Kingston and island-wide — evenings and Saturdays by appointment.",
     "label": "Home"
+  },
+  "/tutoring": {
+    "title": "Java Tutoring & Guided Debugging in Jamaica | RosuePro",
+    "description": "Online Java tutoring and guided debugging for learners in Jamaica. J$3,500 per 60-minute session — evenings and Saturdays by appointment with RosuePro.",
+    "label": "Java tutoring"
   },
   "/portfolio": {
     "title": "Website Development Portfolio | RosuePro Jamaica",
@@ -60,8 +65,8 @@
     "type": "article"
   },
   "/about-us": {
-    "title": "About RosuePro | Java & Web Development in Jamaica",
-    "description": "Meet RosuePro, providing Java tutoring, website repairs, business landing pages, AI automations, and AI chatbots in Jamaica. Explore our work and contact us about your project.",
+    "title": "About RosuePro | Websites & WhatsApp Chatbots in Jamaica",
+    "description": "Meet RosuePro — landing pages, website repairs, AI automations, and WhatsApp chatbots for Jamaican small businesses, plus Java tutoring for learners. Based in Kingston, serving Jamaica.",
     "label": "About RosuePro"
   }
 }
