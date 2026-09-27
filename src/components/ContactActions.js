@@ -47,7 +47,10 @@ export function EmailWhatsAppActions({
 }) {
   return (
     <div className={className}>
-      <a className={buttonClassEmail} href={mailtoHref}>
+      <a
+        className={buttonClassEmail}
+        href={mailtoHref && /^mailto:/i.test(mailtoHref) ? mailtoHref : 'mailto:rosuepro@gmail.com'}
+      >
         {mailLabel}
       </a>
       <WhatsAppButton className={buttonClassWhatsApp} message={whatsappMessage}>

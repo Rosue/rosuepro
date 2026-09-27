@@ -119,7 +119,7 @@ export default function ServiceOfferings() {
           All prices in Jamaican dollars. Enquiries open your email app or WhatsApp; appointments are confirmed personally.
         </p>
         <p className="text-center mt-4">
-          <a href="/#portfolio">View portfolio examples</a> or <Link to="/about-us">learn more about RosuePro</Link>.
+          <Link to={{ pathname: '/', hash: '#portfolio' }}>View portfolio examples</Link> or <Link to="/about-us">learn more about RosuePro</Link>.
         </p>
         <div className="service-next-steps mt-4 p-4">
           <h2 className="h4">A simple way to get started</h2>

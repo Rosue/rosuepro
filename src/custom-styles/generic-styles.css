@@ -94,8 +94,7 @@ a.btn.btn-whatsapp:active {
 .contact-actions .btn-whatsapp-icon {
   flex-shrink: 0;
 }
-.service-offerings .contact-actions a.btn-whatsapp,
-.txt-hard .contact-actions a.btn-whatsapp {
+.service-offerings .contact-actions a.btn-whatsapp {
   color: #fff !important;
 }
 
