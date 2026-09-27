@@ -13,7 +13,7 @@ export default function WebsiteDesignJamaicaPrice() {
       <h1 className='text-center txt-dark'>Website Design Jamaica Price: What a Website Really Costs in 2026</h1>
 
       <Container className='p-3 px-5 bg-light rounded mt-5'>
-          <img src="/website-design-jamaica-price.png" className="card-img-top mb-4" alt="Kingston business owner reviewing a landing page on a laptop with WhatsApp open on her phone" width="1280" height="720" loading="lazy" decoding="async" />
+          <img src="/website-design-jamaica-price.webp" className="card-img-top mb-4" alt="Kingston business owner reviewing a landing page on a laptop with WhatsApp open on her phone" width="1280" height="720" loading="lazy" decoding="async" />
           <div className="card-body">
 
           <p className="lead">If you have searched for &quot;website design Jamaica price&quot;, you have probably noticed that the answers are all over the place. One person quotes a few thousand dollars, another quotes hundreds of thousands, and very few explain why. This guide sets out, plainly, what drives website cost in Jamaica, what a landing page is and who it suits, and what RosuePro charges, so you can budget with confidence before you speak to anyone.</p>
