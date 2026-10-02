@@ -131,3 +131,20 @@ a.btn.btn-whatsapp:active {
 
 /* Keep intrinsic image dimensions responsive after reserving layout space. */
 main .card-img-top { height: auto; }
+
+/* Blog listing: equal-height cards with CTA pinned to bottom, centered */
+.blog-article-cards > .card {
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-article-cards > .card .card-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.blog-article-cards > .card .card-body .btn {
+  margin-top: auto;
+  align-self: center;
+}
