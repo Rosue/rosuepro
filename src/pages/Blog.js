@@ -12,6 +12,14 @@ export default function Blog() {
       <h1 className='text-center txt-dark'>Digital Marketing Blog</h1>
       <div className='d-flex flex-wrap justify-content-center gap-4 w-100 mt-5 mb-5'>
         <div className="card" style={{"width": "18rem"}}>
+          <img src="/whatsapp-chatbot-for-business-jamaica.webp" className="card-img-top" alt="Smartphone showing a WhatsApp business chatbot conversation for a Jamaican small business" width="1280" height="720" loading="lazy" decoding="async" />
+          <div className="card-body">
+            <h5 className="card-title">WhatsApp Chatbot for Business Jamaica: How Small Businesses Reply Faster in 2026</h5>
+            <p className="card-text">Looking for a WhatsApp chatbot for business Jamaica? This guide explains what a bot does for Kingston small businesses, who it suits, RosuePro pricing from J$28,000, and the J$45,000 landing page plus chatbot package.</p>
+            <Link to={"/blog/whatsapp-chatbot-for-business-jamaica"} className="btn btn-primary">Read WhatsApp chatbot guide</Link>
+          </div>
+        </div>
+        <div className="card" style={{"width": "18rem"}}>
           <img src="/website-design-jamaica-price.webp" className="card-img-top" alt="Kingston business owner reviewing a landing page on a laptop with WhatsApp open on her phone" width="1280" height="720" loading="lazy" decoding="async" />
           <div className="card-body">
             <h5 className="card-title">Website Design Jamaica Price: What a Website Really Costs in 2026</h5>
