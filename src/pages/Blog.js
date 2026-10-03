@@ -12,6 +12,14 @@ export default function Blog() {
       <h1 className='text-center txt-dark'>Digital Marketing Blog</h1>
       <div className='blog-article-cards d-flex flex-wrap justify-content-center gap-4 w-100 mt-5 mb-5'>
         <div className="card" style={{"width": "18rem"}}>
+          <img src="/websites-and-ai-for-jamaican-funeral-homes-memorials.webp" className="card-img-top" alt="Respectful Jamaican memorial chapel exterior for a funeral home website" width="1280" height="720" loading="lazy" decoding="async" />
+          <div className="card-body">
+            <h5 className="card-title">How Jamaican funeral homes can serve families online with AI</h5>
+            <p className="card-text">When families need service times, chapel directions, and tributes shared with relatives abroad, phone calls at every hour can overwhelm staff. A respectful website, memorial pages, WhatsApp chatbots, and light automations from RosuePro help funeral homes in Jamaica answer with dignity.</p>
+            <Link to={"/blog/websites-and-ai-for-jamaican-funeral-homes-memorials"} className="btn btn-primary">Read funeral home guide</Link>
+          </div>
+        </div>
+        <div className="card" style={{"width": "18rem"}}>
           <img src="/whatsapp-chatbot-for-business-jamaica.webp" className="card-img-top" alt="Smartphone showing a WhatsApp business chatbot conversation for a Jamaican small business" width="1280" height="720" loading="lazy" decoding="async" />
           <div className="card-body">
             <h5 className="card-title">WhatsApp Chatbot for Business Jamaica: How Small Businesses Reply Faster in 2026</h5>
