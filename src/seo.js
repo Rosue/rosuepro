@@ -1,8 +1,18 @@
 const pages = require('./seo-pages.json');
+const { getProjectBySlug, projectSeoPage, allProjectSeoPages } = require('./data/portfolioProjects');
 const origin = 'https://rosue.pro';
 function pageFor(pathname) {
   const path = pathname.replace(/\/$/, '') || '/';
+  const projectMatch = path.match(/^\/portfolio\/([^/]+)$/);
+  if (projectMatch) {
+    const project = getProjectBySlug(projectMatch[1]);
+    if (project) return projectSeoPage(project);
+    return { path, title: 'Page Not Found | RosuePro', description: 'This page could not be found. Explore RosuePro services, view our portfolio, or contact us for help.', label: 'Page not found', noindex: true };
+  }
   return { path, ...(pages[path] || { title: 'Page Not Found | RosuePro', description: 'This page could not be found. Explore RosuePro services, view our portfolio, or contact us for help.', label: 'Page not found', noindex: true }) };
+}
+function allPublicRoutes() {
+  return [...Object.keys(pages), ...allProjectSeoPages().map((page) => page.path)];
 }
 function schemaFor(page) {
   const organization = {
@@ -43,7 +53,8 @@ function applyMetadata(doc, pathname) {
   };
   setMeta('name','description',page.description);
   setMeta('name','robots',page.noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large');
-  for (const [key, value] of Object.entries({title:page.title,description:page.description,url:origin+page.path,type:page.type || 'website',site_name:'RosuePro',image:origin+(page.image || '/social-preview.png'),'image:alt':page.imageAlt || 'RosuePro Website Development'})) setMeta('property','og:'+key,value);
+  const absoluteAsset = (assetPath) => origin + encodeURI((assetPath || '/social-preview.png').startsWith('/') ? (assetPath || '/social-preview.png') : '/' + (assetPath || '/social-preview.png'));
+  for (const [key, value] of Object.entries({title:page.title,description:page.description,url:origin+page.path,type:page.type || 'website',site_name:'RosuePro',image:absoluteAsset(page.image),'image:alt':page.imageAlt || 'RosuePro Website Development'})) setMeta('property','og:'+key,value);
   setMeta('name','twitter:card','summary_large_image');
   for (const key of ['title','description','image','image:alt']) setMeta('name','twitter:'+key,doc.querySelector('meta[property="og:'+key+'"]').content);
   let canonical = doc.querySelector('link[rel="canonical"]');
@@ -53,4 +64,4 @@ function applyMetadata(doc, pathname) {
   if (!schema) { schema = doc.createElement('script'); schema.id = 'seo-structured-data'; schema.type = 'application/ld+json'; doc.head.appendChild(schema); }
   schema.textContent = JSON.stringify(schemaFor(page)).replace(/</g, '\\u003c');
 }
-module.exports = { pages, origin, pageFor, schemaFor, applyMetadata };
+module.exports = { pages, origin, pageFor, schemaFor, applyMetadata, allPublicRoutes };

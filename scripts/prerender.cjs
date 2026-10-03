@@ -14,9 +14,9 @@ const React = require('react');
 const { renderToString } = require('react-dom/server');
 const { StaticRouter } = require('react-router-dom/server');
 const Router = require('../src/core/Router').default;
-const { pages, origin, applyMetadata } = require('../src/seo');
+const { origin, applyMetadata, allPublicRoutes } = require('../src/seo');
 const template = fs.readFileSync('build/index.html','utf8');
-for (const route of [...Object.keys(pages), '/404']) {
+for (const route of [...allPublicRoutes(), '/404']) {
   const dom = new JSDOM(template);
   const doc = dom.window.document;
   applyMetadata(doc, route);
@@ -29,5 +29,5 @@ for (const route of [...Object.keys(pages), '/404']) {
   fs.writeFileSync(file,dom.serialize());
   console.log('Prerendered ' + route);
 }
-fs.writeFileSync('build/sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + Object.keys(pages).map(route => '  <url><loc>' + origin + route + '</loc></url>').join('\n') + '\n</urlset>\n');
+fs.writeFileSync('build/sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + allPublicRoutes().map(route => '  <url><loc>' + origin + route + '</loc></url>').join('\n') + '\n</urlset>\n');
 fs.writeFileSync('build/robots.txt', 'User-agent: *\nAllow: /\n\nSitemap: ' + origin + '/sitemap.xml\n');

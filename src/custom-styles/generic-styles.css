@@ -148,3 +148,23 @@ main .card-img-top { height: auto; }
   margin-top: auto;
   align-self: center;
 }
+
+.project-share-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.project-share-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #0d1523;
+  margin-right: 0.25rem;
+}
+
+.project-share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
