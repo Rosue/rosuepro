@@ -13,6 +13,19 @@ export default function Portforlio() {
         <h1 className="text-center mt-5  txt-dark">Website Development Portfolio</h1>
         <p className="text-center"><small className="txt-dark mb-5">A showcase of some of our work</small></p>
         <div className="card mb-5 portfolio-project-card">
+          <img src="/portfolio/carlos-transports.webp" className="card-img-top project-preview" alt="Carlos Transports website showing Jamaica taxi and private charter booking" loading="lazy" decoding="async" width="1280" height="800" />
+          <div className="card-body">
+            <div className="d-flex align-items-center gap-3">
+              <div>
+                <h2 className="h5 card-title mb-1">Carlos Transports</h2>
+                <p className="card-text mb-3">Jamaica taxi and private charter booking — private charter, airport pickup, and nightlife & event rides. Fast, safe, and always on time.</p>
+                <a href="https://carlos-transports.web.app/" target="_blank" rel="noreferrer" className="btn btn-primary">Visit Carlos Transports</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="card mb-5 portfolio-project-card">
           <img src="/projects/vybz-meter.webp" className="card-img-top project-preview" alt="Vybz Meter website showing its interactive Jamaica hotspots map" loading="lazy" decoding="async" width="1280" height="720" />
           <div className="card-body">
             <div className="d-flex align-items-center gap-3">

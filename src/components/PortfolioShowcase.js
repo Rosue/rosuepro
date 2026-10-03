@@ -2,6 +2,14 @@ import React from 'react';
 
 const projects = [
   {
+    name: 'Carlos Transports',
+    description:
+      'Jamaica taxi and private charter booking — private charter, airport pickup, and nightlife & event rides. Fast, safe, and always on time.',
+    url: 'https://carlos-transports.web.app/',
+    image: '/portfolio/carlos-transports.webp',
+    imageAlt: 'Carlos Transports Jamaica taxi and private charter booking homepage',
+  },
+  {
     name: 'Pack My Cart',
     description: 'Online supermarket platform for Jamaican shops — product listings, carts, and checkout.',
     demoText: 'Live chatbot demo: try Blacka chat on pack-my-cart.web.app',

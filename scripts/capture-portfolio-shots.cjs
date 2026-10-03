@@ -9,6 +9,7 @@ fs.mkdirSync(outDir, { recursive: true });
 const targets = [
   { url: 'https://pack-my-cart.web.app/', file: 'pack-my-cart.webp' },
   { url: 'https://funeral-template.web.app/', file: 'funeral-template.webp' },
+  { url: 'https://carlos-transports.web.app/', file: 'carlos-transports.webp' },
 ];
 
 (async () => {
