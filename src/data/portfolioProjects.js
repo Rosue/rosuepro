@@ -121,7 +121,6 @@ function projectVisitLabel(project, context) {
 }
 
 function getShareUrl(project) {
-  if (project.liveUrl) return project.liveUrl;
   return origin + projectPagePath(project);
 }
 

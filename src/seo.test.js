@@ -40,6 +40,9 @@ test('portfolio project pages expose per-project social metadata', () => {
   );
 });
 
-test('projects without a live site share the RosuePro project page', () => {
-  expect(getShareUrl({ slug: 'yahsonice', liveUrl: undefined })).toBe('https://rosue.pro/portfolio/yahsonice');
+test('share links always use the RosuePro portfolio page for social previews', () => {
+  expect(getShareUrl({ slug: 'yahsonice' })).toBe('https://rosue.pro/portfolio/yahsonice');
+  expect(getShareUrl({ slug: 'vybz-meter', liveUrl: 'https://vybz-meter.web.app/' })).toBe(
+    'https://rosue.pro/portfolio/vybz-meter'
+  );
 });

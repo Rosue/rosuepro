@@ -41,4 +41,7 @@ test('portfolio projects include share actions', () => {
 
   expect(screen.getAllByRole('link', { name: /Share .+ on WhatsApp/ }).length).toBeGreaterThanOrEqual(7);
   expect(screen.getAllByRole('button', { name: /Copy link to/ }).length).toBeGreaterThanOrEqual(7);
+
+  const vybzWhatsApp = screen.getByRole('link', { name: 'Share Vybz Meter on WhatsApp' });
+  expect(vybzWhatsApp.href).toContain(encodeURIComponent('https://rosue.pro/portfolio/vybz-meter'));
 });
