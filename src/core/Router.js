@@ -5,6 +5,7 @@ import About from '../pages/About';
 import NotFound from '../pages/NotFound';
 import Landing from '../pages/Landing';
 import Portforlio from '../pages/Portforlio';
+import PortfolioProject from '../pages/PortfolioProject';
 import Resume from '../pages/Resume';
 import Blog from '../pages/Blog';
 import BasicTipsMarketMusic from '../pages/blog/BasicTipsMarketMusic';
@@ -21,6 +22,7 @@ export default function Router() {
     <><Seo /><Routes location={location} key={location.pathname}>
         <Route path='/' element={<Landing />} />
         <Route path='/portfolio' element={<Portforlio />} />
+        <Route path='/portfolio/:slug' element={<PortfolioProject />} />
         <Route path='/resume' element={<Resume />} />
         <Route path='/blog' element={<Blog />} />
         <Route path='/blog/basic-tips-market-music' element={<BasicTipsMarketMusic />} />

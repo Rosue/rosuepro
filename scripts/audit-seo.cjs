@@ -1,7 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 const { JSDOM } = require('jsdom');
-const routes = Object.keys(require('../src/seo-pages.json'));
+const { allPublicRoutes } = require('../src/seo');
+const routes = allPublicRoutes();
 const origin = 'https://rosue.pro';
 const local = process.argv.includes('--local');
 async function read(url) {

@@ -31,3 +31,14 @@ test('promotes Vybz Meter and Funeral Template on the portfolio page', () => {
     'https://funeral-template.web.app/'
   );
 });
+
+test('portfolio projects include share actions', () => {
+  render(
+    <BrowserRouter>
+      <Portforlio />
+    </BrowserRouter>
+  );
+
+  expect(screen.getAllByRole('link', { name: /Share .+ on WhatsApp/ }).length).toBeGreaterThanOrEqual(7);
+  expect(screen.getAllByRole('button', { name: /Copy link to/ }).length).toBeGreaterThanOrEqual(7);
+});

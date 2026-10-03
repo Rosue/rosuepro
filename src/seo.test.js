@@ -2,6 +2,7 @@ import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import Router from './core/Router';
 import { applyMetadata } from './seo';
+import { getShareUrl } from './data/portfolioProjects';
 
 test('updates metadata during client navigation without leaving duplicate tags', async () => {
   render(<MemoryRouter initialEntries={['/']}><Router /></MemoryRouter>);
@@ -22,4 +23,23 @@ test('unknown routes are noindex and returning to a public route restores indexi
   applyMetadata(document, '/about-us');
   expect(document.querySelector('meta[name="robots"]').content).not.toContain('noindex');
   expect(document.querySelector('link[rel="canonical"]').href).toBe('https://rosue.pro/about-us');
+});
+
+test('portfolio project pages expose per-project social metadata', () => {
+  applyMetadata(document, '/portfolio/vybz-meter');
+  expect(document.title).toBe('Vybz Meter | RosuePro Portfolio');
+  expect(document.querySelector('meta[property="og:title"]').content).toBe('Vybz Meter | RosuePro Portfolio');
+  expect(document.querySelector('meta[property="og:description"]').content).toContain('interactive map');
+  expect(document.querySelector('meta[property="og:url"]').content).toBe('https://rosue.pro/portfolio/vybz-meter');
+  expect(document.querySelector('meta[property="og:image"]').content).toBe(
+    'https://rosue.pro/projects/vybz-meter.webp'
+  );
+  expect(document.querySelector('meta[name="twitter:card"]').content).toBe('summary_large_image');
+  expect(document.querySelector('meta[name="twitter:image"]').content).toBe(
+    'https://rosue.pro/projects/vybz-meter.webp'
+  );
+});
+
+test('projects without a live site share the RosuePro project page', () => {
+  expect(getShareUrl({ slug: 'yahsonice', liveUrl: undefined })).toBe('https://rosue.pro/portfolio/yahsonice');
 });
