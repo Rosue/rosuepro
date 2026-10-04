@@ -152,6 +152,7 @@ main .card-img-top { height: auto; }
 .portfolio-card-actions {
   margin-top: auto;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 0.6rem;
@@ -163,6 +164,7 @@ main .card-img-top { height: auto; }
   flex-wrap: wrap;
   gap: 0.5rem;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .portfolio-card-actions--centered {
@@ -176,9 +178,11 @@ main .card-img-top { height: auto; }
   gap: 0.3rem;
   align-items: center;
   margin-left: auto;
+  flex-shrink: 0;
 }
 
 .project-share-btn {
+  flex-shrink: 0;
   width: 32px;
   height: 32px;
   border-radius: 8px;
@@ -226,4 +230,20 @@ main .card-img-top { height: auto; }
 
 .project-share-copy-note.show {
   opacity: 1;
+}
+
+@media (max-width: 575.98px) {
+  .portfolio-card-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .portfolio-card-actions-primary .btn {
+    align-self: flex-start;
+  }
+
+  .project-share-actions {
+    margin-left: 0;
+    justify-content: flex-end;
+  }
 }
