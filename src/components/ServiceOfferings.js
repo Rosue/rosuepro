@@ -29,6 +29,23 @@ const offers = [
     whatsappMessage: WHATSAPP_DEFAULT_MESSAGE,
   },
   {
+    title: 'Custom websites',
+    price: 'From J$30,000',
+    unit: 'for an agreed business website scope',
+    description:
+      'A website built around your business—your services, branding, and contact details—so people can find you on Google, learn what you offer, and reach out when they are ready. Showing up online helps more customers discover you and can lead to more sales for your business.',
+    includes: [
+      'Mobile-friendly pages tailored to your business and supplied content',
+      'Clear service or product information visitors and search engines can read',
+      'Contact details and enquiry paths so interested customers can reach you',
+    ],
+    note: 'Scope, number of pages, and final price are confirmed before build. Domain, hosting renewal, and ongoing content updates are quoted separately unless agreed upfront.',
+    action: 'Enquire about a custom website',
+    subject: 'Custom website enquiry',
+    body:
+      'Hi RosuePro,\n\nI would like a custom website for my business.\nBusiness name and what you do: \nPages or sections you need: \nDo you have logo, text, and images ready? \nPreferred deadline: ',
+  },
+  {
     title: 'Website fixes',
     price: 'From J$8,000',
     unit: 'per agreed repair',
