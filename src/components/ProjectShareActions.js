@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { projectShareUrl, projectShareWhatsAppText } from '../data/portfolioProjects';
+
+const COPY_NOTE_MS = 1400;
 
 function FacebookIcon() {
   return (
@@ -35,17 +37,36 @@ function LinkIcon() {
 
 export default function ProjectShareActions({ project, shareTitle, className = '' }) {
   const [copied, setCopied] = useState(false);
+  const hideCopyNoteTimerRef = useRef(null);
   const title = shareTitle || project.name;
   const url = projectShareUrl(project);
   const whatsappHref = `https://wa.me/?text=${encodeURIComponent(projectShareWhatsAppText(title, url))}`;
   const facebookHref = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
   const xHref = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`;
 
+  useEffect(() => {
+    return () => {
+      if (hideCopyNoteTimerRef.current) {
+        window.clearTimeout(hideCopyNoteTimerRef.current);
+      }
+    };
+  }, []);
+
+  function scheduleHideCopyNote() {
+    if (hideCopyNoteTimerRef.current) {
+      window.clearTimeout(hideCopyNoteTimerRef.current);
+    }
+    hideCopyNoteTimerRef.current = window.setTimeout(() => {
+      hideCopyNoteTimerRef.current = null;
+      setCopied(false);
+    }, COPY_NOTE_MS);
+  }
+
   async function copyLink() {
     try {
       await navigator.clipboard.writeText(url);
       setCopied(true);
-      window.setTimeout(() => setCopied(false), 1400);
+      scheduleHideCopyNote();
     } catch {
       setCopied(false);
     }
@@ -99,7 +120,7 @@ export default function ProjectShareActions({ project, shareTitle, className = '
         role="status"
         aria-live="polite"
       >
-        Link copied
+        {copied ? 'Link copied' : ''}
       </p>
     </>
   );
