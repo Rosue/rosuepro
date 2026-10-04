@@ -1,99 +1,106 @@
 import React, { useState } from 'react';
-import { getShareUrl, shareMessage } from '../data/portfolioProjects';
+import { projectShareUrl, projectShareWhatsAppText } from '../data/portfolioProjects';
 
 function FacebookIcon() {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
-      <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h2.6l.4-3H13v-2c0-.6.4-1 1-1z" />
     </svg>
   );
 }
 
 function XIcon() {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
-      <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.865-5.07-4.427 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M14.7 10.3 21.4 3h-1.6l-5.8 6.4L9.3 3H3.5l7 10.1L3.5 21h1.6l6.2-6.8L14.7 21h5.8l-7.3-10.7zm-2.2 2.4-.7-1-5.6-7.6h2.4l4.5 6.2.7 1 5.9 8h-2.4l-4.8-6.6z" />
     </svg>
   );
 }
 
 function WhatsAppShareIcon() {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
-      <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.7-1.2A9 9 0 1 0 12 3zm5 12.6c-.2.6-1.2 1.1-1.7 1.1-.4 0-.9.2-3.1-.7-2.6-1.1-4.2-3.7-4.3-3.9-.1-.2-1-1.3-1-2.5s.6-1.8.9-2c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.6.7 2 .8 2.1.1.2.1.3 0 .5-.1.2-.2.3-.3.5l-.4.5c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.3.1 1.7.8 2 .9.3.2.5.2.5.3.1.2.1.9-.1 1.5z" />
     </svg>
   );
 }
 
 function LinkIcon() {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
-      <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z" />
-      <path d="M6.586 4.5A2 2 0 0 0 4.085 6.085l.793.792A1 1 0 0 1 4.06 7.06l-1.78-1.78A4 4 0 0 1 8.343 3.06l1.829 1.828a3 3 0 0 0-4.243 4.243l-.793-.793a1 1 0 0 1-.146-.199 2 2 0 0 1 .861-3.337L7.12 4.55a2 2 0 1 1 2.83 2.83l-.793.792a4 4 0 0 0-.128 1.287z" />
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M9 3h8a2 2 0 0 1 2 2v10h-2V5H9V3zm-4 4h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2zm0 2v10h8V9H5z" />
     </svg>
   );
 }
 
-export default function ProjectShareActions({ project, className = '' }) {
+export default function ProjectShareActions({ project, shareTitle, className = '' }) {
   const [copied, setCopied] = useState(false);
-  const url = getShareUrl(project);
-  const text = shareMessage(project);
-  const whatsappHref = `https://wa.me/?text=${encodeURIComponent(`${text} ${url}`)}`;
+  const title = shareTitle || project.name;
+  const url = projectShareUrl(project);
+  const whatsappHref = `https://wa.me/?text=${encodeURIComponent(projectShareWhatsAppText(title, url))}`;
   const facebookHref = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
-  const xHref = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`;
+  const xHref = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`;
 
   async function copyLink() {
     try {
       await navigator.clipboard.writeText(url);
       setCopied(true);
-      window.setTimeout(() => setCopied(false), 2000);
+      window.setTimeout(() => setCopied(false), 1400);
     } catch {
       setCopied(false);
     }
   }
 
   return (
-    <div className={`project-share-actions ${className}`.trim()} role="group" aria-label={`Share ${project.name}`}>
-      <span className="project-share-label">Share</span>
-      <a
-        className="btn btn-sm btn-outline-primary project-share-btn"
-        href={whatsappHref}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label={`Share ${project.name} on WhatsApp`}
+    <>
+      <div
+        className={`project-share-actions ${className}`.trim()}
+        role="group"
+        aria-label={`Share ${title}`}
       >
-        <WhatsAppShareIcon />
-        <span>WhatsApp</span>
-      </a>
-      <a
-        className="btn btn-sm btn-outline-primary project-share-btn"
-        href={facebookHref}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label={`Share ${project.name} on Facebook`}
+        <a
+          className="project-share-btn"
+          href={whatsappHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Share ${title} on WhatsApp`}
+        >
+          <WhatsAppShareIcon />
+        </a>
+        <a
+          className="project-share-btn"
+          href={facebookHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Share ${title} on Facebook`}
+        >
+          <FacebookIcon />
+        </a>
+        <a
+          className="project-share-btn"
+          href={xHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Share ${title} on X`}
+        >
+          <XIcon />
+        </a>
+        <button
+          type="button"
+          className="project-share-btn"
+          onClick={copyLink}
+          aria-label={`Copy link to ${title}`}
+        >
+          <LinkIcon />
+        </button>
+      </div>
+      <p
+        className={`project-share-copy-note${copied ? ' show' : ''}`}
+        role="status"
+        aria-live="polite"
       >
-        <FacebookIcon />
-        <span>Facebook</span>
-      </a>
-      <a
-        className="btn btn-sm btn-outline-primary project-share-btn"
-        href={xHref}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label={`Share ${project.name} on X`}
-      >
-        <XIcon />
-        <span>X</span>
-      </a>
-      <button
-        type="button"
-        className="btn btn-sm btn-outline-primary project-share-btn"
-        onClick={copyLink}
-        aria-label={`Copy link to ${project.name}`}
-      >
-        <LinkIcon />
-        <span>{copied ? 'Copied' : 'Copy link'}</span>
-      </button>
-    </div>
+        Link copied
+      </p>
+    </>
   );
 }

@@ -124,8 +124,18 @@ function getShareUrl(project) {
   return origin + projectPagePath(project);
 }
 
+/** URL shared from portfolio cards (live site when available). */
+function projectShareUrl(project) {
+  if (project.liveUrl) return project.liveUrl;
+  return getShareUrl(project);
+}
+
 function shareMessage(project) {
   return `${project.name} — ${project.description}`;
+}
+
+function projectShareWhatsAppText(shareTitle, url) {
+  return `${shareTitle} — ${url}`;
 }
 
 function projectSeoDescription(project) {
@@ -171,6 +181,8 @@ module.exports = {
   projectDescriptionForContext,
   projectVisitLabel,
   getShareUrl,
+  projectShareUrl,
+  projectShareWhatsAppText,
   shareMessage,
   projectSeoPage,
   allProjectSeoPages,

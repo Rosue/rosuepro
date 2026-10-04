@@ -33,7 +33,7 @@ export default function PortfolioProjectCard({
         width="1280"
         height="800"
       />
-      <div className={`card-body${context === 'home' ? ' d-flex flex-column text-center' : ''}`}>
+      <div className={`card-body d-flex flex-column${context === 'home' ? ' text-center' : ''}`}>
         {context === 'home' ? (
           <h3 className="h4 card-title">{displayName}</h3>
         ) : (
@@ -47,27 +47,26 @@ export default function PortfolioProjectCard({
             </a>
           </p>
         ) : null}
-        <div className={`d-flex flex-wrap gap-2 align-items-center mb-3${context === 'home' ? ' justify-content-center' : ''}`}>
-          {project.liveUrl ? (
-            <a
-              href={project.liveUrl}
-              target="_blank"
-              rel="noreferrer"
-              className={`btn btn-primary${context === 'home' ? ' align-self-center' : ''}`}
-            >
-              {visitLabel}
-            </a>
-          ) : null}
-          {showRosuePageLink ? (
-            <Link to={projectPagePath(project)} className="btn btn-outline-primary">
-              View on RosuePro
-            </Link>
-          ) : null}
+        <div className="portfolio-card-actions">
+          <div className="portfolio-card-actions-primary">
+            {project.liveUrl ? (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="btn btn-primary"
+              >
+                {visitLabel}
+              </a>
+            ) : null}
+            {showRosuePageLink ? (
+              <Link to={projectPagePath(project)} className="btn btn-outline-primary">
+                View on RosuePro
+              </Link>
+            ) : null}
+          </div>
+          <ProjectShareActions project={project} shareTitle={displayName} />
         </div>
-        <ProjectShareActions
-          project={project}
-          className={context === 'home' ? 'justify-content-center' : ''}
-        />
       </div>
     </article>
   );

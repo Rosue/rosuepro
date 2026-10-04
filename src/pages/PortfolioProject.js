@@ -38,14 +38,18 @@ export default function PortfolioProject() {
                 </a>
               </p>
             ) : null}
-            {project.liveUrl ? (
-              <a href={project.liveUrl} target="_blank" rel="noreferrer" className="btn btn-primary mb-3">
-                {project.visitLabel || `Visit ${project.name}`}
-              </a>
-            ) : (
-              <p className="text-muted mb-3">Live demo link coming soon.</p>
-            )}
-            <ProjectShareActions project={project} className="justify-content-center" />
+            <div className="portfolio-card-actions portfolio-card-actions--centered">
+              <div className="portfolio-card-actions-primary">
+                {project.liveUrl ? (
+                  <a href={project.liveUrl} target="_blank" rel="noreferrer" className="btn btn-primary">
+                    {project.visitLabel || `Visit ${project.name}`}
+                  </a>
+                ) : (
+                  <p className="text-muted mb-0">Live demo link coming soon.</p>
+                )}
+              </div>
+              <ProjectShareActions project={project} shareTitle={project.name} />
+            </div>
           </div>
         </div>
       </main>
