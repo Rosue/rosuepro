@@ -2,7 +2,7 @@ import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import Router from './core/Router';
 import { applyMetadata } from './seo';
-import { getShareUrl } from './data/portfolioProjects';
+import { getShareUrl, projectShareUrl } from './data/portfolioProjects';
 
 test('updates metadata during client navigation without leaving duplicate tags', async () => {
   render(<MemoryRouter initialEntries={['/']}><Router /></MemoryRouter>);
@@ -44,5 +44,12 @@ test('share links always use the RosuePro portfolio page for social previews', (
   expect(getShareUrl({ slug: 'yahsonice' })).toBe('https://rosue.pro/portfolio/yahsonice');
   expect(getShareUrl({ slug: 'vybz-meter', liveUrl: 'https://vybz-meter.web.app/' })).toBe(
     'https://rosue.pro/portfolio/vybz-meter'
+  );
+});
+
+test('portfolio card share actions prefer the live project URL when available', () => {
+  expect(projectShareUrl({ slug: 'yahsonice' })).toBe('https://rosue.pro/portfolio/yahsonice');
+  expect(projectShareUrl({ slug: 'vybz-meter', liveUrl: 'https://vybz-meter.web.app/' })).toBe(
+    'https://vybz-meter.web.app/'
   );
 });

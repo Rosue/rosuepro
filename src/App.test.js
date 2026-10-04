@@ -50,5 +50,8 @@ test('portfolio projects include share actions', () => {
   expect(screen.getAllByRole('button', { name: /Copy link to/ }).length).toBeGreaterThanOrEqual(7);
 
   const vybzWhatsApp = screen.getByRole('link', { name: 'Share Vybz Meter on WhatsApp' });
-  expect(vybzWhatsApp.href).toContain(encodeURIComponent('https://rosue.pro/portfolio/vybz-meter'));
+  expect(vybzWhatsApp.href).toContain(encodeURIComponent('Vybz Meter — https://vybz-meter.web.app/'));
+
+  expect(screen.queryByRole('button', { name: /Copy link$/i })).not.toBeInTheDocument();
+  expect(screen.queryByText('WhatsApp', { selector: '.project-share-btn span' })).not.toBeInTheDocument();
 });
