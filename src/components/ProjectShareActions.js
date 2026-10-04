@@ -119,7 +119,6 @@ export default function ProjectShareActions({ project, shareTitle, className = '
         className={`project-share-copy-note${copied ? ' show' : ''}`}
         role="status"
         aria-live="polite"
-        aria-hidden={copied ? false : true}
       >
         {copied ? 'Link copied' : ''}
       </p>

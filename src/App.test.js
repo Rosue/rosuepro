@@ -56,23 +56,34 @@ test('portfolio projects include share actions', () => {
   const copyButton = screen.getByRole('button', { name: 'Copy link to Vybz Meter' });
   expect(copyButton).toHaveTextContent('');
   expect(copyButton.querySelector('svg')).toBeInTheDocument();
-  expect(screen.queryByText('WhatsApp')).not.toBeInTheDocument();
+  expect(screen.queryByText('WhatsApp', { selector: '.project-share-btn span' })).not.toBeInTheDocument();
+  document.querySelectorAll('.project-share-btn').forEach((btn) => {
+    expect(btn).toHaveTextContent('');
+  });
 });
 
-test('copy link shows a status message on the portfolio page', async () => {
-  const writeText = jest.fn().mockResolvedValue(undefined);
-  Object.assign(navigator, { clipboard: { writeText } });
+describe('copy link on portfolio page', () => {
+  const originalClipboard = navigator.clipboard;
 
-  render(
-    <BrowserRouter>
-      <Portforlio />
-    </BrowserRouter>
-  );
+  afterEach(() => {
+    Object.assign(navigator, { clipboard: originalClipboard });
+  });
 
-  await userEvent.click(screen.getByRole('button', { name: 'Copy link to Vybz Meter' }));
+  test('shows a status message after a successful copy', async () => {
+    const writeText = jest.fn().mockResolvedValue(undefined);
+    Object.assign(navigator, { clipboard: { writeText } });
 
-  await waitFor(() => {
-    expect(writeText).toHaveBeenCalledWith('https://vybz-meter.web.app/');
-    expect(screen.getByText('Link copied')).toBeInTheDocument();
+    render(
+      <BrowserRouter>
+        <Portforlio />
+      </BrowserRouter>
+    );
+
+    await userEvent.click(screen.getByRole('button', { name: 'Copy link to Vybz Meter' }));
+
+    await waitFor(() => {
+      expect(writeText).toHaveBeenCalledWith('https://vybz-meter.web.app/');
+      expect(screen.getByText('Link copied')).toBeInTheDocument();
+    });
   });
 });

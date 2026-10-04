@@ -238,8 +238,12 @@ main .card-img-top { height: auto; }
     align-items: stretch;
   }
 
-  .portfolio-card-actions-primary .btn {
+  .portfolio-card-actions:not(.portfolio-card-actions--centered) .portfolio-card-actions-primary .btn {
     align-self: flex-start;
+  }
+
+  .portfolio-card-actions--centered .portfolio-card-actions-primary .btn {
+    align-self: center;
   }
 
   .project-share-actions {
