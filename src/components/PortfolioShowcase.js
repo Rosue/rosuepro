@@ -11,7 +11,7 @@ export default function PortfolioShowcase({ id = 'portfolio', headingId = 'portf
         <div className="card-body">
           <h2 id={headingId} className="card-title text-center text-dark">Portfolio</h2>
           <p className="card-text text-center text-dark">
-            Live sites built for Jamaican businesses — tap a project to visit the demo.
+            Live sites built for Jamaican businesses — open a project page for details or visit the live demo.
           </p>
           <div className="row row-cols-1 row-cols-md-2 g-4 mt-1">
             {projects.map((project) => (

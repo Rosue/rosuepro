@@ -39,6 +39,20 @@ test('promotes Vybz Meter and Funeral Template on the portfolio page', () => {
   );
 });
 
+test('portfolio cards link to RosuePro project pages', () => {
+  render(
+    <BrowserRouter>
+      <Portforlio />
+    </BrowserRouter>
+  );
+
+  const vybzDetailLink = screen
+    .getAllByRole('link', { name: 'Vybz Meter' })
+    .find((link) => link.getAttribute('href') === '/portfolio/vybz-meter');
+  expect(vybzDetailLink).toBeTruthy();
+  expect(screen.getAllByRole('link', { name: 'View project page' }).length).toBeGreaterThanOrEqual(7);
+});
+
 test('portfolio projects include share actions', () => {
   render(
     <BrowserRouter>

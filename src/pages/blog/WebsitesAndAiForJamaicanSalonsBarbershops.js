@@ -2,6 +2,7 @@ import React from 'react'
 import TopNavbar from '../../components/TopNavbar'
 import { Container } from 'react-bootstrap'
 import Footer from '../../components/Footer'
+import BlogPublishedDate from '../../components/BlogPublishedDate'
 
 export default function WebsitesAndAiForJamaicanSalonsBarbershops() {
   return (
@@ -9,6 +10,7 @@ export default function WebsitesAndAiForJamaicanSalonsBarbershops() {
     <TopNavbar/>
     <Container as="main" id="main-content" className='main-content mb-5'>
       <h1 className='text-center txt-dark'>How Jamaican salon and barbershop owners can win more bookings with a website and AI</h1>
+      <BlogPublishedDate className="text-center text-muted mt-2" />
 
       <Container className='p-3 px-5 bg-light rounded mt-5'>
           <img src="/jamaican-salon-barbershop-blog.png" className="card-img-top mb-4" alt="Jamaican salon and barbershop interior" width="1200" height="630" loading="lazy" decoding="async" />

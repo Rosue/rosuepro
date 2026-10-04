@@ -2,6 +2,7 @@ import React from 'react'
 import TopNavbar from '../../components/TopNavbar'
 import { Container } from 'react-bootstrap'
 import Footer from '../../components/Footer'
+import BlogPublishedDate from '../../components/BlogPublishedDate'
 
 const rosueProWhatsAppQuoteHref = 'https://wa.me/18765667328' // pragma: allowlist secret
 
@@ -11,6 +12,7 @@ export default function WebsitesAndAiForJamaicanFuneralHomesMemorials() {
     <TopNavbar/>
     <Container as="main" id="main-content" className='main-content mb-5'>
       <h1 className='text-center txt-dark'>How Jamaican funeral homes can serve families online with AI</h1>
+      <BlogPublishedDate className="text-center text-muted mt-2" />
 
       <Container className='p-3 px-5 bg-light rounded mt-5'>
           <img src="/websites-and-ai-for-jamaican-funeral-homes-memorials.webp" className="card-img-top mb-4" alt="Respectful Jamaican memorial chapel exterior for a funeral home website" width="1280" height="720" loading="lazy" decoding="async" />

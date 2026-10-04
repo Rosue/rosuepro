@@ -22,23 +22,37 @@ export default function PortfolioProjectCard({
   const visitLabel = projectVisitLabel(project, context);
   const displayName = projectDisplayName(project, context);
 
+  const detailPath = projectPagePath(project);
+  const titleHeading =
+    context === 'home' ? (
+      <h3 className="h4 card-title mb-0">
+        <Link to={detailPath} className="text-reset text-decoration-none">
+          {displayName}
+        </Link>
+      </h3>
+    ) : (
+      <h2 className="h5 card-title mb-1">
+        <Link to={detailPath} className="text-reset text-decoration-none">
+          {displayName}
+        </Link>
+      </h2>
+    );
+
   return (
     <article className={cardClassName}>
-      <img
-        src={image}
-        className="card-img-top project-preview"
-        alt={imageAlt}
-        loading="lazy"
-        decoding="async"
-        width="1280"
-        height="800"
-      />
+      <Link to={detailPath} className="d-block">
+        <img
+          src={image}
+          className="card-img-top project-preview"
+          alt={imageAlt}
+          loading="lazy"
+          decoding="async"
+          width="1280"
+          height="800"
+        />
+      </Link>
       <div className={`card-body${context === 'home' ? ' d-flex flex-column text-center' : ''}`}>
-        {context === 'home' ? (
-          <h3 className="h4 card-title">{displayName}</h3>
-        ) : (
-          <h2 className="h5 card-title mb-1">{displayName}</h2>
-        )}
+        {titleHeading}
         <p className={`card-text mb-3${context === 'home' ? ' flex-grow-1' : ''}`}>{description}</p>
         {project.demoUrl ? (
           <p className="small mb-2">
@@ -58,11 +72,9 @@ export default function PortfolioProjectCard({
               {visitLabel}
             </a>
           ) : null}
-          {showRosuePageLink ? (
-            <Link to={projectPagePath(project)} className="btn btn-outline-primary">
-              View on RosuePro
-            </Link>
-          ) : null}
+          <Link to={detailPath} className="btn btn-outline-primary">
+            {showRosuePageLink ? 'View on RosuePro' : 'View project page'}
+          </Link>
         </div>
         <ProjectShareActions
           project={project}

@@ -2,6 +2,7 @@ import React from 'react'
 import TopNavbar from '../../components/TopNavbar'
 import { Container } from 'react-bootstrap'
 import Footer from '../../components/Footer'
+import BlogPublishedDate from '../../components/BlogPublishedDate'
 
 const rosueProWhatsAppQuoteHref = 'https://wa.me/18765667328' // pragma: allowlist secret
 
@@ -11,6 +12,7 @@ export default function WebsiteDesignJamaicaPrice() {
     <TopNavbar/>
     <Container as="main" id="main-content" className='main-content mb-5'>
       <h1 className='text-center txt-dark'>Website Design Jamaica Price: What a Website Really Costs in 2026</h1>
+      <BlogPublishedDate className="text-center text-muted mt-2" />
 
       <Container className='p-3 px-5 bg-light rounded mt-5'>
           <img src="/website-design-jamaica-price.webp" className="card-img-top mb-4" alt="Kingston business owner reviewing a landing page on a laptop with WhatsApp open on her phone" width="1280" height="720" loading="lazy" decoding="async" />

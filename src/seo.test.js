@@ -46,3 +46,24 @@ test('share links always use the RosuePro portfolio page for social previews', (
     'https://rosue.pro/portfolio/vybz-meter'
   );
 });
+
+test('blog index metadata matches Jamaica website and WhatsApp guides', () => {
+  applyMetadata(document, '/blog');
+  expect(document.title).toBe('Jamaica Website & WhatsApp Guides | RosuePro Blog');
+  expect(document.querySelector('meta[name="description"]').content).toMatch(/WhatsApp chatbots/i);
+  expect(document.querySelector('meta[name="description"]').content).toMatch(/Jamaican small businesses/i);
+});
+
+test('website design Jamaica price article includes Article, FAQ, and Service structured data', () => {
+  applyMetadata(document, '/blog/website-design-jamaica-price');
+  const graph = JSON.parse(document.getElementById('seo-structured-data').textContent)['@graph'];
+  const article = graph.find((item) => item['@type'] === 'Article');
+  expect(article.datePublished).toBe('2026-09-27');
+  expect(article.author.name).toBe('RosuePro');
+  expect(article.image[0]).toBe('https://rosue.pro/website-design-jamaica-price.webp');
+  expect(graph.some((item) => item['@type'] === 'FAQPage')).toBe(true);
+  const service = graph.find((item) => item['@type'] === 'Service');
+  expect(service.offers.price).toBe('45000');
+  expect(service.offers.priceCurrency).toBe('JMD');
+  expect(graph.find((item) => item['@type'] === 'Organization').telephone).toBe('+1-876-566-7328');
+});
