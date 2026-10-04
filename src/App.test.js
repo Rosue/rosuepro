@@ -3,6 +3,13 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import Portforlio from './pages/Portforlio';
 
+test('lists custom website offering from J$25,000 on the home page', () => {
+  render(<App />);
+  expect(screen.getByRole('heading', { name: 'Custom websites' })).toBeInTheDocument();
+  expect(screen.getByText('From J$25,000')).toBeInTheDocument();
+  expect(screen.getByText(/find you on Google/i)).toBeInTheDocument();
+});
+
 test('promotes Pack My Cart and Funeral Template on the home page', () => {
   render(<App />);
   expect(screen.getByRole('link', { name: 'Visit Pack My Cart' })).toHaveAttribute(
