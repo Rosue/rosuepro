@@ -2,6 +2,7 @@ import React from 'react'
 import TopNavbar from '../../components/TopNavbar'
 import { Container } from 'react-bootstrap'
 import Footer from '../../components/Footer'
+import BlogPublishedDate from '../../components/BlogPublishedDate'
 
 export default function PackMyCartHelpsJamaicanSupermarkets() {
   return (
@@ -9,6 +10,7 @@ export default function PackMyCartHelpsJamaicanSupermarkets() {
     <TopNavbar/>
     <Container as="main" id="main-content" className='main-content mb-5'>
       <h1 className='text-center txt-dark'>How Pack My Cart helps Jamaican supermarket owners sell online</h1>
+      <BlogPublishedDate className="text-center text-muted mt-2" />
 
       <Container className='p-3 px-5 bg-light rounded mt-5'>
           <img src="/Screenshot 2025-08-03 160451.png" className="card-img-top mb-4" alt="Pack My Cart online supermarket platform for Jamaica" width="1895" height="863" loading="lazy" decoding="async" />

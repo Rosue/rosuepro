@@ -22,6 +22,7 @@ export default function PortfolioProjectCard({
   const visitLabel = projectVisitLabel(project, context);
   const displayName = projectDisplayName(project, context);
   const isDemo = project.type === 'demo';
+  const detailPath = projectPagePath(project);
   const previewClassName = `card-img-top project-preview${
     isDemo ? ' project-preview--16-10' : ''
   }`;
@@ -38,22 +39,39 @@ export default function PortfolioProjectCard({
     />
   );
 
+  const titleHeading =
+    context === 'home' ? (
+      <h3 className="h4 card-title mb-0">
+        <Link to={detailPath} className="text-reset text-decoration-none">
+          {displayName}
+        </Link>
+      </h3>
+    ) : (
+      <h2 className="h5 card-title mb-1">
+        <Link to={detailPath} className="text-reset text-decoration-none">
+          {displayName}
+        </Link>
+      </h2>
+    );
+
+  const previewBlock = isDemo ? (
+    <div className="portfolio-card-preview-wrap">
+      <span className="portfolio-demo-pill">Demo</span>
+      <Link to={detailPath} className="d-block">
+        {previewImage}
+      </Link>
+    </div>
+  ) : (
+    <Link to={detailPath} className="d-block">
+      {previewImage}
+    </Link>
+  );
+
   return (
     <article className={cardClassName}>
-      {isDemo ? (
-        <div className="portfolio-card-preview-wrap">
-          <span className="portfolio-demo-pill">Demo</span>
-          {previewImage}
-        </div>
-      ) : (
-        previewImage
-      )}
+      {previewBlock}
       <div className={`card-body d-flex flex-column${context === 'home' ? ' text-center' : ''}`}>
-        {context === 'home' ? (
-          <h3 className="h4 card-title">{displayName}</h3>
-        ) : (
-          <h2 className="h5 card-title mb-1">{displayName}</h2>
-        )}
+        {titleHeading}
         <p
           className={`card-text${isDemo ? ' mb-2' : ' mb-3'}${context === 'home' ? ' flex-grow-1' : ''}`}
         >
@@ -74,7 +92,7 @@ export default function PortfolioProjectCard({
         <div
           className={`portfolio-card-actions${
             isDemo ? ' portfolio-card-actions--single-line' : ''
-          }`}
+          }${context === 'home' ? ' justify-content-center' : ''}`}
         >
           <div className="portfolio-card-actions-primary">
             {project.liveUrl ? (
@@ -82,16 +100,14 @@ export default function PortfolioProjectCard({
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-primary"
+                className={`btn btn-primary${context === 'home' ? ' align-self-center' : ''}`}
               >
                 {visitLabel}
               </a>
             ) : null}
-            {showRosuePageLink ? (
-              <Link to={projectPagePath(project)} className="btn btn-outline-primary">
-                View on RosuePro
-              </Link>
-            ) : null}
+            <Link to={detailPath} className="btn btn-outline-primary">
+              {showRosuePageLink ? 'View on RosuePro' : 'View project page'}
+            </Link>
           </div>
           <ProjectShareActions project={project} shareTitle={displayName} />
         </div>
