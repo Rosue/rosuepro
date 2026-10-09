@@ -46,6 +46,24 @@ const offers = [
       'Hi RosuePro,\n\nI would like a custom website for my business (from J$25,000 for agreed scope).\nBusiness name and what you do: \nPages or sections you need: \nDo you have logo, text, and images ready? \nPreferred deadline: ',
   },
   {
+    title: 'Google Business Profile (Google Maps)',
+    price: 'Ask for a price',
+    unit: 'scope confirmed before we begin',
+    description:
+      'Claim and verify your business on Google Maps, then set up and customise your Google Business Profile so people can find you and contact you. Rosue walks Jamaican owners who own the business through finding or creating the listing, requesting ownership, and completing Google’s verification (you do the check yourself—for example video, phone, or postcard). After it is claimed, we help you shape the listing with your description, categories, hours, and the details customers look for.',
+    includes: [
+      'Find your existing Google Maps listing or create one, then request ownership and complete Google’s verification (you complete the check)',
+      'Customise your profile: business description, categories, hours, services or products, photos and logo, and attributes',
+      'Add phone, WhatsApp, and a website link—and connect a RosuePro website when you have one',
+    ],
+    note:
+      'You must own the business (or be authorised to manage it). RosuePro never claims a listing for someone who does not own the business. Google decides verification outcomes; we do not guarantee approval, rankings, traffic, or how many people will find you.',
+    action: 'Ask about Google Business Profile',
+    subject: 'Google Business Profile (Google Maps) enquiry',
+    body:
+      'Hi RosuePro,\n\nI own this business and would like help with my Google Business Profile on Google Maps.\nBusiness name: \nLocation or area served: \nExisting listing on Google Maps (yes / no / not sure): \nRosuePro website to link (if any): \nPreferred deadline: ',
+  },
+  {
     title: 'Website fixes',
     price: 'From J$8,000',
     unit: 'per agreed repair',
