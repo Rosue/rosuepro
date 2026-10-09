@@ -44,6 +44,27 @@ test('promotes Vybz Meter and Funeral Template on the portfolio page', () => {
   );
 });
 
+test('portfolio page includes live demo section with prototype cards', () => {
+  render(
+    <BrowserRouter>
+      <Portforlio />
+    </BrowserRouter>
+  );
+
+  const demosSection = document.getElementById('demos');
+  expect(demosSection).toHaveAttribute('aria-labelledby', 'demos-heading');
+  expect(screen.getByRole('heading', { name: 'Try a live demo' })).toBeInTheDocument();
+  expect(
+    screen.getByText(/Working prototypes built by RosuePro/i)
+  ).toBeInTheDocument();
+
+  const tryDemoLinks = screen.getAllByRole('link', { name: 'Try the demo' });
+  expect(tryDemoLinks[0]).toHaveAttribute('href', 'https://trimpon-ja.web.app');
+  expect(tryDemoLinks).toHaveLength(6);
+  expect(screen.queryByRole('heading', { name: 'TrimPon JA', level: 2 })).toBeInTheDocument();
+  expect(screen.getByRole('link', { name: 'Share TrimPon JA on WhatsApp' })).toBeInTheDocument();
+});
+
 test('portfolio projects include share actions', () => {
   render(
     <BrowserRouter>
