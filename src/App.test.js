@@ -60,7 +60,7 @@ test('portfolio page includes live demo section with prototype cards', () => {
 
   const tryDemoLinks = screen.getAllByRole('link', { name: 'Try the demo' });
   expect(tryDemoLinks[0]).toHaveAttribute('href', 'https://trimpon-ja.web.app');
-  expect(tryDemoLinks).toHaveLength(6);
+  expect(tryDemoLinks).toHaveLength(8);
   expect(screen.queryByRole('heading', { name: 'TrimPon JA', level: 2 })).toBeInTheDocument();
   expect(screen.getByRole('link', { name: 'Share TrimPon JA on WhatsApp' })).toBeInTheDocument();
 });

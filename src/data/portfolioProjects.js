@@ -141,6 +141,27 @@ const portfolioProjects = [
     imageAlt: 'Pack My Hardware storefront showing featured stores and products',
     demoMeta: 'Prototype · sample data',
   },
+  {
+    type: 'demo',
+    slug: 'party-jamaica',
+    name: 'Party Jamaica',
+    description:
+      'Discover parties and events, book tickets, and explore nightlife spots on a Jamaica map.',
+    liveUrl: 'https://partyjamaica-9a21f.web.app',
+    image: '/portfolio/party-jamaica.webp',
+    imageAlt: 'Party Jamaica event platform with featured party and map sections',
+    demoMeta: 'Prototype · sample data',
+  },
+  {
+    type: 'demo',
+    slug: 'jamaica-route-taxi',
+    name: 'Jamaica Route Taxi',
+    description: 'Sign-in for route taxi drivers and passengers on one shared login.',
+    liveUrl: 'https://jamaica-route-taxi-service.web.app',
+    image: '/portfolio/jamaica-route-taxi.webp',
+    imageAlt: 'Jamaica Route Taxi sign-in page for drivers and passengers',
+    demoMeta: 'Prototype · sample data',
+  },
 ];
 
 function getProjectBySlug(slug) {

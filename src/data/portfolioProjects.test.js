@@ -23,7 +23,7 @@ test('reggae-wheels resolves for portfolio detail route', () => {
 
 test('demo prototypes are excluded from client portfolio and homepage featured lists', () => {
   const demos = demoPortfolioProjects();
-  expect(demos).toHaveLength(6);
+  expect(demos).toHaveLength(8);
   expect(demos.map((project) => project.slug)).toEqual([
     'trimpon-ja',
     'checkpon-ja',
@@ -31,6 +31,8 @@ test('demo prototypes are excluded from client portfolio and homepage featured l
     'fitpon-ja',
     'barrelpon-ja',
     'pack-my-hardware',
+    'party-jamaica',
+    'jamaica-route-taxi',
   ]);
 
   const clientSlugs = clientPortfolioProjects().map((project) => project.slug);

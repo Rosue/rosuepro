@@ -17,6 +17,8 @@ const targets = [
   { url: 'https://fitpon-ja.web.app/', file: 'fitpon-ja.webp' },
   { url: 'https://barrelpon-ja.web.app/', file: 'barrelpon-ja.webp' },
   { url: 'https://pack-my-hardware.web.app/', file: 'pack-my-hardware.webp' },
+  { url: 'https://partyjamaica-9a21f.web.app/', file: 'party-jamaica.webp' },
+  { url: 'https://jamaica-route-taxi-service.web.app/', file: 'jamaica-route-taxi.webp' },
 ];
 
 (async () => {
