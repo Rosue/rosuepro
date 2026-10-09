@@ -21,8 +21,24 @@ export default function PortfolioProjectCard({
   const description = projectDescriptionForContext(project, context);
   const visitLabel = projectVisitLabel(project, context);
   const displayName = projectDisplayName(project, context);
-
+  const isDemo = project.type === 'demo';
   const detailPath = projectPagePath(project);
+  const previewClassName = `card-img-top project-preview${
+    isDemo ? ' project-preview--16-10' : ''
+  }`;
+
+  const previewImage = (
+    <img
+      src={image}
+      className={previewClassName}
+      alt={imageAlt}
+      loading="lazy"
+      decoding="async"
+      width="1280"
+      height="800"
+    />
+  );
+
   const titleHeading =
     context === 'home' ? (
       <h3 className="h4 card-title mb-0">
@@ -38,22 +54,34 @@ export default function PortfolioProjectCard({
       </h2>
     );
 
+  const previewBlock = isDemo ? (
+    <div className="portfolio-card-preview-wrap">
+      <span className="portfolio-demo-pill">Demo</span>
+      <Link to={detailPath} className="d-block">
+        {previewImage}
+      </Link>
+    </div>
+  ) : (
+    <Link to={detailPath} className="d-block">
+      {previewImage}
+    </Link>
+  );
+
   return (
     <article className={cardClassName}>
-      <Link to={detailPath} className="d-block">
-        <img
-          src={image}
-          className="card-img-top project-preview"
-          alt={imageAlt}
-          loading="lazy"
-          decoding="async"
-          width="1280"
-          height="800"
-        />
-      </Link>
-      <div className={`card-body${context === 'home' ? ' d-flex flex-column text-center' : ''}`}>
+      {previewBlock}
+      <div className={`card-body d-flex flex-column${context === 'home' ? ' text-center' : ''}`}>
         {titleHeading}
-        <p className={`card-text mb-3${context === 'home' ? ' flex-grow-1' : ''}`}>{description}</p>
+        <p
+          className={`card-text${isDemo ? ' mb-2' : ' mb-3'}${context === 'home' ? ' flex-grow-1' : ''}`}
+        >
+          {description}
+        </p>
+        {isDemo ? (
+          <p className="portfolio-demo-meta small text-muted mb-2">
+            {project.demoMeta || 'Prototype · sample data'}
+          </p>
+        ) : null}
         {project.demoUrl ? (
           <p className="small mb-2">
             <a href={project.demoUrl} target="_blank" rel="noreferrer">
@@ -61,25 +89,28 @@ export default function PortfolioProjectCard({
             </a>
           </p>
         ) : null}
-        <div className={`d-flex flex-wrap gap-2 align-items-center mb-3${context === 'home' ? ' justify-content-center' : ''}`}>
-          {project.liveUrl ? (
-            <a
-              href={project.liveUrl}
-              target="_blank"
-              rel="noreferrer"
-              className={`btn btn-primary${context === 'home' ? ' align-self-center' : ''}`}
-            >
-              {visitLabel}
-            </a>
-          ) : null}
-          <Link to={detailPath} className="btn btn-outline-primary">
-            {showRosuePageLink ? 'View on RosuePro' : 'View project page'}
-          </Link>
+        <div
+          className={`portfolio-card-actions${
+            isDemo ? ' portfolio-card-actions--single-line' : ''
+          }${context === 'home' ? ' justify-content-center' : ''}`}
+        >
+          <div className="portfolio-card-actions-primary">
+            {project.liveUrl ? (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`btn btn-primary${context === 'home' ? ' align-self-center' : ''}`}
+              >
+                {visitLabel}
+              </a>
+            ) : null}
+            <Link to={detailPath} className="btn btn-outline-primary">
+              {showRosuePageLink ? 'View on RosuePro' : 'View project page'}
+            </Link>
+          </div>
+          <ProjectShareActions project={project} shareTitle={displayName} />
         </div>
-        <ProjectShareActions
-          project={project}
-          className={context === 'home' ? 'justify-content-center' : ''}
-        />
       </div>
     </article>
   );

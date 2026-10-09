@@ -77,17 +77,17 @@ const portfolioProjectDetails = {
   },
   'reggae-wheels': {
     intro:
-      'Reggae Wheels is a tour and rental booking website — the live demo advertises tours, trips, and rentals so visitors can learn what is available before they reach out.',
+      'Reggae Wheels is a Jamaica travel and car-rental site — plan island trips and experiences, or rent a vehicle to explore on your own, with contact details for Discovery Bay.',
     sections: [
       {
-        heading: 'Tour and rental focus',
+        heading: 'Trips and car rental',
         paragraphs: [
-          'Reggae Wheels targets visitors who want structured trips or vehicle hire in Jamaica. The site explains offerings in a format that works for search and for links shared in chat apps.',
+          'The live site at reggaewheels-2482a.web.app welcomes travellers with options to plan island trips and experiences or rent a vehicle for independent exploration.',
         ],
         bullets: [
-          'Showcase tours, trips, and rental options in one place.',
-          'Give travellers a credible web destination beyond social pages alone.',
-          'Support enquiries with clear next steps on the live Firebase-hosted demo.',
+          'Present tours, trips, and rental choices in one mobile-friendly site.',
+          'Give visitors a stable link for Google and referrals beyond social posts alone.',
+          'Surface contact paths for Discovery Bay and wider Jamaica travel enquiries.',
         ],
       },
     ],

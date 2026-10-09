@@ -38,12 +38,14 @@ const portfolioProjects = [
   },
   {
     slug: 'reggae-wheels',
-    name: 'Reggae Wheels Website',
-    description: 'This website books and advertises tours, trips and rentals',
+    name: 'Reggae Wheels',
+    description:
+      'Jamaica travel and car-rental site — plan island trips and experiences, or rent a vehicle to explore on your own. Contact details for Discovery Bay.',
     liveUrl: 'https://reggaewheels-2482a.web.app/',
-    image: '/reggaewheels-2482a.web.app_ (1).webp',
-    imageAlt: 'Reggae Wheels tour and rental booking website',
+    image: '/portfolio/reggae-wheels.webp',
+    imageAlt: 'Reggae Wheels website welcoming travellers to Jamaica trips and car rental',
     visitLabel: 'Visit Reggae Wheels',
+    featuredOnHome: true,
   },
   {
     slug: 'shynz-by-onyx',
@@ -77,6 +79,88 @@ const portfolioProjects = [
     image: '/432952191_923514793107512_60065450142670162_ysn.jpg',
     imageAlt: 'Yahsonice website connecting bar owners with bartenders',
     visitLabel: null,
+  },
+  {
+    type: 'demo',
+    slug: 'trimpon-ja',
+    name: 'TrimPon JA',
+    description: 'Barber booking and queue management for Jamaican shops.',
+    liveUrl: 'https://trimpon-ja.web.app',
+    image: '/portfolio/trimpon-ja.webp',
+    imageAlt: 'TrimPon JA barber booking and queue prototype homepage',
+    demoMeta: 'Prototype · sample data',
+  },
+  {
+    type: 'demo',
+    slug: 'checkpon-ja',
+    name: 'CheckPon JA',
+    description: 'Helper and elder-care marketplace connecting families with support.',
+    liveUrl: 'https://checkpon-ja.web.app',
+    image: '/portfolio/checkpon-ja.webp',
+    imageAlt: 'CheckPon JA elder-care marketplace prototype homepage',
+    demoMeta: 'Prototype · sample data',
+  },
+  {
+    type: 'demo',
+    slug: 'yardfix-ja',
+    name: 'YardFix JA',
+    description: 'Trades and hurricane repair coordination for homes and yards.',
+    liveUrl: 'https://yardfix-ja-rosue.web.app',
+    image: '/portfolio/yardfix-ja.webp',
+    imageAlt: 'YardFix JA trades and hurricane repair prototype homepage',
+    demoMeta: 'Prototype · sample data',
+  },
+  {
+    type: 'demo',
+    slug: 'fitpon-ja',
+    name: 'FitPon JA',
+    description: 'Vehicle fitness pre-check before inspection day.',
+    liveUrl: 'https://fitpon-ja.web.app',
+    image: '/portfolio/fitpon-ja.webp',
+    imageAlt: 'FitPon JA vehicle fitness pre-check prototype homepage',
+    demoMeta: 'Prototype · sample data',
+  },
+  {
+    type: 'demo',
+    slug: 'barrelpon-ja',
+    name: 'BarrelPon JA',
+    description: 'Barrel clearance and last-mile delivery for Jamaican communities.',
+    liveUrl: 'https://barrelpon-ja.web.app',
+    image: '/portfolio/barrelpon-ja.webp',
+    imageAlt: 'BarrelPon JA barrel clearance prototype homepage',
+    demoMeta: 'Prototype · sample data',
+  },
+  {
+    type: 'demo',
+    slug: 'pack-my-hardware',
+    name: 'Pack My Hardware',
+    description:
+      'Hardware, tools, and supplies online with featured stores and product listings.',
+    liveUrl: 'https://pack-my-hardware.web.app',
+    image: '/portfolio/pack-my-hardware.webp',
+    imageAlt: 'Pack My Hardware storefront showing featured stores and products',
+    demoMeta: 'Prototype · sample data',
+  },
+  {
+    type: 'demo',
+    slug: 'party-jamaica',
+    name: 'Party Jamaica',
+    description:
+      'Discover parties and events, book tickets, and explore nightlife spots on a Jamaica map.',
+    liveUrl: 'https://partyjamaica-9a21f.web.app',
+    image: '/portfolio/party-jamaica.webp',
+    imageAlt: 'Party Jamaica event platform with featured party and map sections',
+    demoMeta: 'Prototype · sample data',
+  },
+  {
+    type: 'demo',
+    slug: 'jamaica-route-taxi',
+    name: 'Jamaica Route Taxi',
+    description: 'Sign-in for route taxi drivers and passengers on one shared login.',
+    liveUrl: 'https://jamaica-route-taxi-service.web.app',
+    image: '/portfolio/jamaica-route-taxi.webp',
+    imageAlt: 'Jamaica Route Taxi sign-in page for drivers and passengers',
+    demoMeta: 'Prototype · sample data',
   },
 ];
 
@@ -115,17 +199,40 @@ function projectDescriptionForContext(project, context) {
 }
 
 function projectVisitLabel(project, context) {
+  if (project.type === 'demo') return 'Try the demo';
   if (context === 'home' && project.homeVisitLabel) return project.homeVisitLabel;
   if (project.visitLabel) return project.visitLabel;
   return `Visit ${project.name}`;
+}
+
+function isDemoProject(project) {
+  return project.type === 'demo';
+}
+
+function clientPortfolioProjects() {
+  return portfolioProjects.filter((project) => !isDemoProject(project));
+}
+
+function demoPortfolioProjects() {
+  return portfolioProjects.filter(isDemoProject);
 }
 
 function getShareUrl(project) {
   return origin + projectPagePath(project);
 }
 
+/** URL shared from portfolio cards (live site when available). */
+function projectShareUrl(project) {
+  if (project.liveUrl) return project.liveUrl;
+  return getShareUrl(project);
+}
+
 function shareMessage(project) {
   return `${project.name} — ${project.description}`;
+}
+
+function projectShareWhatsAppText(shareTitle, url) {
+  return `${shareTitle} — ${url}`;
 }
 
 function projectSeoDescription(project) {
@@ -156,7 +263,7 @@ function allProjectSeoPages() {
 }
 
 function featuredHomeProjects() {
-  return portfolioProjects.filter((project) => project.featuredOnHome);
+  return portfolioProjects.filter((project) => project.featuredOnHome && !isDemoProject(project));
 }
 
 module.exports = {
@@ -171,8 +278,13 @@ module.exports = {
   projectDescriptionForContext,
   projectVisitLabel,
   getShareUrl,
+  projectShareUrl,
+  projectShareWhatsAppText,
   shareMessage,
   projectSeoPage,
   allProjectSeoPages,
   featuredHomeProjects,
+  isDemoProject,
+  clientPortfolioProjects,
+  demoPortfolioProjects,
 };

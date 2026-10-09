@@ -2,7 +2,7 @@ import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import Router from './core/Router';
 import { applyMetadata } from './seo';
-import { getShareUrl } from './data/portfolioProjects';
+import { getShareUrl, projectShareUrl } from './data/portfolioProjects';
 
 test('updates metadata during client navigation without leaving duplicate tags', async () => {
   render(<MemoryRouter initialEntries={['/']}><Router /></MemoryRouter>);
@@ -66,4 +66,20 @@ test('website design Jamaica price article includes Article, FAQ, and Service st
   expect(service.offers.price).toBe('45000');
   expect(service.offers.priceCurrency).toBe('JMD');
   expect(graph.find((item) => item['@type'] === 'Organization').telephone).toBe('+1-876-566-7328');
+});
+
+test('portfolio card share actions prefer the live project URL when available', () => {
+  expect(projectShareUrl({ slug: 'yahsonice' })).toBe('https://rosue.pro/portfolio/yahsonice');
+  expect(projectShareUrl({ slug: 'vybz-meter', liveUrl: 'https://vybz-meter.web.app/' })).toBe(
+    'https://vybz-meter.web.app/'
+  );
+});
+
+test('reggae wheels portfolio page exposes social metadata and preview image', () => {
+  applyMetadata(document, '/portfolio/reggae-wheels');
+  expect(document.title).toBe('Reggae Wheels | RosuePro Portfolio');
+  expect(document.querySelector('meta[property="og:description"]').content).toContain('car-rental');
+  expect(document.querySelector('meta[property="og:image"]').content).toBe(
+    'https://rosue.pro/portfolio/reggae-wheels.webp'
+  );
 });

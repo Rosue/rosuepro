@@ -15,6 +15,9 @@ export default function PortfolioProject() {
     return <Navigate to="/404" replace />;
   }
 
+  const isDemo = project.type === 'demo';
+  const previewClassName = `card-img-top project-preview${isDemo ? ' project-preview--16-10' : ''}`;
+
   return (
     <>
       <TopNavbar />
@@ -25,13 +28,26 @@ export default function PortfolioProject() {
         <h1 className="text-center mt-4 txt-dark">{project.name}</h1>
         <p className="text-center lead mx-auto" style={{ maxWidth: '42rem' }}>{project.description}</p>
         <div className="card portfolio-project-card mx-auto" style={{ maxWidth: '960px' }}>
-          <img
-            src={project.image}
-            className="card-img-top project-preview"
-            alt={project.imageAlt}
-            width="1280"
-            height="800"
-          />
+          {isDemo ? (
+            <div className="portfolio-card-preview-wrap">
+              <span className="portfolio-demo-pill">Demo</span>
+              <img
+                src={project.image}
+                className={previewClassName}
+                alt={project.imageAlt}
+                width="1280"
+                height="800"
+              />
+            </div>
+          ) : (
+            <img
+              src={project.image}
+              className={previewClassName}
+              alt={project.imageAlt}
+              width="1280"
+              height="800"
+            />
+          )}
           <div className="card-body">
             {details ? (
               <div className="portfolio-project-detail mx-auto" style={{ maxWidth: '40rem' }}>
@@ -55,22 +71,29 @@ export default function PortfolioProject() {
             ) : (
               <p className="text-center">{project.description}</p>
             )}
-            <div className="text-center mt-4">
-              {project.demoUrl ? (
-                <p className="small">
-                  <a href={project.demoUrl} target="_blank" rel="noreferrer">
-                    {project.demoText}
-                  </a>
-                </p>
-              ) : null}
-              {project.liveUrl ? (
-                <a href={project.liveUrl} target="_blank" rel="noreferrer" className="btn btn-primary mb-3">
-                  {project.visitLabel || `Visit ${project.name}`}
+            {project.demoUrl ? (
+              <p className="small text-center">
+                <a href={project.demoUrl} target="_blank" rel="noreferrer">
+                  {project.demoText}
                 </a>
-              ) : (
-                <p className="text-muted mb-3">Live demo link coming soon.</p>
-              )}
-              <ProjectShareActions project={project} className="justify-content-center" />
+              </p>
+            ) : null}
+            {isDemo ? (
+              <p className="portfolio-demo-meta small text-muted text-center mb-3">
+                {project.demoMeta || 'Prototype · sample data'}
+              </p>
+            ) : null}
+            <div className="portfolio-card-actions portfolio-card-actions--centered">
+              <div className="portfolio-card-actions-primary">
+                {project.liveUrl ? (
+                  <a href={project.liveUrl} target="_blank" rel="noreferrer" className="btn btn-primary">
+                    {project.visitLabel || (isDemo ? 'Try the demo' : `Visit ${project.name}`)}
+                  </a>
+                ) : (
+                  <p className="text-muted mb-0">Live demo link coming soon.</p>
+                )}
+              </div>
+              <ProjectShareActions project={project} shareTitle={project.name} />
             </div>
           </div>
         </div>

@@ -10,6 +10,15 @@ const targets = [
   { url: 'https://pack-my-cart.web.app/', file: 'pack-my-cart.webp' },
   { url: 'https://funeral-template.web.app/', file: 'funeral-template.webp' },
   { url: 'https://carlos-transports.web.app/', file: 'carlos-transports.webp' },
+  { url: 'https://reggaewheels-2482a.web.app/', file: 'reggae-wheels.webp' },
+  { url: 'https://trimpon-ja.web.app/', file: 'trimpon-ja.webp' },
+  { url: 'https://checkpon-ja.web.app/', file: 'checkpon-ja.webp' },
+  { url: 'https://yardfix-ja-rosue.web.app/', file: 'yardfix-ja.webp' },
+  { url: 'https://fitpon-ja.web.app/', file: 'fitpon-ja.webp' },
+  { url: 'https://barrelpon-ja.web.app/', file: 'barrelpon-ja.webp' },
+  { url: 'https://pack-my-hardware.web.app/', file: 'pack-my-hardware.webp' },
+  { url: 'https://partyjamaica-9a21f.web.app/', file: 'party-jamaica.webp' },
+  { url: 'https://jamaica-route-taxi-service.web.app/', file: 'jamaica-route-taxi.webp' },
 ];
 
 (async () => {
