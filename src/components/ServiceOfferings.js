@@ -46,6 +46,25 @@ const offers = [
       'Hi RosuePro,\n\nI would like a custom website for my business (from J$25,000 for agreed scope).\nBusiness name and what you do: \nPages or sections you need: \nDo you have logo, text, and images ready? \nPreferred deadline: ',
   },
   {
+    title: 'Google Business Profile (Google Maps)',
+    price: 'Ask for a price',
+    unit: 'scope confirmed before we begin',
+    description:
+      'Guidance for Jamaican business owners who own the business to claim and verify their listing on Google Maps, so people can find you, see your hours and category, and contact you by phone, WhatsApp, or your website. Rosue walks you through each step—you complete Google’s verification yourself (for example video, phone, or postcard).',
+    includes: [
+      'Find your existing Google Maps listing or create one for your business',
+      'Request ownership and work through Google’s verification (you complete the check)',
+      'Add hours, photos, category, phone/WhatsApp, and a website link on your profile',
+      'Optional link to a RosuePro website when you have one',
+    ],
+    note:
+      'You must own the business (or be authorised to manage it). RosuePro never claims a listing for someone who does not own the business. Google decides verification outcomes; we do not guarantee approval, rankings, traffic, or how many people will find you.',
+    action: 'Ask about Google Business Profile',
+    subject: 'Google Business Profile (Google Maps) enquiry',
+    body:
+      'Hi RosuePro,\n\nI own this business and would like help with my Google Business Profile on Google Maps.\nBusiness name: \nLocation or area served: \nExisting listing on Google Maps (yes / no / not sure): \nRosuePro website to link (if any): \nPreferred deadline: ',
+  },
+  {
     title: 'Website fixes',
     price: 'From J$8,000',
     unit: 'per agreed repair',

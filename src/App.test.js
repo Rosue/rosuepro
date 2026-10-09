@@ -11,6 +11,14 @@ test('lists custom website offering from J$25,000 on the home page', () => {
   expect(screen.getByText(/find you on Google/i)).toBeInTheDocument();
 });
 
+test('lists Google Business Profile help with ask-for-a-price on the home page', () => {
+  render(<App />);
+  expect(screen.getByRole('heading', { name: 'Google Business Profile (Google Maps)' })).toBeInTheDocument();
+  expect(screen.getByText('Ask for a price')).toBeInTheDocument();
+  expect(screen.getByText(/never claims a listing for someone who does not own the business/i)).toBeInTheDocument();
+  expect(screen.getByRole('link', { name: 'Ask about Google Business Profile' })).toBeInTheDocument();
+});
+
 test('promotes Pack My Cart, Reggae Wheels, and Funeral Template on the home page', () => {
   render(<App />);
   expect(screen.getByRole('link', { name: 'Visit Pack My Cart' })).toHaveAttribute(
