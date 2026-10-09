@@ -11,11 +11,15 @@ test('lists custom website offering from J$25,000 on the home page', () => {
   expect(screen.getByText(/find you on Google/i)).toBeInTheDocument();
 });
 
-test('promotes Pack My Cart and Funeral Template on the home page', () => {
+test('promotes Pack My Cart, Reggae Wheels, and Funeral Template on the home page', () => {
   render(<App />);
   expect(screen.getByRole('link', { name: 'Visit Pack My Cart' })).toHaveAttribute(
     'href',
     'https://pack-my-cart.web.app/'
+  );
+  expect(screen.getByRole('link', { name: 'Visit Reggae Wheels' })).toHaveAttribute(
+    'href',
+    'https://reggaewheels-2482a.web.app/'
   );
   expect(screen.getByRole('link', { name: /Visit Funeral site template/i })).toHaveAttribute(
     'href',

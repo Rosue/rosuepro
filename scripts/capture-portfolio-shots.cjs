@@ -10,6 +10,7 @@ const targets = [
   { url: 'https://pack-my-cart.web.app/', file: 'pack-my-cart.webp' },
   { url: 'https://funeral-template.web.app/', file: 'funeral-template.webp' },
   { url: 'https://carlos-transports.web.app/', file: 'carlos-transports.webp' },
+  { url: 'https://reggaewheels-2482a.web.app/', file: 'reggae-wheels.webp' },
 ];
 
 (async () => {

@@ -53,3 +53,12 @@ test('portfolio card share actions prefer the live project URL when available', 
     'https://vybz-meter.web.app/'
   );
 });
+
+test('reggae wheels portfolio page exposes social metadata and preview image', () => {
+  applyMetadata(document, '/portfolio/reggae-wheels');
+  expect(document.title).toBe('Reggae Wheels | RosuePro Portfolio');
+  expect(document.querySelector('meta[property="og:description"]').content).toContain('car-rental');
+  expect(document.querySelector('meta[property="og:image"]').content).toBe(
+    'https://rosue.pro/portfolio/reggae-wheels.webp'
+  );
+});

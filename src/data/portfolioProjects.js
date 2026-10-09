@@ -38,12 +38,14 @@ const portfolioProjects = [
   },
   {
     slug: 'reggae-wheels',
-    name: 'Reggae Wheels Website',
-    description: 'This website books and advertises tours, trips and rentals',
+    name: 'Reggae Wheels',
+    description:
+      'Jamaica travel and car-rental site — plan island trips and experiences, or rent a vehicle to explore on your own. Contact details for Discovery Bay.',
     liveUrl: 'https://reggaewheels-2482a.web.app/',
-    image: '/reggaewheels-2482a.web.app_ (1).webp',
-    imageAlt: 'Reggae Wheels tour and rental booking website',
+    image: '/portfolio/reggae-wheels.webp',
+    imageAlt: 'Reggae Wheels website welcoming travellers to Jamaica trips and car rental',
     visitLabel: 'Visit Reggae Wheels',
+    featuredOnHome: true,
   },
   {
     slug: 'shynz-by-onyx',
