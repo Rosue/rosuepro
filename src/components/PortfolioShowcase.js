@@ -26,6 +26,8 @@ export default function PortfolioShowcase({ id = 'portfolio', headingId = 'portf
           </div>
           <p className="text-center mt-4 mb-0">
             <a href="/portfolio">See more website projects</a>
+            {' · '}
+            <a href="/portfolio#demos">Try live demos</a>
           </p>
         </div>
       </div>

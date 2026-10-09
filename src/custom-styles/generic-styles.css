@@ -129,6 +129,61 @@ a.btn.btn-whatsapp:active {
   border-bottom: 1px solid rgba(0, 78, 187, 0.2);
 }
 
+.project-preview--16-10 {
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.portfolio-card-preview-wrap {
+  position: relative;
+}
+
+.portfolio-demo-pill {
+  position: absolute;
+  top: 0.55rem;
+  left: 0.55rem;
+  z-index: 1;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: #4d5b70;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.portfolio-demos-band {
+  background-color: #eef4ff;
+  padding: 2.75rem 0 3.25rem;
+  scroll-margin-top: 7.5rem;
+}
+
+.portfolio-demos-subtext {
+  color: #4a5568;
+  max-width: 36rem;
+  margin-inline: auto;
+}
+
+.portfolio-project-card--demo .card-body {
+  padding: 0.85rem 1rem 1rem;
+}
+
+.portfolio-project-card--demo .card-title {
+  font-size: 1.05rem;
+}
+
+.portfolio-project-card--demo .card-text {
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.portfolio-demo-meta {
+  margin-bottom: 0.35rem;
+}
+
 /* Keep intrinsic image dimensions responsive after reserving layout space. */
 main .card-img-top { height: auto; }
 
@@ -233,9 +288,31 @@ main .card-img-top { height: auto; }
 }
 
 @media (max-width: 575.98px) {
-  .portfolio-card-actions {
+  .portfolio-card-actions:not(.portfolio-card-actions--single-line) {
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .portfolio-card-actions--single-line {
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  .portfolio-card-actions--single-line .portfolio-card-actions-primary {
+    flex: 0 1 auto;
+  }
+
+  .portfolio-card-actions--single-line .portfolio-card-actions-primary .btn {
+    width: auto;
+    white-space: nowrap;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    font-size: 0.875rem;
+  }
+
+  .portfolio-card-actions--single-line .project-share-actions {
+    flex-shrink: 0;
+    margin-left: auto;
   }
 
   .portfolio-card-actions:not(.portfolio-card-actions--centered) .portfolio-card-actions-primary .btn {
