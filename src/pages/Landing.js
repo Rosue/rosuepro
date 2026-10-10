@@ -4,6 +4,7 @@ import Carousel from '../components/HomeCarousel'
 import Footer from '../components/Footer'
 import ServiceOfferings from '../components/ServiceOfferings'
 import PortfolioShowcase from '../components/PortfolioShowcase'
+import HomeShareSection from '../components/HomeShareSection'
 
 
 export default function Landing() {
@@ -17,7 +18,9 @@ export default function Landing() {
 
       <PortfolioShowcase />
 
-      </main><Footer />
+      </main>
+      <HomeShareSection />
+      <Footer />
     </>
   )
 }
