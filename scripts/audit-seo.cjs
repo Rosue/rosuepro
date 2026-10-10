@@ -54,6 +54,7 @@ async function read(url) {
     ['Self-referencing canonical URLs', all(p => p.doc.querySelector('link[rel="canonical"]')?.href === origin + p.route)],
     ['Public pages allow indexing', all(p => !/noindex/i.test(meta(p, 'meta[name="robots"]'))) && !/Disallow:\s*\/\s*$/m.test(robots.body)],
     ['XML sitemap lists every public route', /<urlset\b/.test(sitemap.body) && routes.every(r => sitemap.body.includes('<loc>' + origin + r + '</loc>'))],
+    ['Sitemap entries include lastmod dates', routes.every(r => sitemap.body.includes('<loc>' + origin + r + '</loc>') && /<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/.test(sitemap.body))],
     ['Robots advertises sitemap', robots.status === 200 && robots.body.includes('Sitemap: ' + origin + '/sitemap.xml')],
     ['Route-specific HTML without JavaScript', unique(pages.map(p => p.doc.querySelector('#root')?.textContent)) && all(p => (p.doc.querySelector('#root')?.textContent.length || 0) > 200)],
     ['Crawlable internal navigation', all(p => p.doc.querySelectorAll('a[href^="/"]').length >= 3)],

@@ -10,6 +10,15 @@
     "trailingSlash": false,
     "headers": [
       {
+        "source": "/404.html",
+        "headers": [
+          {
+            "key": "X-Robots-Tag",
+            "value": "noindex"
+          }
+        ]
+      },
+      {
         "source": "/static/**",
         "headers": [
           {

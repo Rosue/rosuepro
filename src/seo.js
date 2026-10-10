@@ -1,9 +1,15 @@
 const pages = require('./seo-pages.json');
 const { getProjectBySlug, projectSeoPage, allProjectSeoPages, absoluteImageUrl } = require('./data/portfolioProjects');
 const { getBlogPostByPath } = require('./data/blogPosts');
+const {
+  phone: ROSUEPRO_PHONE,
+  email: ROSUEPRO_EMAIL,
+  address: ROSUEPRO_ADDRESS,
+  areaServed: ROSUEPRO_AREA_SERVED,
+  sameAs: ROSUEPRO_SAME_AS,
+  serviceCatalog,
+} = require('./data/rosueProBusiness');
 const origin = 'https://rosue.pro';
-
-const ROSUEPRO_PHONE = '+1-876-566-7328';
 
 const websiteDesignJamaicaFaq = [
   {
@@ -35,6 +41,15 @@ const websiteDesignJamaicaFaq = [
 
 function pageFor(pathname) {
   const path = pathname.replace(/\/$/, '') || '/';
+  if (path === '/404') {
+    return {
+      path: '/404',
+      title: 'Page Not Found | RosuePro',
+      description: 'This page could not be found. Explore RosuePro services, view our portfolio, or contact us for help.',
+      label: 'Page not found',
+      noindex: true,
+    };
+  }
   const projectMatch = path.match(/^\/portfolio\/([^/]+)$/);
   if (projectMatch) {
     const project = getProjectBySlug(projectMatch[1]);
@@ -71,31 +86,87 @@ function absoluteAsset(assetPath) {
   return absoluteImageUrl(assetPath || '/social-preview.png');
 }
 
-function schemaFor(page) {
-  const organization = {
+function organizationNode() {
+  return {
     '@type': 'Organization',
     '@id': origin + '/#organization',
     name: 'RosuePro',
     url: origin + '/',
     logo: origin + '/logo.png',
-    email: 'rosuepro@gmail.com',
+    email: ROSUEPRO_EMAIL,
     telephone: ROSUEPRO_PHONE,
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Discovery Bay',
-      addressRegion: 'St. Ann',
-      addressCountry: 'JM',
-    },
-    areaServed: [
-      { '@type': 'City', name: 'Kingston' },
-      { '@type': 'Country', name: 'Jamaica' },
-    ],
-    sameAs: [
-      'https://www.facebook.com/RosuePro',
-      'https://www.instagram.com/rosuepro',
-      'https://www.linkedin.com/in/rosuepro/',
-    ],
+    address: ROSUEPRO_ADDRESS,
+    areaServed: ROSUEPRO_AREA_SERVED,
+    sameAs: ROSUEPRO_SAME_AS,
   };
+}
+
+function professionalServiceNode() {
+  return {
+    '@type': 'ProfessionalService',
+    '@id': origin + '/#rosuepro-professional-service',
+    name: 'RosuePro',
+    url: origin + '/',
+    image: origin + '/logo.png',
+    telephone: ROSUEPRO_PHONE,
+    email: ROSUEPRO_EMAIL,
+    address: ROSUEPRO_ADDRESS,
+    areaServed: ROSUEPRO_AREA_SERVED,
+    priceRange: 'J$8,000 – J$45,000+',
+  };
+}
+
+function serviceSchemaNodes(providerId, pagePath = '/') {
+  return serviceCatalog.map((service) => {
+    const offer = {
+      '@type': 'Offer',
+      url: origin + pagePath,
+      description: service.offer.description,
+    };
+    if (service.offer.price) {
+      offer.price = service.offer.price;
+      offer.priceCurrency = service.offer.priceCurrency;
+    }
+    return {
+      '@type': 'Service',
+      '@id': `${origin}${pagePath}#service-${service.id}`,
+      name: service.name,
+      description: service.description,
+      provider: { '@id': providerId },
+      areaServed: ROSUEPRO_AREA_SERVED,
+      offers: offer,
+    };
+  });
+}
+
+function shouldIncludeBusinessSchema(page) {
+  if (page.noindex) return false;
+  return (
+    page.path === '/' ||
+    page.path === '/about-us' ||
+    page.path === '/portfolio' ||
+    page.path.startsWith('/portfolio/')
+  );
+}
+
+function breadcrumbItems(page) {
+  if (page.path === '/' || page.noindex) return null;
+  const crumbs = [{ name: 'Home', item: origin + '/' }];
+  if (page.path.startsWith('/portfolio')) {
+    crumbs.push({ name: 'Portfolio', item: origin + '/portfolio' });
+  }
+  if (page.path.startsWith('/blog')) {
+    crumbs.push({ name: 'Blog', item: origin + '/blog' });
+  }
+  const leaf = page.path.replace(/\/$/, '');
+  if (leaf !== '/portfolio' && leaf !== '/blog') {
+    crumbs.push({ name: page.label, item: origin + page.path });
+  }
+  return crumbs;
+}
+
+function schemaFor(page) {
+  const organization = organizationNode();
 
   const pageNode = {
     '@type': page.type === 'article' ? 'Article' : 'WebPage',
@@ -132,36 +203,14 @@ function schemaFor(page) {
     pageNode,
   ];
 
+  if (shouldIncludeBusinessSchema(page)) {
+    graph.push(professionalServiceNode());
+    if (page.path === '/' || page.path === '/about-us') {
+      graph.push(...serviceSchemaNodes(organization['@id'], page.path));
+    }
+  }
+
   if (page.path === '/blog/website-design-jamaica-price') {
-    graph.push({
-      '@type': 'LocalBusiness',
-      '@id': origin + '/#rosuepro-local',
-      name: 'RosuePro',
-      url: origin + '/',
-      telephone: ROSUEPRO_PHONE,
-      email: 'rosuepro@gmail.com',
-      address: organization.address,
-      areaServed: organization.areaServed,
-      priceRange: 'J$8,000 – J$45,000+',
-    });
-    graph.push({
-      '@type': 'Service',
-      '@id': origin + '/blog/website-design-jamaica-price#landing-chatbot-package',
-      name: 'Landing page + WhatsApp chatbot setup',
-      description:
-        'Landing page plus WhatsApp chatbot setup for Jamaican small businesses: J$45,000 one-time, then J$4,000/month for the chatbot service (not website hosting).',
-      provider: { '@id': organization['@id'] },
-      areaServed: organization.areaServed,
-      offers: {
-        '@type': 'Offer',
-        price: '45000',
-        priceCurrency: 'JMD',
-        description:
-          'J$45,000 one-time setup for the landing page and WhatsApp chatbot, then J$4,000/month for ongoing chatbot service (not hosting).',
-        url: origin + '/',
-        availableAtOrFrom: { '@id': origin + '/#rosuepro-local' },
-      },
-    });
     graph.push({
       '@type': 'FAQPage',
       '@id': origin + page.path + '#faq',
@@ -176,10 +225,8 @@ function schemaFor(page) {
     });
   }
 
-  if (page.path !== '/' && !page.noindex) {
-    const crumbs = [{ name: 'Home', item: origin + '/' }];
-    if (page.path.startsWith('/blog/')) crumbs.push({ name: 'Blog', item: origin + '/blog' });
-    crumbs.push({ name: page.label, item: origin + page.path });
+  const crumbs = breadcrumbItems(page);
+  if (crumbs) {
     graph.push({
       '@type': 'BreadcrumbList',
       itemListElement: crumbs.map((item, i) => ({ '@type': 'ListItem', position: i + 1, ...item })),
@@ -187,6 +234,17 @@ function schemaFor(page) {
   }
 
   return { '@context': 'https://schema.org', '@graph': graph };
+}
+
+function ensureLink(doc, rel, href, extra = {}) {
+  let link = doc.querySelector(`link[rel="${rel}"][href="${href}"]`);
+  if (!link) {
+    link = doc.createElement('link');
+    link.rel = rel;
+    link.href = href;
+    Object.entries(extra).forEach(([key, value]) => link.setAttribute(key, value));
+    doc.head.appendChild(link);
+  }
 }
 
 function applyMetadata(doc, pathname) {
@@ -227,6 +285,11 @@ function applyMetadata(doc, pathname) {
   }
   if (page.noindex) canonical.remove();
   else canonical.href = origin + page.path;
+  if (page.path === '/') {
+    ensureLink(doc, 'preload', '/Slide1.webp', { as: 'image' });
+    const preloadHero = doc.querySelector('link[rel="preload"][href="/Slide1.webp"]');
+    if (preloadHero) preloadHero.setAttribute('fetchpriority', 'high');
+  }
   let schema = doc.getElementById('seo-structured-data');
   if (!schema) {
     schema = doc.createElement('script');

@@ -54,7 +54,7 @@ test('blog index metadata matches Jamaica website and WhatsApp guides', () => {
   expect(document.querySelector('meta[name="description"]').content).toMatch(/Jamaican small businesses/i);
 });
 
-test('website design Jamaica price article includes Article, FAQ, and Service structured data', () => {
+test('website design Jamaica price article includes Article and FAQ structured data', () => {
   applyMetadata(document, '/blog/website-design-jamaica-price');
   const graph = JSON.parse(document.getElementById('seo-structured-data').textContent)['@graph'];
   const article = graph.find((item) => item['@type'] === 'Article');
@@ -62,10 +62,46 @@ test('website design Jamaica price article includes Article, FAQ, and Service st
   expect(article.author.name).toBe('RosuePro');
   expect(article.image[0]).toBe('https://rosue.pro/website-design-jamaica-price.webp');
   expect(graph.some((item) => item['@type'] === 'FAQPage')).toBe(true);
-  const service = graph.find((item) => item['@type'] === 'Service');
-  expect(service.offers.price).toBe('45000');
-  expect(service.offers.priceCurrency).toBe('JMD');
   expect(graph.find((item) => item['@type'] === 'Organization').telephone).toBe('+1-876-566-7328');
+});
+
+test('homepage includes ProfessionalService and service offers in structured data', () => {
+  applyMetadata(document, '/');
+  const graph = JSON.parse(document.getElementById('seo-structured-data').textContent)['@graph'];
+  expect(graph.some((item) => item['@type'] === 'ProfessionalService')).toBe(true);
+  const services = graph.filter((item) => item['@type'] === 'Service');
+  expect(services.length).toBeGreaterThanOrEqual(7);
+  const leadPackage = services.find((item) => item.name === 'Landing page + WhatsApp chatbot setup');
+  expect(leadPackage.offers.price).toBe('45000');
+  expect(document.querySelector('link[rel="preload"][href="/Slide1.webp"]')).toBeTruthy();
+});
+
+test('portfolio detail breadcrumbs include Portfolio parent', () => {
+  applyMetadata(document, '/portfolio/vybz-meter');
+  const crumbs = JSON.parse(document.getElementById('seo-structured-data').textContent)['@graph'].find(
+    (item) => item['@type'] === 'BreadcrumbList'
+  ).itemListElement;
+  expect(crumbs.map((item) => item.item)).toEqual([
+    'https://rosue.pro/',
+    'https://rosue.pro/portfolio',
+    'https://rosue.pro/portfolio/vybz-meter',
+  ]);
+});
+
+test('404 page is noindex', () => {
+  applyMetadata(document, '/404');
+  expect(document.querySelector('meta[name="robots"]').content).toBe('noindex, follow');
+  expect(document.querySelector('link[rel="canonical"]')).toBeNull();
+});
+
+test('sitemap lists every public route with lastmod', () => {
+  const { buildSitemapXml } = require('../scripts/sitemap-build.cjs');
+  const { allPublicRoutes, origin } = require('./seo');
+  const xml = buildSitemapXml('2026-01-01');
+  allPublicRoutes().forEach((route) => {
+    expect(xml).toContain(`<loc>${origin}${route}</loc>`);
+  });
+  expect((xml.match(/<lastmod>/g) || []).length).toBe(allPublicRoutes().length);
 });
 
 test('portfolio card share actions prefer the live project URL when available', () => {
