@@ -328,3 +328,109 @@ main .card-img-top { height: auto; }
     justify-content: flex-end;
   }
 }
+
+.home-share-band {
+  margin-top: 2.5rem;
+  padding: 2rem 0;
+  background: #fff;
+  border-top: 1px solid #d4deea;
+}
+
+.home-share-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.home-share-qr {
+  width: 148px;
+  height: 148px;
+  padding: 10px;
+  background: #fff;
+  border: 1px solid #d4deea;
+  border-radius: 14px;
+  flex-shrink: 0;
+}
+
+.home-share-qr img,
+.home-share-qr svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.home-share-copy h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0 0 0.4rem;
+  color: #1c2433;
+}
+
+.home-share-copy > p {
+  margin: 0;
+  color: #4d5b70;
+  max-width: 36rem;
+}
+
+.home-share-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.home-share-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  height: 40px;
+  padding: 0 0.9rem;
+  border-radius: 10px;
+  border: 1px solid #d4deea;
+  background: #f7f9fc;
+  color: #1c2433;
+  text-decoration: none;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.home-share-pill svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+.home-share-pill:hover {
+  border-color: #9eb0c9;
+  color: #163a8c;
+  background: #fff;
+}
+
+.home-share-pill--wa {
+  background: #1ebe5d;
+  border-color: #1ebe5d;
+  color: #fff;
+}
+
+.home-share-pill--wa:hover {
+  background: #17964a;
+  border-color: #17964a;
+  color: #fff;
+}
+
+@media (max-width: 860px) {
+  .home-share-grid {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .home-share-row {
+    justify-content: center;
+  }
+}
