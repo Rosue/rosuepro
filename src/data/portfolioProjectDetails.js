@@ -132,6 +132,135 @@ const portfolioProjectDetails = {
       },
     ],
   },
+  'trimpon-ja': {
+    intro:
+      'TrimPon JA is a RosuePro prototype for barber booking and queue management — built for Jamaican shops that want customers to see wait times and book without endless phone calls.',
+    sections: [
+      {
+        heading: 'Prototype focus',
+        paragraphs: [
+          'The live demo at trimpon-ja.web.app shows how a barber or grooming business can present services and manage demand on mobile-first pages.',
+        ],
+        bullets: [
+          'Barber booking and queue-oriented flows for walk-in and appointment culture.',
+          'Sample data only — meant as a working prototype, not a production client site.',
+          'Try the demo from the RosuePro portfolio or share this project page when discussing similar apps.',
+        ],
+      },
+    ],
+  },
+  'checkpon-ja': {
+    intro:
+      'CheckPon JA is a RosuePro prototype connecting families with helper and elder-care support options in Jamaica.',
+    sections: [
+      {
+        heading: 'Marketplace concept',
+        paragraphs: [
+          'The checkpon-ja.web.app demo illustrates how families could discover and reach helpers while keeping enquiry paths clear on the phone.',
+        ],
+        bullets: [
+          'Helper and elder-care marketplace framing with mobile-friendly layout.',
+          'Prototype with sample listings — scope for a full product would be agreed separately.',
+        ],
+      },
+    ],
+  },
+  'yardfix-ja': {
+    intro:
+      'YardFix JA is a RosuePro prototype for trades and hurricane repair coordination — helping homeowners describe jobs and reach the right help.',
+    sections: [
+      {
+        heading: 'Repairs and trades',
+        paragraphs: [
+          'The yardfix-ja-rosue.web.app demo shows how storm or yard work requests could be captured with clear next steps.',
+        ],
+        bullets: [
+          'Focused on Jamaican home and yard repair coordination scenarios.',
+          'Working prototype with sample data for portfolio demonstrations.',
+        ],
+      },
+    ],
+  },
+  'fitpon-ja': {
+    intro:
+      'FitPon JA is a RosuePro prototype for vehicle fitness pre-checks before inspection day — reducing surprises at the inspection centre.',
+    sections: [
+      {
+        heading: 'Driver-focused flow',
+        paragraphs: [
+          'The fitpon-ja.web.app demo walks through a pre-check experience motorists could use on their phones.',
+        ],
+        bullets: [
+          'Vehicle fitness pre-check concept for Jamaican drivers.',
+          'Prototype only — not affiliated with a government inspection body.',
+        ],
+      },
+    ],
+  },
+  'barrelpon-ja': {
+    intro:
+      'BarrelPon JA is a RosuePro prototype for barrel clearance and last-mile delivery in Jamaican communities.',
+    sections: [
+      {
+        heading: 'Logistics concept',
+        paragraphs: [
+          'The barrelpon-ja.web.app demo shows how recipients and senders might track barrel movement and delivery hand-offs.',
+        ],
+        bullets: [
+          'Last-mile and barrel clearance flows suited to diaspora shipping culture.',
+          'Sample data for portfolio and product discussions.',
+        ],
+      },
+    ],
+  },
+  'pack-my-hardware': {
+    intro:
+      'Pack My Hardware is a RosuePro prototype for hardware, tools, and supplies online — with featured stores and product listings.',
+    sections: [
+      {
+        heading: 'Retail prototype',
+        paragraphs: [
+          'The pack-my-hardware.web.app demo extends the Pack My Cart grocery pattern to hardware and tool retailers.',
+        ],
+        bullets: [
+          'Storefront and product listing patterns for Jamaican hardware shops.',
+          'Prototype with sample inventory — enquire with RosuePro for a scoped build.',
+        ],
+      },
+    ],
+  },
+  'party-jamaica': {
+    intro:
+      'Party Jamaica is a RosuePro prototype to discover parties and events, book tickets, and explore nightlife on a Jamaica map.',
+    sections: [
+      {
+        heading: 'Events and map',
+        paragraphs: [
+          'The partyjamaica-9a21f.web.app demo combines featured events with map-oriented discovery for nightlife and parties.',
+        ],
+        bullets: [
+          'Event listings and map sections aimed at mobile nightlife browsing.',
+          'Prototype — not a live ticketing operator.',
+        ],
+      },
+    ],
+  },
+  'jamaica-route-taxi': {
+    intro:
+      'Jamaica Route Taxi is a RosuePro prototype with a shared sign-in experience for route taxi drivers and passengers.',
+    sections: [
+      {
+        heading: 'Transport sign-in',
+        paragraphs: [
+          'The jamaica-route-taxi-service.web.app demo shows a unified login path for drivers and passengers in a route-taxi context.',
+        ],
+        bullets: [
+          'Driver and passenger roles on one prototype codebase.',
+          'Sample flows for portfolio discussions about transport apps in Jamaica.',
+        ],
+      },
+    ],
+  },
   yahsonice: {
     intro:
       'Yahsonice is a website concept that connects bar owners with bartenders — helping both sides find opportunities without relying only on informal networks.',

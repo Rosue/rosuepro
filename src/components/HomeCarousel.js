@@ -8,7 +8,7 @@ export default function HomeCarousel() {
         <img
           className="d-block mx-auto img-fluid rounded"
           src="/Slide1.webp"
-          alt="RosuePro website development services" width="1983" height="793" loading="lazy" decoding="async" />
+          alt="RosuePro website development services" width="1983" height="793" loading="eager" fetchPriority="high" decoding="async" />
         {/* <Carousel.Caption className="carousel-caption-custom">
           <h3>Welcome to RosuePro</h3>
           <p>Best in the business</p>

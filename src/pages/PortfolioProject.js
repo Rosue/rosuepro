@@ -25,7 +25,9 @@ export default function PortfolioProject() {
         <p className="mt-4 mb-0">
           <Link to="/portfolio">← Back to portfolio</Link>
         </p>
-        <h1 className="text-center mt-4 txt-dark">{project.name}</h1>
+        <h1 className="text-center mt-4 txt-dark">
+          {project.name.length >= 10 ? project.name : `${project.name}: RosuePro portfolio project`}
+        </h1>
         <p className="text-center lead mx-auto" style={{ maxWidth: '42rem' }}>{project.description}</p>
         <div className="card portfolio-project-card mx-auto" style={{ maxWidth: '960px' }}>
           {isDemo ? (
