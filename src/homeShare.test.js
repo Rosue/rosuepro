@@ -6,6 +6,7 @@ import userEvent from '@testing-library/user-event';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import {
+  HOME_SHARE_QR_SRC,
   ROSUE_PRO_HOME_URL,
   homeShareFacebookHref,
   homeShareLinkedInHref,
@@ -22,7 +23,7 @@ test('home share QR SVG encodes https://rosue.pro', async () => {
     color: { dark: '#000000', light: '#ffffff' },
   });
   const actual = fs.readFileSync(
-    path.join(__dirname, 'assets/home-share-qr.svg'),
+    path.join(__dirname, '../public/home-share-qr.svg'),
     'utf8'
   );
   expect(actual.trim()).toBe(expected.trim());
@@ -39,7 +40,12 @@ test('home page includes share band above the footer', () => {
   expect(
     screen.getByText(/Scan the code or share RosuePro with a friend, customer, or group chat/i)
   ).toBeInTheDocument();
-  expect(screen.getByRole('img', { name: 'QR code for rosue.pro' })).toBeInTheDocument();
+  const qrWrapper = screen.getByRole('img', { name: 'QR code for rosue.pro' });
+  expect(qrWrapper).toBeInTheDocument();
+  const qrImg = qrWrapper.querySelector('img');
+  expect(qrImg).toHaveAttribute('src', HOME_SHARE_QR_SRC);
+  expect(qrImg.getAttribute('src')).not.toContain('object Object');
+  expect(qrImg.getAttribute('src')).toMatch(/home-share-qr\.svg$/);
 
   const whatsapp = screen.getByRole('link', { name: 'WhatsApp' });
   expect(whatsapp.href).toBe(homeShareWhatsAppHref());

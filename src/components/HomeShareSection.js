@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
-import homeShareQr from '../assets/home-share-qr.svg';
 import {
+  HOME_SHARE_QR_SRC,
   ROSUE_PRO_HOME_URL,
   homeShareFacebookHref,
   homeShareLinkedInHref,
@@ -54,7 +54,7 @@ export default function HomeShareSection() {
       <section className="home-share-band" id="share" aria-labelledby="share-title">
         <div className="container home-share-grid">
           <div className="home-share-qr" role="img" aria-label="QR code for rosue.pro">
-            <img src={homeShareQr} width={128} height={128} alt="" decoding="async" />
+            <img src={HOME_SHARE_QR_SRC} width={128} height={128} alt="" decoding="async" />
           </div>
           <div className="home-share-copy">
             <h2 id="share-title">Know a business that needs a website?</h2>

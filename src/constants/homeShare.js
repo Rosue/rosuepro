@@ -1,5 +1,8 @@
 export const ROSUE_PRO_HOME_URL = 'https://rosue.pro';
 
+/** Static asset in /public — must stay a plain path for SSR prerender. */
+export const HOME_SHARE_QR_SRC = `${process.env.PUBLIC_URL || ''}/home-share-qr.svg`;
+
 export const HOME_SHARE_SOCIAL_TEXT =
   'RosuePro — landing pages + WhatsApp chatbots for Jamaican small businesses';
 

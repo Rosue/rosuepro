@@ -3,7 +3,7 @@ const path = require('path');
 const QRCode = require('qrcode');
 
 const URL = 'https://rosue.pro';
-const OUT = path.join(__dirname, '../src/assets/home-share-qr.svg');
+const OUT = path.join(__dirname, '../public/home-share-qr.svg');
 
 async function main() {
   const innerSize = 128;
