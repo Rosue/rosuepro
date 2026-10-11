@@ -1,6 +1,16 @@
 /** Publish dates from the git commits that added each article (YYYY-MM-DD). */
 const blogPosts = [
   {
+    path: '/blog/ai-automation-jamaica',
+    datePublished: '2026-10-11',
+    cardTitle: 'AI Automation Jamaica: Practical Ways Small Businesses Save Time in 2026',
+    cardExcerpt:
+      'Looking for AI automation Jamaica? RosuePro AI automations in Kingston from J$35,000, plus the J$45,000 landing page and chatbot package. Practical ways to save time on follow-ups and admin.',
+    image: '/ai-automation-jamaica.webp',
+    imageAlt: 'Kingston small business owner using AI automation for reminders and follow-ups',
+    ctaLabel: 'Read AI automation guide',
+  },
+  {
     path: '/blog/websites-and-ai-for-jamaican-funeral-homes-memorials',
     datePublished: '2026-10-03',
     cardTitle: 'How Jamaican funeral homes can serve families online with AI',
