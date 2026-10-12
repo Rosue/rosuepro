@@ -3,6 +3,7 @@ import { Link, Navigate, useParams } from 'react-router-dom';
 import TopNavbar from '../components/TopNavbar';
 import Footer from '../components/Footer';
 import ProjectShareActions from '../components/ProjectShareActions';
+import PackMyCartDemoVideo from '../components/PackMyCartDemoVideo';
 import { getProjectBySlug } from '../data/portfolioProjects';
 import { getPortfolioProjectDetails } from '../data/portfolioProjectDetails';
 
@@ -50,6 +51,7 @@ export default function PortfolioProject() {
               height="800"
             />
           )}
+          {slug === 'pack-my-cart' ? <PackMyCartDemoVideo /> : null}
           <div className="card-body">
             {details ? (
               <div className="portfolio-project-detail mx-auto" style={{ maxWidth: '40rem' }}>

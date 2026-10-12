@@ -1,8 +1,9 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, MemoryRouter, Route, Routes } from 'react-router-dom';
 import App from './App';
 import Portforlio from './pages/Portforlio';
+import PortfolioProject from './pages/PortfolioProject';
 
 test('lists custom website offering from J$25,000 on the home page', () => {
   render(<App />);
@@ -36,11 +37,25 @@ test('promotes Pack My Cart, Reggae Wheels, and Funeral Template on the home pag
   );
 });
 
-test('portfolio page shows Pack My Cart demo video below the Pack My Cart card', () => {
+test('portfolio grid does not show the Pack My Cart demo video', () => {
   render(
     <BrowserRouter>
       <Portforlio />
     </BrowserRouter>
+  );
+
+  expect(
+    screen.queryByLabelText('Pack My Cart demo video: Blacka AI shopping helper')
+  ).not.toBeInTheDocument();
+});
+
+test('pack-my-cart project page shows demo video near the project preview', () => {
+  render(
+    <MemoryRouter initialEntries={['/portfolio/pack-my-cart']}>
+      <Routes>
+        <Route path="/portfolio/:slug" element={<PortfolioProject />} />
+      </Routes>
+    </MemoryRouter>
   );
 
   const video = screen.getByLabelText('Pack My Cart demo video: Blacka AI shopping helper');
@@ -50,8 +65,22 @@ test('portfolio page shows Pack My Cart demo video below the Pack My Cart card',
     screen.getByText('Blacka, the AI shopping helper, answering in Jamaican Creole.')
   ).toBeInTheDocument();
 
-  const packMyCartCard = screen.getByRole('link', { name: 'Visit Pack My Cart' }).closest('.card');
-  expect(packMyCartCard.parentElement).toContainElement(video);
+  const card = document.querySelector('.portfolio-project-card');
+  expect(card).toContainElement(video);
+});
+
+test('other portfolio project pages do not show the Pack My Cart demo video', () => {
+  render(
+    <MemoryRouter initialEntries={['/portfolio/vybz-meter']}>
+      <Routes>
+        <Route path="/portfolio/:slug" element={<PortfolioProject />} />
+      </Routes>
+    </MemoryRouter>
+  );
+
+  expect(
+    screen.queryByLabelText('Pack My Cart demo video: Blacka AI shopping helper')
+  ).not.toBeInTheDocument();
 });
 
 test('promotes Vybz Meter and Funeral Template on the portfolio page', () => {
