@@ -3,6 +3,7 @@ import TopNavbar from '../../components/TopNavbar'
 import { Container } from 'react-bootstrap'
 import Footer from '../../components/Footer'
 import BlogPublishedDate from '../../components/BlogPublishedDate'
+import BlogArticleShare from '../../components/BlogArticleShare'
 
 export default function BasicTipsMarketMusic() {
   return (
@@ -11,6 +12,7 @@ export default function BasicTipsMarketMusic() {
     <Container as="main" id="main-content" className='main-content mb-5'>
       <h1 className='text-center txt-dark'>Basic Tips on how to Market your Music</h1>
       <BlogPublishedDate className="text-center text-muted mt-2" />
+      <BlogArticleShare variant="compact" />
 
       <Container className='p-3 px-5 bg-light rounded mt-5'>
           <img src="/headphones-4595492_1280.jpg" className="card-img-top mb-4" alt="Headphones for music and online promotion" width="1280" height="853" loading="lazy" decoding="async" />
@@ -42,6 +44,7 @@ export default function BasicTipsMarketMusic() {
 <p>There are plenty of other tips however these are only just a couple of hassle-free ones. In addition, <b>creating remixes</b> to well known songs which are out on radio stations will surely enable you to have more views!</p>
 <p>I sincerely hope that these guidelines about how to market your songs on line will help your career… Good Luck.</p>
 
+          <BlogArticleShare variant="footer" />
           </div>
       </Container>
     </Container>

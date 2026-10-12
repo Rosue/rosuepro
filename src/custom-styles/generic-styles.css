@@ -434,3 +434,31 @@ main .card-img-top { height: auto; }
     justify-content: center;
   }
 }
+
+.blog-article-share-compact-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.75rem;
+}
+
+.blog-article-share-compact {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.blog-article-share-footer {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.blog-article-share-footer-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.blog-article-share-footer-row {
+  justify-content: center;
+}
