@@ -1,3 +1,6 @@
+import fs from 'fs';
+import path from 'path';
+import QRCode from 'qrcode';
 import { render, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
@@ -5,7 +8,10 @@ import Router from './core/Router';
 import { applyMetadata } from './seo';
 import { getBlogPostByPath } from './data/blogPosts';
 import {
+  blogArticleQrDownloadFilename,
+  blogArticleQrPublicSrc,
   blogArticleShareUrl,
+  blogArticleSlugFromPath,
   blogShareFacebookHref,
   blogShareLinkedInHref,
   blogShareWhatsAppHref,
@@ -14,6 +20,24 @@ import {
 } from './constants/blogShare';
 
 const AI_AUTOMATION_PATH = '/blog/ai-automation-jamaica';
+
+test('blog article QR SVG encodes the canonical article URL', async () => {
+  const slug = blogArticleSlugFromPath(AI_AUTOMATION_PATH);
+  const url = blogArticleShareUrl(AI_AUTOMATION_PATH);
+  const expected = await QRCode.toString(url, {
+    type: 'svg',
+    margin: 4,
+    width: 112,
+    color: { dark: '#000000', light: '#ffffff' },
+  });
+  const actual = fs.readFileSync(
+    path.join(__dirname, `../public/qr/blog/${slug}.svg`),
+    'utf8'
+  );
+  expect(actual.trim()).toBe(expected.trim());
+  expect(blogArticleQrPublicSrc(AI_AUTOMATION_PATH)).toBe(`/qr/blog/${slug}.svg`);
+  expect(blogArticleQrDownloadFilename(AI_AUTOMATION_PATH)).toBe(`rosuepro-${slug}-qr.svg`);
+});
 
 test('blog share helpers use canonical rosue.pro article URLs and title', () => {
   const post = getBlogPostByPath(AI_AUTOMATION_PATH);
@@ -85,6 +109,17 @@ test('blog article renders compact and footer share rows', async () => {
   expect(footer.getByText('WhatsApp')).toBeInTheDocument();
   expect(footer.getByText('Facebook')).toBeInTheDocument();
   expect(footer.getByText('LinkedIn')).toBeInTheDocument();
+
+  const slug = blogArticleSlugFromPath(AI_AUTOMATION_PATH);
+  const qrLabel = `QR code for ${title}`;
+  expect(screen.getByRole('img', { name: qrLabel })).toBeInTheDocument();
+  const qrImg = screen.getByRole('img', { name: qrLabel }).querySelector('img');
+  expect(qrImg).toHaveAttribute('src', `/qr/blog/${slug}.svg`);
+  expect(qrImg.getAttribute('src')).not.toContain('object Object');
+  expect(footer.getByText('Scan to open this article')).toBeInTheDocument();
+  const download = footer.getByRole('link', { name: 'Download QR' });
+  expect(download).toHaveAttribute('href', `/qr/blog/${slug}.svg`);
+  expect(download).toHaveAttribute('download', `rosuepro-${slug}-qr.svg`);
 });
 
 describe('blog article copy link', () => {

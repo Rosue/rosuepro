@@ -452,13 +452,87 @@ main .card-img-top { height: auto; }
   border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
 
+.blog-article-share-grid {
+  margin-top: 0.25rem;
+}
+
+.blog-article-share-qr {
+  width: 128px;
+  padding: 8px;
+  background: #fff;
+  border: 1px solid #d4deea;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.blog-article-share-qr img {
+  width: 112px;
+  height: 112px;
+  display: block;
+}
+
+.blog-article-share-qr-caption {
+  margin: 0.5rem 0 0;
+  font-size: 0.8rem;
+  color: #4d5b70;
+  text-align: center;
+  max-width: 128px;
+}
+
+.blog-article-share-qr-download {
+  display: inline-block;
+  margin-top: 0.35rem;
+  font-size: 0.8rem;
+  color: #1b3fd6;
+  text-decoration: underline;
+  text-align: center;
+  max-width: 128px;
+}
+
+.blog-article-share-qr-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .blog-article-share-footer-title {
   font-size: 1.125rem;
   font-weight: 600;
-  margin-bottom: 1rem;
-  text-align: center;
+  margin: 0 0 0.75rem;
+  line-height: 1.2;
+  color: #1c2433;
 }
 
 .blog-article-share-footer-row {
-  justify-content: center;
+  margin-top: 0;
+}
+
+@media (max-width: 860px) {
+  .blog-article-share-qr-col {
+    display: none;
+  }
+
+  .blog-article-share-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .blog-article-share-footer-title {
+    text-align: center;
+  }
+
+  .blog-article-share-footer-row {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+@media print {
+  .blog-article-share-pills {
+    display: none !important;
+  }
+
+  .blog-article-share-qr-col {
+    display: flex !important;
+  }
 }
