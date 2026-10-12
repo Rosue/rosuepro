@@ -4,6 +4,7 @@ import { Container } from 'react-bootstrap'
 import Footer from '../components/Footer'
 import PortfolioProjectCard from '../components/PortfolioProjectCard'
 import PortfolioDemosSection from '../components/PortfolioDemosSection'
+import PackMyCartDemoVideo from '../components/PackMyCartDemoVideo'
 import { clientPortfolioProjects } from '../data/portfolioProjects'
 
 export default function Portforlio() {
@@ -25,6 +26,7 @@ export default function Portforlio() {
                 context="portfolio"
                 cardClassName="card h-100 portfolio-project-card"
               />
+              {project.slug === 'pack-my-cart' ? <PackMyCartDemoVideo /> : null}
             </div>
           ))}
         </div>

@@ -184,6 +184,38 @@ a.btn.btn-whatsapp:active {
   margin-bottom: 0.35rem;
 }
 
+.packmycart-demo-video {
+  margin-top: 1rem;
+  margin-inline: auto;
+  max-width: 320px;
+  text-align: center;
+}
+
+.packmycart-demo-video__frame {
+  aspect-ratio: 9 / 16;
+  max-width: 320px;
+  margin-inline: auto;
+  border: 1px solid rgba(0, 78, 187, 0.2);
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #eef4ff;
+}
+
+.packmycart-demo-video__player {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-color: #eef4ff;
+}
+
+.packmycart-demo-video__caption {
+  margin-top: 0.65rem;
+  font-size: 0.9rem;
+  color: #6c757d;
+  line-height: 1.4;
+}
+
 /* Keep intrinsic image dimensions responsive after reserving layout space. */
 main .card-img-top { height: auto; }
 

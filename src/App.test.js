@@ -36,6 +36,24 @@ test('promotes Pack My Cart, Reggae Wheels, and Funeral Template on the home pag
   );
 });
 
+test('portfolio page shows Pack My Cart demo video below the Pack My Cart card', () => {
+  render(
+    <BrowserRouter>
+      <Portforlio />
+    </BrowserRouter>
+  );
+
+  const video = screen.getByLabelText('Pack My Cart demo video: Blacka AI shopping helper');
+  expect(video).toHaveAttribute('poster', '/videos/packmycart-demo-poster.webp');
+  expect(video).not.toHaveAttribute('src');
+  expect(
+    screen.getByText('Blacka, the AI shopping helper, answering in Jamaican Creole.')
+  ).toBeInTheDocument();
+
+  const packMyCartCard = screen.getByRole('link', { name: 'Visit Pack My Cart' }).closest('.card');
+  expect(packMyCartCard.parentElement).toContainElement(video);
+});
+
 test('promotes Vybz Meter and Funeral Template on the portfolio page', () => {
   render(
     <BrowserRouter>
