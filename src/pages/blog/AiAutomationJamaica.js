@@ -3,6 +3,7 @@ import TopNavbar from '../../components/TopNavbar'
 import { Container } from 'react-bootstrap'
 import Footer from '../../components/Footer'
 import BlogPublishedDate from '../../components/BlogPublishedDate'
+import BlogArticleShare from '../../components/BlogArticleShare'
 
 const rosueProWhatsAppQuoteHref = 'https://wa.me/18765667328' // pragma: allowlist secret
 
@@ -13,6 +14,7 @@ export default function AiAutomationJamaica() {
     <Container as="main" id="main-content" className='main-content mb-5'>
       <h1 className='text-center txt-dark'>AI Automation Jamaica: Practical Ways Small Businesses Save Time in 2026</h1>
       <BlogPublishedDate className="text-center text-muted mt-2" />
+      <BlogArticleShare variant="compact" />
 
       <Container className='p-3 px-5 bg-light rounded mt-5'>
           <img src="/ai-automation-jamaica.webp" className="card-img-top mb-4" alt="Kingston small business owner using AI automation for reminders and follow-ups" width="1280" height="720" loading="lazy" decoding="async" />
@@ -113,6 +115,7 @@ export default function AiAutomationJamaica() {
 <p><a href={rosueProWhatsAppQuoteHref} target="_blank" rel="noreferrer"><b>Message RosuePro on WhatsApp: +1 876 566 7328</b></a></p>
 <p>Or find out more at <a href="https://rosue.pro" target="_blank" rel="noreferrer">rosue.pro</a>.</p>
 
+          <BlogArticleShare variant="footer" />
           </div>
       </Container>
     </Container>

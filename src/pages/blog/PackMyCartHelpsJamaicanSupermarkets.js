@@ -3,6 +3,7 @@ import TopNavbar from '../../components/TopNavbar'
 import { Container } from 'react-bootstrap'
 import Footer from '../../components/Footer'
 import BlogPublishedDate from '../../components/BlogPublishedDate'
+import BlogArticleShare from '../../components/BlogArticleShare'
 
 export default function PackMyCartHelpsJamaicanSupermarkets() {
   return (
@@ -11,6 +12,7 @@ export default function PackMyCartHelpsJamaicanSupermarkets() {
     <Container as="main" id="main-content" className='main-content mb-5'>
       <h1 className='text-center txt-dark'>How Pack My Cart helps Jamaican supermarket owners sell online</h1>
       <BlogPublishedDate className="text-center text-muted mt-2" />
+      <BlogArticleShare variant="compact" />
 
       <Container className='p-3 px-5 bg-light rounded mt-5'>
           <img src="/Screenshot 2025-08-03 160451.png" className="card-img-top mb-4" alt="Pack My Cart online supermarket platform for Jamaica" width="1895" height="863" loading="lazy" decoding="async" />
@@ -68,6 +70,7 @@ export default function PackMyCartHelpsJamaicanSupermarkets() {
 <p>Start here: browse the live platform at <a href="https://pack-my-cart.web.app" target="_blank" rel="noreferrer">https://pack-my-cart.web.app</a>, then talk to RosuePro about getting your supermarket listed and stocked for online orders.</p>
 <p>Learn more about RosuePro services at <a href="https://rosue.pro" target="_blank" rel="noreferrer">https://rosue.pro</a>.</p>
 
+          <BlogArticleShare variant="footer" />
           </div>
       </Container>
     </Container>

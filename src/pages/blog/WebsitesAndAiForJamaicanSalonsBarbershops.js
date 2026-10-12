@@ -3,6 +3,7 @@ import TopNavbar from '../../components/TopNavbar'
 import { Container } from 'react-bootstrap'
 import Footer from '../../components/Footer'
 import BlogPublishedDate from '../../components/BlogPublishedDate'
+import BlogArticleShare from '../../components/BlogArticleShare'
 
 export default function WebsitesAndAiForJamaicanSalonsBarbershops() {
   return (
@@ -11,6 +12,7 @@ export default function WebsitesAndAiForJamaicanSalonsBarbershops() {
     <Container as="main" id="main-content" className='main-content mb-5'>
       <h1 className='text-center txt-dark'>How Jamaican salon and barbershop owners can win more bookings with a website and AI</h1>
       <BlogPublishedDate className="text-center text-muted mt-2" />
+      <BlogArticleShare variant="compact" />
 
       <Container className='p-3 px-5 bg-light rounded mt-5'>
           <img src="/jamaican-salon-barbershop-blog.png" className="card-img-top mb-4" alt="Jamaican salon and barbershop interior" width="1200" height="630" loading="lazy" decoding="async" />
@@ -78,6 +80,7 @@ export default function WebsitesAndAiForJamaicanSalonsBarbershops() {
 <p>If you run a salon or barbershop and your phone never stops, start with a clear landing page and a scoped chatbot for the questions you answer every day. Describe what you need, agree scope and price, then book an available evening or Saturday.</p>
 <p>Learn more or enquire at <a href="https://rosue.pro" target="_blank" rel="noreferrer">rosue.pro</a> (<a href="mailto:RosuePro@gmail.com">RosuePro@gmail.com</a>).</p>
 
+          <BlogArticleShare variant="footer" />
           </div>
       </Container>
     </Container>

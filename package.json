@@ -16,7 +16,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "node scripts/generate-home-qr.cjs && react-scripts build && node scripts/defer-render-blocking-css.cjs && node scripts/prerender.cjs && node scripts/verify-home-share-prerender.cjs",
+    "build": "node scripts/generate-home-qr.cjs && node scripts/generate-blog-qrs.cjs && react-scripts build && node scripts/defer-render-blocking-css.cjs && node scripts/prerender.cjs && node scripts/verify-home-share-prerender.cjs && node scripts/verify-blog-share-prerender.cjs",
+    "pretest": "node scripts/generate-home-qr.cjs && node scripts/generate-blog-qrs.cjs",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "audit:seo": "node scripts/audit-seo.cjs"
