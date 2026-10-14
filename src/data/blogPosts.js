@@ -1,6 +1,18 @@
 /** Publish dates from the git commits that added each article (YYYY-MM-DD). */
 const blogPosts = [
   {
+    path: '/blog/websites-and-ai-for-jamaican-auto-garages-mechanics',
+    datePublished: '2026-10-14',
+    cardTitle:
+      'Websites and AI for Kingston Auto Garages and Mechanics: Fewer Missed Calls, More Booked Jobs',
+    cardExcerpt:
+      'How Kingston garages and mechanics can catch missed calls, take WhatsApp bookings and quote requests, and send "is my car ready?" updates with RosuePro websites, chatbots and automations.',
+    image: '/websites-and-ai-for-jamaican-auto-garages-mechanics.webp',
+    imageAlt:
+      'Mechanic working under a car on a lift in a Kingston garage, with a WhatsApp booking chat on a phone',
+    ctaLabel: 'Read the garage guide',
+  },
+  {
     path: '/blog/ai-automation-jamaica',
     datePublished: '2026-10-11',
     cardTitle: 'AI Automation Jamaica: Practical Ways Small Businesses Save Time in 2026',

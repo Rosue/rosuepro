@@ -16,6 +16,7 @@ import WebsiteDesignJamaicaPrice from '../pages/blog/WebsiteDesignJamaicaPrice';
 import WhatsappChatbotForBusinessJamaica from '../pages/blog/WhatsappChatbotForBusinessJamaica';
 import AiAutomationJamaica from '../pages/blog/AiAutomationJamaica';
 import WebsitesAndAiForJamaicanFuneralHomesMemorials from '../pages/blog/WebsitesAndAiForJamaicanFuneralHomesMemorials';
+import WebsitesAndAiForJamaicanAutoGaragesMechanics from '../pages/blog/WebsitesAndAiForJamaicanAutoGaragesMechanics';
 import Tutoring from '../pages/Tutoring';
 
 export default function Router() {
@@ -35,6 +36,7 @@ export default function Router() {
         <Route path='/blog/whatsapp-chatbot-for-business-jamaica' element={<WhatsappChatbotForBusinessJamaica />} />
         <Route path='/blog/ai-automation-jamaica' element={<AiAutomationJamaica />} />
         <Route path='/blog/websites-and-ai-for-jamaican-funeral-homes-memorials' element={<WebsitesAndAiForJamaicanFuneralHomesMemorials />} />
+        <Route path='/blog/websites-and-ai-for-jamaican-auto-garages-mechanics' element={<WebsitesAndAiForJamaicanAutoGaragesMechanics />} />
         <Route path="/about-us" element={<About />} />
         <Route path="/tutoring" element={<Tutoring />} />
         <Route path="*" element={<NotFound />} />
