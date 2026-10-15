@@ -607,3 +607,7 @@ main .card-img-top { height: auto; }
 @media (min-width: 1200px) {
   .hero-video-copy .services-intro h1 { font-size: clamp(2rem, 2.6vw, 2.75rem); }
 }
+
+.service-card-title-badge { display: flex; align-items: center; gap: 0.5rem; }
+.service-play-badge { display: inline-grid; place-items: center; width: 28px; height: 28px; flex: none; border-radius: 50%; background: #17398f; color: #fff; }
+.service-play-badge svg { margin-left: 2px; }

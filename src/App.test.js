@@ -15,7 +15,7 @@ test('lists custom website offering from J$25,000 on the home page', () => {
 test('lists Google Business Profile help with ask-for-a-price on the home page', () => {
   render(<App />);
   expect(screen.getByRole('heading', { name: 'Google Business Profile (Google Maps)' })).toBeInTheDocument();
-  expect(screen.getByText('Ask for a price')).toBeInTheDocument();
+  expect(screen.getAllByText('Ask for a price')).toHaveLength(2);
   expect(screen.getByText(/never claims a listing for someone who does not own the business/i)).toBeInTheDocument();
   expect(screen.getByText(/Customise your profile: business description, categories, hours/i)).toBeInTheDocument();
   expect(screen.getByRole('link', { name: 'Ask about Google Business Profile' })).toBeInTheDocument();
@@ -181,4 +181,12 @@ describe('copy link on portfolio page', () => {
       expect(screen.getByText('Link copied')).toBeInTheDocument();
     });
   });
+});
+
+test('lists Promo videos with ask-for-a-price and no website fixes card', () => {
+  render(<App />);
+  expect(screen.getByRole('heading', { name: 'Promo videos' })).toBeInTheDocument();
+  expect(screen.getByText(/burned-in captions that work without sound/i)).toBeInTheDocument();
+  expect(screen.getByRole('link', { name: 'Request a video quote' })).toHaveAttribute('href', expect.stringContaining('Promo%20video%20quote'));
+  expect(screen.queryByRole('heading', { name: 'Website fixes' })).not.toBeInTheDocument();
 });
