@@ -1,45 +1,20 @@
 const http = require('http');
-const path = require('path');
 const { chromium } = require('playwright');
 
-const VIEWPORTS = [360, 768, 1024, 1280, 1440];
+const VIEWPORTS = [360, 390, 768, 820, 1024, 1280, 1440];
 const BASE_URL = process.env.PORTFOLIO_OVERFLOW_BASE_URL || 'http://127.0.0.1:3000';
 const ROUTES = [
-  { path: '/portfolio', cardSelector: '.portfolio-project-card' },
-  { path: '/', cardSelector: '.project-promo-card' },
+  {
+    path: '/portfolio',
+    cardSelector: '.portfolio-client-grid .portfolio-project-card',
+    rowSelector: '.portfolio-client-grid .col',
+  },
+  {
+    path: '/',
+    cardSelector: '.featured-projects .project-promo-card',
+    rowSelector: '.featured-projects .row > .col',
+  },
 ];
-
-function assertNoOverflow(card, context) {
-  const cardRect = card.getBoundingClientRect();
-  const cardLabel =
-    card.querySelector('.card-title')?.textContent?.trim() || context.cardIndex;
-
-  if (card.scrollWidth > card.clientWidth + 1) {
-    throw new Error(
-      `${context.route} card "${cardLabel}" scrollWidth ${card.scrollWidth} > clientWidth ${card.clientWidth} at viewport ${context.width}px`
-    );
-  }
-
-  const buttons = card.querySelectorAll('.portfolio-card-actions .btn');
-  buttons.forEach((btn) => {
-    const rect = btn.getBoundingClientRect();
-    if (rect.right > cardRect.right + 1 || rect.left < cardRect.left - 1) {
-      throw new Error(
-        `${context.route} card "${cardLabel}" button "${btn.textContent?.trim()}" outside card bounds at viewport ${context.width}px (btn right ${rect.right}, card right ${cardRect.right})`
-      );
-    }
-  });
-
-  const shareRow = card.querySelector('.project-share-actions');
-  if (shareRow) {
-    const shareRect = shareRow.getBoundingClientRect();
-    if (shareRect.right > cardRect.right + 1 || shareRect.left < cardRect.left - 1) {
-      throw new Error(
-        `${context.route} card "${cardLabel}" share actions outside card bounds at viewport ${context.width}px`
-      );
-    }
-  }
-}
 
 async function checkRoute(page, route, width) {
   await page.setViewportSize({ width, height: 900 });
@@ -62,16 +37,21 @@ async function checkRoute(page, route, width) {
           );
         }
 
-        card.querySelectorAll('.portfolio-card-actions .btn').forEach((btn) => {
+        card.querySelectorAll('.portfolio-card-actions--showcase .portfolio-card-btn').forEach((btn) => {
           const rect = btn.getBoundingClientRect();
+          if (rect.height < 44) {
+            errors.push(
+              `${routePath} card "${cardLabel}" button "${btn.getAttribute('aria-label') || btn.textContent?.trim()}" height ${rect.height}px < 44px at viewport ${viewportWidth}px`
+            );
+          }
           if (rect.right > cardRect.right + 1 || rect.left < cardRect.left - 1) {
             errors.push(
-              `${routePath} card "${cardLabel}" button "${btn.textContent?.trim()}" outside card bounds at viewport ${viewportWidth}px`
+              `${routePath} card "${cardLabel}" button "${btn.getAttribute('aria-label') || btn.textContent?.trim()}" outside card bounds at viewport ${viewportWidth}px`
             );
           }
         });
 
-        const shareRow = card.querySelector('.project-share-actions');
+        const shareRow = card.querySelector('.portfolio-card-share-actions');
         if (shareRow) {
           const shareRect = shareRow.getBoundingClientRect();
           if (shareRect.right > cardRect.right + 1 || shareRect.left < cardRect.left - 1) {
@@ -79,6 +59,40 @@ async function checkRoute(page, route, width) {
               `${routePath} card "${cardLabel}" share actions outside card bounds at viewport ${viewportWidth}px`
             );
           }
+        }
+      });
+
+      const rowEls = cards.map((card) =>
+        card.querySelector('.portfolio-card-actions-primary')
+      ).filter(Boolean);
+
+      const sorted = rowEls
+        .map((el) => {
+          const rect = el.getBoundingClientRect();
+          return { el, top: rect.top, bottom: rect.bottom };
+        })
+        .sort((a, b) => a.top - b.top || a.el.getBoundingClientRect().left - b.el.getBoundingClientRect().left);
+
+      const rows = [];
+      sorted.forEach((item) => {
+        const row = rows.find((r) => Math.abs(r.top - item.top) < 8);
+        if (row) {
+          row.items.push(item);
+        } else {
+          rows.push({ top: item.top, items: [item] });
+        }
+      });
+
+      rows.forEach((row) => {
+        if (row.items.length < 2) {
+          return;
+        }
+        const bottoms = row.items.map((item) => item.bottom);
+        const diff = Math.max(...bottoms) - Math.min(...bottoms);
+        if (diff > 2) {
+          errors.push(
+            `${routePath} action buttons not bottom-aligned in a grid row (delta ${diff.toFixed(1)}px) at viewport ${viewportWidth}px`
+          );
         }
       });
 

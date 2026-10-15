@@ -111,7 +111,7 @@ test('portfolio cards link to RosuePro project pages', () => {
     .getAllByRole('link', { name: 'Vybz Meter' })
     .find((link) => link.getAttribute('href') === '/portfolio/vybz-meter');
   expect(vybzDetailLink).toBeTruthy();
-  expect(screen.getAllByRole('link', { name: 'View project page' }).length).toBeGreaterThanOrEqual(7);
+  expect(screen.getAllByRole('link', { name: /Project details for/ }).length).toBeGreaterThanOrEqual(7);
 });
 
 test('portfolio page includes live demo section with prototype cards', () => {

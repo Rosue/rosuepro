@@ -114,12 +114,22 @@ a.btn.btn-whatsapp:active {
   .portfolio-project-card {
     border-color: rgba(0, 78, 187, 0.2);
     box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.12);
-    container-type: inline-size;
   }
 
-.portfolio-project-card .card-body,
-.project-promo-card .card-body {
+.portfolio-client-grid > .col,
+.featured-projects .row > .col,
+.portfolio-demos-band .row > .col {
   min-width: 0;
+}
+
+.portfolio-client-grid.row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.portfolio-client-grid.row > .col {
+  width: 100%;
+  max-width: 100%;
 }
 
 
@@ -171,10 +181,6 @@ a.btn.btn-whatsapp:active {
   color: #4a5568;
   max-width: 36rem;
   margin-inline: auto;
-}
-
-.portfolio-project-card--demo .card-body {
-  padding: 0.85rem 1rem 1rem;
 }
 
 .portfolio-project-card--demo .card-title {
@@ -261,7 +267,176 @@ main .card-img-top { height: auto; }
   align-self: center;
 }
 
-.portfolio-card-actions {
+/* Portfolio grid / home showcase cards — action & share area */
+.portfolio-client-grid .portfolio-project-card,
+.portfolio-demos-band .portfolio-project-card,
+.featured-projects .project-promo-card {
+  container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+  overflow-wrap: anywhere;
+}
+
+.portfolio-client-grid .portfolio-project-card .card-body,
+.portfolio-demos-band .portfolio-project-card .card-body,
+.featured-projects .project-promo-card .card-body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+@container (max-width: 300px) {
+  .portfolio-client-grid .portfolio-project-card .card-body,
+  .portfolio-demos-band .portfolio-project-card .card-body,
+  .featured-projects .project-promo-card .card-body {
+    padding: 16px;
+  }
+}
+
+.portfolio-client-grid .portfolio-project-card .card-title,
+.portfolio-demos-band .portfolio-project-card .card-title,
+.featured-projects .project-promo-card .card-title {
+  margin-bottom: 8px;
+}
+
+.portfolio-client-grid .portfolio-card-description,
+.portfolio-demos-band .portfolio-card-description,
+.featured-projects .portfolio-card-description {
+  margin-bottom: 0;
+  flex-grow: 1;
+}
+
+.portfolio-card-actions.portfolio-card-actions--showcase {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 8px;
+  padding-top: 16px;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.portfolio-card-actions--showcase .portfolio-card-actions-primary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+  min-width: 0;
+}
+
+.portfolio-card-actions--showcase.portfolio-card-actions--centered .portfolio-card-actions-primary {
+  justify-content: center;
+}
+
+.portfolio-card-actions--showcase .portfolio-card-btn {
+  flex: 1 1 160px;
+  min-width: 0;
+  max-width: 100%;
+  min-height: 44px;
+  padding: 10px 16px;
+  font-size: 16px;
+  line-height: 1.25;
+  border-radius: 8px;
+  border-width: 2px;
+  border-style: solid;
+  white-space: normal;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.portfolio-card-actions--showcase .portfolio-card-btn--visit {
+  background-color: #163a8c;
+  border-color: transparent;
+  color: #fff;
+}
+
+.portfolio-card-actions--showcase .portfolio-card-btn--visit:hover,
+.portfolio-card-actions--showcase .portfolio-card-btn--visit:focus-visible {
+  background-color: #102c6c;
+  color: #fff;
+}
+
+.portfolio-card-actions--showcase .portfolio-card-btn--details {
+  background-color: #fff;
+  border-color: #163a8c;
+  color: #163a8c;
+}
+
+.portfolio-card-actions--showcase .portfolio-card-btn--details:hover {
+  background-color: #f7f9fc;
+  border-color: #102c6c;
+  color: #102c6c;
+}
+
+.portfolio-card-actions--showcase .portfolio-card-btn:focus-visible {
+  outline: 3px solid #163a8c;
+  outline-offset: 2px;
+}
+
+.portfolio-card-actions--showcase .portfolio-card-btn--visit:focus-visible {
+  box-shadow: 0 0 0 2px #fff;
+}
+
+@container (max-width: 340px) {
+  .portfolio-card-actions--showcase .portfolio-card-btn {
+    flex-basis: 100%;
+  }
+}
+
+.portfolio-card-actions--showcase .portfolio-card-share-actions {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 12px;
+  margin-left: 0;
+  padding-top: 12px;
+  border-top: 1px solid #d4deea;
+  flex-shrink: 0;
+}
+
+.portfolio-card-actions--showcase .portfolio-card-share-actions .project-share-btn {
+  width: 40px;
+  height: 40px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 2px;
+  border-radius: 8px;
+  border: 1px solid #d4deea;
+  background: #fff;
+  color: #4d5b70;
+}
+
+.portfolio-card-actions--showcase .portfolio-card-share-actions .project-share-btn:hover {
+  color: #163a8c;
+  border-color: #9eb0c9;
+  background: #fff;
+}
+
+.portfolio-card-actions--showcase .portfolio-card-share-actions .project-share-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.portfolio-card-actions--centered:not(.portfolio-card-actions--showcase) {
+  max-width: 28rem;
+  margin-inline: auto;
+}
+
+.portfolio-card-actions:not(.portfolio-card-actions--showcase) {
   margin-top: auto;
   display: flex;
   flex-wrap: wrap;
@@ -274,54 +449,14 @@ main .card-img-top { height: auto; }
   box-sizing: border-box;
 }
 
-.portfolio-card-actions-primary {
+.portfolio-card-actions:not(.portfolio-card-actions--showcase) .portfolio-card-actions-primary {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   align-items: center;
-  justify-content: flex-start;
   flex: 1 1 8rem;
   min-width: 0;
   max-width: 100%;
-}
-
-.portfolio-card-actions.justify-content-center .portfolio-card-actions-primary {
-  justify-content: center;
-}
-
-.portfolio-card-actions-primary .btn {
-  flex: 1 1 auto;
-  max-width: 100%;
-  white-space: normal;
-  text-align: center;
-}
-
-@container (max-width: 26rem) {
-  .portfolio-card-actions:not(.portfolio-card-actions--single-line) {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .portfolio-card-actions:not(.portfolio-card-actions--single-line) .portfolio-card-actions-primary {
-    width: 100%;
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .portfolio-card-actions:not(.portfolio-card-actions--single-line) .portfolio-card-actions-primary .btn {
-    width: 100%;
-  }
-
-  .portfolio-card-actions:not(.portfolio-card-actions--single-line) .project-share-actions {
-    margin-left: 0;
-    width: 100%;
-    justify-content: center;
-  }
-}
-
-.portfolio-card-actions--centered {
-  max-width: 28rem;
-  margin-inline: auto;
 }
 
 .project-share-actions {
@@ -385,42 +520,12 @@ main .card-img-top { height: auto; }
 }
 
 @media (max-width: 575.98px) {
-  .portfolio-card-actions:not(.portfolio-card-actions--single-line) {
+  .portfolio-card-actions:not(.portfolio-card-actions--showcase) {
     flex-direction: column;
     align-items: stretch;
   }
 
-  .portfolio-card-actions--single-line {
-    flex-wrap: nowrap;
-    align-items: center;
-  }
-
-  .portfolio-card-actions--single-line .portfolio-card-actions-primary {
-    flex: 0 1 auto;
-  }
-
-  .portfolio-card-actions--single-line .portfolio-card-actions-primary .btn {
-    width: auto;
-    white-space: nowrap;
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
-    font-size: 0.875rem;
-  }
-
-  .portfolio-card-actions--single-line .project-share-actions {
-    flex-shrink: 0;
-    margin-left: auto;
-  }
-
-  .portfolio-card-actions:not(.portfolio-card-actions--centered) .portfolio-card-actions-primary .btn {
-    align-self: flex-start;
-  }
-
-  .portfolio-card-actions--centered .portfolio-card-actions-primary .btn {
-    align-self: center;
-  }
-
-  .project-share-actions {
+  .portfolio-card-actions:not(.portfolio-card-actions--showcase) .project-share-actions {
     margin-left: 0;
     justify-content: flex-end;
   }
