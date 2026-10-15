@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { EmailWhatsAppActions } from './ContactActions';
+import HeroVideo from './HeroVideo';
 import {
   LEAD_PACKAGE_CHATBOT_SERVICE_NOTE,
   LEAD_PACKAGE_PRICE_SUMMARY,
@@ -102,27 +103,29 @@ const defaultMailto = `mailto:rosuepro@gmail.com?subject=${encodeURIComponent('L
 
 export default function ServiceOfferings() {
   return (
-    <section className="service-offerings py-5" id="services" aria-labelledby="services-heading">
-      <div className="container">
-        <div className="services-intro mx-auto text-center mb-4">
-          <p className="service-eyebrow">ROSUEPRO · JAMAICAN SMALL BUSINESS WEBSITES</p>
-          <h1 id="services-heading">
-            Landing page + WhatsApp chatbot packages<br />for Jamaican small businesses.
-          </h1>
-          <p className="lead mt-3">
-            Get a professional landing page and a WhatsApp chatbot that answers common questions and captures leads — built for businesses in Kingston and across Jamaica.
-          </p>
-          <p className="service-lead-price fw-semibold mt-2">{LEAD_PACKAGE_PRICE_SUMMARY}.</p>
-          <p className="small text-secondary mb-0">{LEAD_PACKAGE_CHATBOT_SERVICE_NOTE}</p>
-          <p className="service-availability mt-3">Evenings &amp; Saturdays · By appointment · Jamaica time</p>
-          <EmailWhatsAppActions
-            className="contact-actions d-flex flex-column flex-sm-row flex-wrap gap-2 justify-content-center mt-4"
-            mailtoHref={defaultMailto}
-            mailLabel="Email enquiry"
-            whatsappLabel="WhatsApp enquiry"
-            whatsappMessage={WHATSAPP_DEFAULT_MESSAGE}
-          />
-        </div>
+    <section className="service-offerings pb-5" id="services" aria-labelledby="services-heading">
+      <HeroVideo>
+            <div className="services-intro mx-auto text-center mb-4">
+              <p className="service-eyebrow">ROSUEPRO · JAMAICAN SMALL BUSINESS WEBSITES</p>
+              <h1 id="services-heading">
+                Landing page + WhatsApp chatbot packages<br />for Jamaican small businesses.
+              </h1>
+              <p className="lead mt-3">
+                Get a professional landing page and a WhatsApp chatbot that answers common questions and captures leads — built for businesses in Kingston and across Jamaica.
+              </p>
+              <p className="service-lead-price fw-semibold mt-2">{LEAD_PACKAGE_PRICE_SUMMARY}.</p>
+              <p className="small text-secondary mb-0">{LEAD_PACKAGE_CHATBOT_SERVICE_NOTE}</p>
+              <p className="service-availability mt-3">Evenings &amp; Saturdays · By appointment · Jamaica time</p>
+              <EmailWhatsAppActions
+                className="contact-actions d-flex flex-column flex-sm-row flex-wrap gap-2 justify-content-center mt-4"
+                mailtoHref={defaultMailto}
+                mailLabel="Email enquiry"
+                whatsappLabel="WhatsApp enquiry"
+                whatsappMessage={WHATSAPP_DEFAULT_MESSAGE}
+              />
+            </div>
+      </HeroVideo>
+      <div className="container pt-5">
         <div className="row row-cols-1 row-cols-lg-3 g-4">
           {offers.map((offer) => (
             <div className="col" key={offer.title}>
