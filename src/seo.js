@@ -286,9 +286,8 @@ function applyMetadata(doc, pathname) {
   if (page.noindex) canonical.remove();
   else canonical.href = origin + page.path;
   if (page.path === '/') {
-    ensureLink(doc, 'preload', '/Slide1.webp', { as: 'image' });
-    const preloadHero = doc.querySelector('link[rel="preload"][href="/Slide1.webp"]');
-    if (preloadHero) preloadHero.setAttribute('fetchpriority', 'high');
+    // Hero LCP is the video poster <img fetchpriority="high"> in the page markup.
+    doc.querySelectorAll('link[rel="preload"][href="/Slide1.webp"]').forEach((l) => l.remove());
   }
   let schema = doc.getElementById('seo-structured-data');
   if (!schema) {

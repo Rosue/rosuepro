@@ -1,14 +1,15 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import {
-  HERO_POSTERS,
+  FORMATS,
+  PORTRAIT_FORMAT,
+  WIDE_FORMAT,
   getPoster,
-  getRatioClass,
-  getVideoSources,
-  pickVideoSrc,
+  getFormat,
+  getVideoSrc,
   shouldSkipAutoload,
 } from './heroVideoSources';
 
-const CAPTION = '26-second promo: websites and WhatsApp chatbots for Jamaican businesses';
+const CAPTION = '18-second video ad: RosuePro builds websites and WhatsApp chatbots for Jamaican businesses';
 
 function env() {
   if (typeof window === 'undefined') return { width: 1440, dpr: 1 };
@@ -18,7 +19,7 @@ function env() {
 export default function HeroVideo({ children }) {
   const videoRef = useRef(null);
   const frameRef = useRef(null);
-  const [ratio, setRatio] = useState('landscape');
+  const [ratio, setRatio] = useState(WIDE_FORMAT);
   const [skipAuto] = useState(() =>
     typeof window !== 'undefined' &&
     shouldSkipAutoload({ matchMedia: window.matchMedia, connection: navigator.connection })
@@ -34,7 +35,7 @@ export default function HeroVideo({ children }) {
     if (!v) return;
     const { width, dpr } = env();
     v.poster = getPoster(r, width); // poster before src
-    const src = pickVideoSrc(getVideoSources(r, { dpr, viewportWidth: width }), (t) => v.canPlayType && v.canPlayType(t));
+    const src = getVideoSrc(r, { dpr, viewportWidth: width });
     v.muted = true;
     v.src = src;
     if (v.load) v.load();
@@ -49,7 +50,7 @@ export default function HeroVideo({ children }) {
     let idleId;
     const start = () => {
       const ric = window.requestIdleCallback || ((cb) => setTimeout(cb, 200));
-      idleId = ric(() => loadSrc(getRatioClass()));
+      idleId = ric(() => loadSrc(getFormat()));
     };
     if (document.readyState === 'complete') start();
     else window.addEventListener('load', start, { once: true });
@@ -59,12 +60,12 @@ export default function HeroVideo({ children }) {
     };
   }, [skipAuto, loadSrc]);
 
-  useEffect(() => { setRatio(getRatioClass()); }, []);
+  useEffect(() => { setRatio(getFormat()); }, []);
 
   // Swap only when the ratio class changes.
   useEffect(() => {
     const onChange = () => {
-      const next = getRatioClass();
+      const next = getFormat();
       setRatio((prev) => {
         if (prev !== next && loaded) loadSrc(next);
         else if (prev !== next && videoRef.current) videoRef.current.poster = getPoster(next, env().width);
@@ -123,21 +124,21 @@ export default function HeroVideo({ children }) {
 
   const playOnTap = () => {
     userPaused.current = false;
-    loadSrc(getRatioClass());
+    loadSrc(getFormat());
   };
 
   const poster = getPoster(ratio, env().width);
 
   return (
-    <div className="hero-video" data-ratio={ratio}>
+    <div className="hero-video" data-format={ratio} data-wide={WIDE_FORMAT}>
       <div className="hero-video-media">
         <div className="hero-video-frame" ref={frameRef}>
           <picture hidden={loaded}>
-            <source media="(max-width: 767px) and (orientation: portrait)" srcSet={`${HERO_POSTERS.portrait.small} 960w, ${HERO_POSTERS.portrait.full} 1080w`} sizes="100vw" />
+            <source media="(max-width: 767px) and (orientation: portrait)" srcSet={`${FORMATS[PORTRAIT_FORMAT].poster.small} 960w, ${FORMATS[PORTRAIT_FORMAT].poster.full} ${FORMATS[PORTRAIT_FORMAT].poster.fullWidth}w`} sizes="100vw" />
             <img
               className="hero-video-poster"
-              src={HERO_POSTERS.landscape.full}
-              srcSet={`${HERO_POSTERS.landscape.small} 960w, ${HERO_POSTERS.landscape.full} 1920w`}
+              src={FORMATS[WIDE_FORMAT].poster.full}
+              srcSet={`${FORMATS[WIDE_FORMAT].poster.small} 960w, ${FORMATS[WIDE_FORMAT].poster.full} ${FORMATS[WIDE_FORMAT].poster.fullWidth}w`}
               sizes="(min-width: 1200px) 58vw, 100vw"
               alt=""
               fetchpriority="high"

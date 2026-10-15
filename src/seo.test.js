@@ -73,7 +73,7 @@ test('homepage includes ProfessionalService and service offers in structured dat
   expect(services.length).toBeGreaterThanOrEqual(7);
   const leadPackage = services.find((item) => item.name === 'Landing page + WhatsApp chatbot setup');
   expect(leadPackage.offers.price).toBe('45000');
-  expect(document.querySelector('link[rel="preload"][href="/Slide1.webp"]')).toBeTruthy();
+  expect(document.querySelector('link[rel="preload"][href="/Slide1.webp"]')).toBeNull();
 });
 
 test('portfolio detail breadcrumbs include Portfolio parent', () => {

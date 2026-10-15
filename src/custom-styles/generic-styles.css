@@ -21,13 +21,13 @@ body{
     margin-top: 200px; /* Adjust this value based on your navbar height */
   }
 
-/* Keep the expanded landing navbar in the page flow so it cannot cover the carousel. */
+/* Keep the expanded landing navbar in the page flow so it cannot cover the hero. */
 @media (min-width: 576px) {
   .landing-navbar.fixed-top {
     position: sticky;
   }
 
-  .landing-carousel {
+  .landing-hero {
     margin-top: 0;
   }
 }
@@ -739,17 +739,20 @@ main .card-img-top { height: auto; }
   }
 }
 
-/* Homepage video hero */
+/* Homepage video hero
+   Phones (portrait, <768): 9:16. 768px+: WIDE_FORMAT from heroVideoSources.js
+   (data-wide="16x9"). */
 .hero-video { display: flex; flex-direction: column; }
-.hero-video-frame { position: relative; overflow: hidden; background: #102C6C; }
+.hero-video-frame { position: relative; overflow: hidden; background: #102C6C; width: 100%; }
 .hero-video-poster, .hero-video-el { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
-.hero-video-frame { width: 100%; aspect-ratio: 16 / 9; }
-@media (max-width: 767px) and (orientation: portrait) {
-  .hero-video-frame { aspect-ratio: 9 / 16; max-height: 78svh; }
-}
 .hero-video picture { display: block; width: 100%; height: 100%; }
 .hero-video-copy { padding: 2rem 1rem 0; }
 .hero-video-copy .services-intro { max-width: 640px; }
+/* 768px+: 16:9 full width, text below (tablet) */
+.hero-video[data-wide="16x9"] .hero-video-frame { aspect-ratio: 16 / 9; }
+@media (max-width: 767px) and (orientation: portrait) {
+  .hero-video[data-wide] .hero-video-frame { aspect-ratio: 9 / 16; max-height: 78svh; max-width: none; margin: 0; border-radius: 0; box-shadow: none; }
+}
 .hero-video-controls { position: absolute; right: 12px; bottom: 12px; display: flex; gap: 8px; }
 .hero-video-btn, .hero-video-play-cta {
   border: 0; color: #fff; background: rgba(16, 44, 108, 0.6);
@@ -760,20 +763,19 @@ main .card-img-top { height: auto; }
 .hero-video-play-cta { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); padding: 0.75rem 1.25rem; border-radius: 999px; font-weight: 700; }
 @media (min-width: 1200px) {
   .hero-video { flex-direction: row-reverse; align-items: center; gap: 2.5rem; max-width: 1320px; margin: 0 auto; padding: 3rem 1.5rem 0; }
-  .hero-video-media { flex: 0 0 58.333%; max-width: 58.333%; }
-  .hero-video-copy { flex: 0 0 calc(41.667% - 2.5rem); padding: 0; }
-  .hero-video-copy .services-intro { text-align: left !important; margin: 0 !important; }
+  .hero-video-copy { flex: 0 0 calc(41.667% - 2.5rem); min-width: 0; padding: 0; }
+  .hero-video-copy .services-intro { text-align: left !important; margin: 0 !important; max-width: none; }
   .hero-video-copy .contact-actions { justify-content: flex-start !important; }
-  .hero-video-frame { border-radius: 16px; box-shadow: 0 18px 48px rgba(16, 44, 108, 0.28); }
-  .hero-video-frame .hero-video-el, .hero-video-frame .hero-video-poster { object-fit: contain; }
+  .hero-video-copy .services-intro h1 { font-size: clamp(2rem, 2.6vw, 2.75rem); }
+  .hero-video[data-wide="16x9"] .hero-video-media { flex: 0 0 58.333%; max-width: 58.333%; }
+  .hero-video[data-wide="16x9"] .hero-video-frame { border-radius: 16px; box-shadow: 0 18px 48px rgba(16, 44, 108, 0.28); }
+  .hero-video[data-wide="16x9"] .hero-video-el, .hero-video[data-wide="16x9"] .hero-video-poster { object-fit: contain; }
 }
+
 /* Hero sits directly under the nav on phones too (no fixed-nav gap). */
 @media (max-width: 575.98px) {
   .landing-navbar.fixed-top { position: sticky; }
-  .landing-carousel { margin-top: 0; }
-}
-@media (min-width: 1200px) {
-  .hero-video-copy .services-intro h1 { font-size: clamp(2rem, 2.6vw, 2.75rem); }
+  .landing-hero { margin-top: 0; }
 }
 
 .service-card-title-badge { display: flex; align-items: center; gap: 0.5rem; }
