@@ -65,15 +65,21 @@ const offers = [
       'Hi RosuePro,\n\nI own this business and would like help with my Google Business Profile on Google Maps.\nBusiness name: \nLocation or area served: \nExisting listing on Google Maps (yes / no / not sure): \nRosuePro website to link (if any): \nPreferred deadline: ',
   },
   {
-    title: 'Website fixes',
-    price: 'From J$8,000',
-    unit: 'per agreed repair',
-    description: 'Get one specific website problem assessed and fixed, with a clear scope before work begins.',
-    includes: ['Contact form troubleshooting', 'Mobile layout fixes', 'Content updates or a specific website error'],
-    note: 'Send the URL and a description. Price and turnaround are confirmed after inspection; larger issues are quoted separately.',
-    action: 'Request a repair quote',
-    subject: 'Website repair enquiry',
-    body: 'Hi RosuePro,\n\nI need help with a website issue.\nWebsite URL: \nWhat is happening: \nExpected result: \nPreferred deadline: ',
+    title: 'Promo videos',
+    playBadge: true,
+    price: 'Ask for a price',
+    unit: 'scope confirmed before we begin',
+    description:
+      'Short, eye-catching videos that show off your business, offer, or website, made for WhatsApp Status, Instagram and Facebook Reels, and your Facebook feed.',
+    includes: [
+      'Vertical 9:16 for Reels, Stories and WhatsApp Status, plus a 16:9 cut for the feed and your website',
+      'Your offer, prices, logo, and contact details on screen, with burned-in captions that work without sound',
+      'Background music and a clear call to action (WhatsApp or website)',
+    ],
+    note: 'You supply the details, photos, or screen recordings. Length, number of versions, and price are confirmed before we start.',
+    action: 'Request a video quote',
+    subject: 'Promo video quote',
+    body: 'Hi RosuePro,\n\nI would like a promo video for my business.\nBusiness name and what to promote: \nWhere it will be posted (WhatsApp Status, Reels, Facebook, website): \nDo you have photos, logo, or screen recordings ready? \nPreferred deadline: ',
   },
   {
     title: 'AI automations',
@@ -134,7 +140,14 @@ export default function ServiceOfferings() {
                   <div className="service-card-lead-badge text-center py-2">Lead package</div>
                 ) : null}
                 <div className="card-body p-4 d-flex flex-column">
-                  <h2 className="h4">{offer.title}</h2>
+                  <h2 className={`h4${offer.playBadge ? ' service-card-title-badge' : ''}`}>
+                    {offer.playBadge ? (
+                      <span className="service-play-badge" aria-hidden="true">
+                        <svg width="12" height="12" viewBox="0 0 12 12" focusable="false"><path d="M3 1.5v9l7.5-4.5z" fill="currentColor" /></svg>
+                      </span>
+                    ) : null}
+                    {offer.title}
+                  </h2>
                   <p className="service-price mt-3 mb-0">{offer.price}</p>
                   <p className="small text-secondary">{offer.unit}</p>
                   <p>{offer.description}</p>

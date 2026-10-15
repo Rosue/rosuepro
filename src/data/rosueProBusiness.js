@@ -51,11 +51,11 @@ const serviceCatalog = [
     },
   },
   {
-    id: 'website-fixes',
-    name: 'Website fixes',
-    description: 'One specific website problem assessed and fixed, with clear scope before work begins.',
+    id: 'promo-videos',
+    name: 'Promo videos',
+    description: 'Short promo videos for WhatsApp Status, Reels and your feed. Price confirmed after scoping.',
     offer: {
-      description: 'From J$8,000 per agreed repair.',
+      description: 'Ask for a price — scope confirmed before work begins.',
     },
   },
   {
