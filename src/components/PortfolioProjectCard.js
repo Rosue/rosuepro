@@ -22,6 +22,12 @@ export default function PortfolioProjectCard({
   const visitLabel = projectVisitLabel(project, context);
   const displayName = projectDisplayName(project, context);
   const isDemo = project.type === 'demo';
+  const visitButtonText = isDemo ? visitLabel : 'Visit site';
+  const visitAriaLabel = visitLabel || `Visit ${displayName}`;
+  const detailsButtonText = showRosuePageLink ? 'View on RosuePro' : 'Project details';
+  const detailsAriaLabel = showRosuePageLink
+    ? `View ${displayName} on RosuePro`
+    : `Project details for ${displayName}`;
   const detailPath = projectPagePath(project);
   const previewClassName = `card-img-top project-preview${
     isDemo ? ' project-preview--16-10' : ''
@@ -72,9 +78,7 @@ export default function PortfolioProjectCard({
       {previewBlock}
       <div className={`card-body d-flex flex-column${context === 'home' ? ' text-center' : ''}`}>
         {titleHeading}
-        <p
-          className={`card-text${isDemo ? ' mb-2' : ' mb-3'}${context === 'home' ? ' flex-grow-1' : ''}`}
-        >
+        <p className={`card-text portfolio-card-description${isDemo ? ' portfolio-card-description--demo' : ''}`}>
           {description}
         </p>
         {isDemo ? (
@@ -90,9 +94,9 @@ export default function PortfolioProjectCard({
           </p>
         ) : null}
         <div
-          className={`portfolio-card-actions${
-            isDemo ? ' portfolio-card-actions--single-line' : ''
-          }${context === 'home' ? ' justify-content-center' : ''}`}
+          className={`portfolio-card-actions portfolio-card-actions--showcase${
+            context === 'home' ? ' portfolio-card-actions--centered' : ''
+          }`}
         >
           <div className="portfolio-card-actions-primary">
             {project.liveUrl ? (
@@ -100,16 +104,26 @@ export default function PortfolioProjectCard({
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`btn btn-primary${context === 'home' ? ' align-self-center' : ''}`}
+                className="btn portfolio-card-btn portfolio-card-btn--visit"
+                aria-label={visitAriaLabel}
               >
-                {visitLabel}
+                {visitButtonText}
+                <span className="visually-hidden"> (opens in new tab)</span>
               </a>
             ) : null}
-            <Link to={detailPath} className="btn btn-outline-primary">
-              {showRosuePageLink ? 'View on RosuePro' : 'View project page'}
+            <Link
+              to={detailPath}
+              className="btn portfolio-card-btn portfolio-card-btn--details"
+              aria-label={detailsAriaLabel}
+            >
+              {detailsButtonText}
             </Link>
           </div>
-          <ProjectShareActions project={project} shareTitle={displayName} />
+          <ProjectShareActions
+            project={project}
+            shareTitle={displayName}
+            className="portfolio-card-share-actions"
+          />
         </div>
       </div>
     </article>
