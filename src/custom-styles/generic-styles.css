@@ -114,7 +114,13 @@ a.btn.btn-whatsapp:active {
   .portfolio-project-card {
     border-color: rgba(0, 78, 187, 0.2);
     box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.12);
+    container-type: inline-size;
   }
+
+.portfolio-project-card .card-body,
+.project-promo-card .card-body {
+  min-width: 0;
+}
 
 
 
@@ -263,6 +269,9 @@ main .card-img-top { height: auto; }
   justify-content: space-between;
   gap: 0.6rem;
   padding-top: 0.35rem;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .portfolio-card-actions-primary {
@@ -270,7 +279,44 @@ main .card-img-top { height: auto; }
   flex-wrap: wrap;
   gap: 0.5rem;
   align-items: center;
-  flex-shrink: 0;
+  justify-content: flex-start;
+  flex: 1 1 8rem;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.portfolio-card-actions.justify-content-center .portfolio-card-actions-primary {
+  justify-content: center;
+}
+
+.portfolio-card-actions-primary .btn {
+  flex: 1 1 auto;
+  max-width: 100%;
+  white-space: normal;
+  text-align: center;
+}
+
+@container (max-width: 26rem) {
+  .portfolio-card-actions:not(.portfolio-card-actions--single-line) {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .portfolio-card-actions:not(.portfolio-card-actions--single-line) .portfolio-card-actions-primary {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .portfolio-card-actions:not(.portfolio-card-actions--single-line) .portfolio-card-actions-primary .btn {
+    width: 100%;
+  }
+
+  .portfolio-card-actions:not(.portfolio-card-actions--single-line) .project-share-actions {
+    margin-left: 0;
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 .portfolio-card-actions--centered {

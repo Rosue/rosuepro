@@ -20,7 +20,8 @@
     "pretest": "node scripts/generate-home-qr.cjs && node scripts/generate-blog-qrs.cjs",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "audit:seo": "node scripts/audit-seo.cjs"
+    "audit:seo": "node scripts/audit-seo.cjs",
+    "test:portfolio-overflow": "node scripts/verify-portfolio-card-overflow.cjs"
   },
   "eslintConfig": {
     "extends": [
