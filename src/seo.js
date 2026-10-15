@@ -236,17 +236,6 @@ function schemaFor(page) {
   return { '@context': 'https://schema.org', '@graph': graph };
 }
 
-function ensureLink(doc, rel, href, extra = {}) {
-  let link = doc.querySelector(`link[rel="${rel}"][href="${href}"]`);
-  if (!link) {
-    link = doc.createElement('link');
-    link.rel = rel;
-    link.href = href;
-    Object.entries(extra).forEach(([key, value]) => link.setAttribute(key, value));
-    doc.head.appendChild(link);
-  }
-}
-
 function applyMetadata(doc, pathname) {
   const page = pageFor(pathname);
   doc.title = page.title;
