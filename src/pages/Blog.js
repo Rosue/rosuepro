@@ -3,6 +3,7 @@ import TopNavbar from '../components/TopNavbar'
 import { Container } from 'react-bootstrap'
 import Footer from '../components/Footer'
 import { Link } from 'react-router-dom'
+import BlogPromoVideo from '../components/BlogPromoVideo'
 import { blogPostsByNewest, formatPublishedDate } from '../data/blogPosts'
 
 export default function Blog() {
@@ -16,7 +17,8 @@ export default function Blog() {
       <p className="text-center text-muted mx-auto" style={{ maxWidth: '40rem' }}>
         Practical articles on website pricing, WhatsApp chatbots, and online tools for Jamaican small businesses — from RosuePro in Kingston and island-wide.
       </p>
-      <div className='blog-article-cards d-flex flex-wrap justify-content-center gap-4 w-100 mt-5 mb-5'>
+      <BlogPromoVideo />
+      <div className='blog-article-cards d-flex flex-wrap justify-content-center gap-4 w-100 mt-4 mb-5'>
         {posts.map((post) => (
           <article className="card" style={{ width: '18rem' }} key={post.path}>
             <Link to={post.path}>
