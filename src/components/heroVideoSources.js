@@ -29,14 +29,14 @@ export function getFormat(matchMedia = typeof window !== 'undefined' ? window.ma
   return matchMedia(PORTRAIT_QUERY).matches ? PORTRAIT_FORMAT : wide;
 }
 
-export function getPoster(format, viewportWidth = 1440) {
-  const p = FORMATS[format].poster;
+export function getPoster(format, viewportWidth = 1440, formats = FORMATS) {
+  const p = formats[format].poster;
   return viewportWidth <= 480 ? p.small : p.full;
 }
 
 /** 1080p for DPR>=3 on 9:16; for wide formats only at viewports >=1440px. */
-export function getVideoSrc(format, { dpr = 1, viewportWidth = 1440 } = {}) {
-  const v = FORMATS[format].video;
+export function getVideoSrc(format, { dpr = 1, viewportWidth = 1440 } = {}, formats = FORMATS) {
+  const v = formats[format].video;
   if (format === PORTRAIT_FORMAT) return dpr >= 3 ? v.hd : v.sd;
   return viewportWidth >= 1440 ? v.hd : v.sd;
 }
@@ -46,4 +46,25 @@ export function shouldSkipAutoload({ matchMedia, connection } = {}) {
   const saveData = !!(connection && connection.saveData);
   const slow = !!(connection && ['2g', 'slow-2g'].includes(connection.effectiveType));
   return reduced || saveData || slow;
+}
+
+/** Blog promo cuts (/blog intro). Same shape as FORMATS. */
+const BLOG_BASE = '/videos/blog';
+export const BLOG_FORMATS = {
+  '9x16': {
+    aspect: '9 / 16',
+    poster: { full: `${BLOG_BASE}/poster-title-9x16-1080x1920-v4.webp`, small: `${BLOG_BASE}/poster-title-9x16-960w-v4.webp`, fullWidth: 1080 },
+    video: { sd: `${BLOG_BASE}/rosuepro-blog-promo-9x16-720p-v4.mp4`, hd: `${BLOG_BASE}/rosuepro-blog-promo-9x16-1080p-v4.mp4` },
+  },
+  '16x9': {
+    aspect: '16 / 9',
+    poster: { full: `${BLOG_BASE}/poster-title-16x9-1920x1080-v4.webp`, small: `${BLOG_BASE}/poster-title-16x9-960w-v4.webp`, fullWidth: 1920 },
+    video: { sd: `${BLOG_BASE}/rosuepro-blog-promo-16x9-720p-v4.mp4`, hd: `${BLOG_BASE}/rosuepro-blog-promo-16x9-1080p-v4.mp4` },
+  },
+};
+
+/** Blog promo: 1080p for DPR 3+ or 1440px+ screens, in either format. */
+export function getBlogVideoSrc(format, { dpr = 1, viewportWidth = 1440 } = {}) {
+  const v = BLOG_FORMATS[format].video;
+  return dpr >= 3 || viewportWidth >= 1440 ? v.hd : v.sd;
 }

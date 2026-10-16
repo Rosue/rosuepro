@@ -781,3 +781,13 @@ main .card-img-top { height: auto; }
 .service-card-title-badge { display: flex; align-items: center; gap: 0.5rem; }
 .service-play-badge { display: inline-grid; place-items: center; width: 28px; height: 28px; flex: none; border-radius: 50%; background: #17398f; color: #fff; }
 .service-play-badge svg { margin-left: 2px; }
+
+/* /blog intro promo video (reuses .hero-video-btn / -controls / -play-cta) */
+.blog-promo-video { margin: 1.5rem auto 16px; text-align: center; width: 100%; max-width: min(880px, calc(60vh * 16 / 9)); }
+.blog-promo-video__frame { position: relative; overflow: hidden; background: #102c6c; aspect-ratio: 16 / 9; border-radius: 16px; box-shadow: 0 18px 48px rgba(16, 44, 108, 0.28); margin-inline: auto; }
+.blog-promo-video__player { display: block; width: 100%; height: 100%; object-fit: cover; }
+.blog-promo-video__caption { margin-top: 0.6rem; font-size: 0.9rem; color: #6c757d; line-height: 1.4; }
+@media (max-width: 767px) and (orientation: portrait) {
+  .blog-promo-video { max-width: 320px; margin-bottom: 24px; }
+  .blog-promo-video__frame { aspect-ratio: 9 / 16; border-radius: 28px; border: 6px solid #0b1b3f; box-shadow: 0 12px 32px rgba(16, 44, 108, 0.3); }
+}
