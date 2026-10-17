@@ -1,6 +1,18 @@
 /** Publish dates from the git commits that added each article (YYYY-MM-DD). */
 const blogPosts = [
   {
+    path: '/blog/website-repair-jamaica',
+    datePublished: '2026-10-17',
+    cardTitle:
+      'Website Repair in Jamaica: How to Fix a Slow, Broken or Outdated Business Website',
+    cardExcerpt:
+      'Website repair in Jamaica from J$8,000. RosuePro in Kingston fixes slow, broken, hacked or outdated business websites, fully remote over WhatsApp.',
+    image: '/website-repair-jamaica.webp',
+    imageAlt:
+      'Laptop showing a broken business website on one side and the repaired, mobile-friendly version on the other, beside a phone and repair tools in a Jamaican home office',
+    ctaLabel: 'Read website repair guide',
+  },
+  {
     path: '/blog/websites-and-ai-for-jamaican-auto-garages-mechanics',
     datePublished: '2026-10-14',
     cardTitle:
