@@ -1,7 +1,18 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
+const { execSync } = require('child_process');
 const { chromium } = require('playwright');
+
+async function launchChromium() {
+  try {
+    return await chromium.launch();
+  } catch (error) {
+    if (!/Executable doesn't exist/i.test(String(error))) throw error;
+    execSync('npx playwright install chromium', { stdio: 'inherit' });
+    return chromium.launch();
+  }
+}
 const { allPublicRoutes } = require('../src/seo');
 
 const buildDir = path.join(__dirname, '..', 'build');
@@ -37,7 +48,7 @@ function startFirebaseLikeServer() {
 
 async function main() {
   const server = await startFirebaseLikeServer();
-  const browser = await chromium.launch();
+  const browser = await launchChromium();
   const failures = [];
 
   for (const route of routes) {
