@@ -9,7 +9,8 @@ import {
   shouldSkipAutoload,
 } from './heroVideoSources';
 
-const CAPTION = '18-second video ad: RosuePro builds websites and WhatsApp chatbots for small businesses worldwide';
+const CAPTION =
+  '18-second RosuePro promo video with voiceover (use the sound button to listen): landing pages and WhatsApp chatbots for small businesses worldwide';
 
 function env() {
   if (typeof window === 'undefined') return { width: 1440, dpr: 1 };

@@ -1,5 +1,7 @@
 const BASE = '/videos/hero';
 
+/** Hero encodes: public/videos/hero/ad-{9x16|16x9}-{720|1080}-v4.mp4 (AAC audio; starts muted — use sound control). */
+
 /**
  * Formats available for the hero. Phones in portrait always use 9:16.
  * 768px+ uses WIDE_FORMAT (16:9). To swap in another wide cut, add its

@@ -13,6 +13,17 @@ test('lists custom website offering with get a quote on the home page', () => {
   expect(screen.getByText(/find you on Google/i)).toBeInTheDocument();
 });
 
+test('home hero uses v4 video posters and muted autoplay video element', () => {
+  render(<App />);
+  const poster = document.querySelector('.hero-video-poster');
+  expect(poster).toBeTruthy();
+  expect(poster.getAttribute('src')).toMatch(/poster-16x9-v4\.webp$/);
+  const video = document.querySelector('video[data-testid="hero-video"]');
+  expect(video).toBeTruthy();
+  expect(video.muted).toBe(true);
+  expect(video.getAttribute('preload')).toBe('none');
+});
+
 test('home hero promotes global positioning and WhatsApp CTA', () => {
   render(<App />);
   expect(
