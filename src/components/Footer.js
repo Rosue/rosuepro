@@ -47,6 +47,18 @@ export default function Footer() {
                     <p>
                         <Link to="/about-us" className="text-reset">About Us</Link>
                     </p>
+                    <p>
+                        <Link to="/" className="text-reset">Home</Link>
+                    </p>
+                    <p>
+                        <Link to="/blog" className="text-reset">Blog</Link>
+                    </p>
+                    <p>
+                        <Link to="/tutoring" className="text-reset">Tutoring</Link>
+                    </p>
+                    <p>
+                        <Link to="/resume" className="text-reset">Resume</Link>
+                    </p>
                     </div>
 
                     {/* <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
