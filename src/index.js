@@ -4,6 +4,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../src/custom-styles/colour-pallets.css';
+import '../src/custom-styles/top-navbar.css';
 
 const container = document.getElementById('root');
 const app = (

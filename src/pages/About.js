@@ -7,7 +7,7 @@ import { EmailWhatsAppActions } from '../components/ContactActions';
 export default function About() {
   return <>
     <TopNavbar />
-    <main className="container main-content mb-5">
+    <main id="main-content" className="container main-content mb-5">
       <h1>About RosuePro</h1>
       <p className="lead">Landing pages, WhatsApp chatbots, and practical website support for small businesses worldwide — plus Java tutoring for learners.</p>
       <p>RosuePro builds template-based business landing pages, scoped website repairs, AI automations, and WhatsApp or website chatbots for small businesses. Message us anytime on WhatsApp or email; scope and quote are agreed before work begins.</p>

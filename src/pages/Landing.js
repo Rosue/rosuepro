@@ -9,8 +9,8 @@ import HomeShareSection from '../components/HomeShareSection'
 export default function Landing() {
   return (
     <>
-      <TopNavbar className="landing-navbar" />
-      <main id="main-content"><div className="main-content landing-hero txt-hard">
+      <TopNavbar />
+      <main id="main-content"><div className="landing-hero txt-hard">
         <ServiceOfferings />
       </div>
 
