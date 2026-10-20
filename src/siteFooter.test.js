@@ -21,7 +21,7 @@ test('shared footer shows Discovery Bay address and footer nav without Resume', 
   expect(screen.queryByRole('link', { name: 'Resume' })).not.toBeInTheDocument();
   expect(screen.getByRole('link', { name: 'Blog' })).toHaveAttribute('href', '/blog');
   expect(screen.getByRole('link', { name: 'Tutoring' })).toHaveAttribute('href', '/tutoring');
-  expect(screen.getByRole('link', { name: 'About' })).toHaveAttribute('href', '/about-us');
+  expect(screen.getByRole('link', { name: 'About' })).toHaveAttribute('href', '/about');
 });
 
 test('shared footer appears on contact and portfolio project pages', () => {
@@ -44,4 +44,12 @@ test('sitemap does not list /resume', () => {
   const xml = buildSitemapXml('2026-01-01');
   expect(allPublicRoutes()).not.toContain('/resume');
   expect(xml).not.toContain('<loc>https://rosue.pro/resume</loc>');
+});
+
+test('sitemap lists /about and not legacy /about-us', () => {
+  const xml = buildSitemapXml('2026-01-01');
+  expect(allPublicRoutes()).toContain('/about');
+  expect(allPublicRoutes()).not.toContain('/about-us');
+  expect(xml).toContain('<loc>https://rosue.pro/about</loc>');
+  expect(xml).not.toContain('<loc>https://rosue.pro/about-us</loc>');
 });

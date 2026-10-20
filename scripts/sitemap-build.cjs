@@ -9,7 +9,7 @@ const routeSourceFiles = {
   '/': 'src/pages/Landing.js',
   '/portfolio': 'src/pages/Portforlio.js',
   '/blog': 'src/pages/Blog.js',
-  '/about-us': 'src/pages/About.js',
+  '/about': 'src/pages/About.js',
   '/tutoring': 'src/pages/Tutoring.js',
 };
 

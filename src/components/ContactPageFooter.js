@@ -12,7 +12,7 @@ export default function ContactPageFooter() {
           <nav aria-label="Footer">
             <Link to="/blog">Blog</Link>
             <Link to="/tutoring">Tutoring</Link>
-            <Link to="/about-us">About</Link>
+            <Link to="/about">About</Link>
           </nav>
         </div>
         <small>Registered business address: Discovery Bay, St. Ann, Jamaica · © RosuePro</small>

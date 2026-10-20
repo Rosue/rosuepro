@@ -178,7 +178,7 @@ export default function ServiceOfferings() {
           {GET_QUOTE_LABEL} on WhatsApp or email — we confirm scope and timing personally.
         </p>
         <p className="text-center mt-4">
-          <Link to={{ pathname: '/', hash: '#portfolio' }}>View portfolio examples</Link> or <Link to="/about-us">learn more about RosuePro</Link>.
+          <Link to={{ pathname: '/', hash: '#portfolio' }}>View portfolio examples</Link> or <Link to="/about">learn more about RosuePro</Link>.
         </p>
         <div className="service-next-steps mt-4 p-4">
           <h2 className="h4">A simple way to get started</h2>
