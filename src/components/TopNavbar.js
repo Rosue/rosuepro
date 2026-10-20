@@ -17,8 +17,8 @@ const NAV_LINKS = [
   },
   {
     label: 'Contact',
-    to: '/about-us',
-    isActive: (pathname) => pathname.startsWith('/about-us'),
+    to: '/contact',
+    isActive: (pathname) => pathname.startsWith('/contact'),
   },
 ];
 

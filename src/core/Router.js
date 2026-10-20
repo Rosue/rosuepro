@@ -20,6 +20,7 @@ import WebsitesAndAiForJamaicanAutoGaragesMechanics from '../pages/blog/Websites
 import WebsiteRepairJamaica from '../pages/blog/WebsiteRepairJamaica';
 import WebsitesAndAiForKingstonMedicalDentalClinics from '../pages/blog/WebsitesAndAiForKingstonMedicalDentalClinics';
 import Tutoring from '../pages/Tutoring';
+import Contact from '../pages/Contact';
 
 export default function Router() {
     const location = useLocation();
@@ -42,6 +43,7 @@ export default function Router() {
         <Route path='/blog/website-repair-jamaica' element={<WebsiteRepairJamaica />} />
         <Route path='/blog/websites-and-ai-for-kingston-medical-dental-clinics' element={<WebsitesAndAiForKingstonMedicalDentalClinics />} />
         <Route path="/about-us" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/tutoring" element={<Tutoring />} />
         <Route path="*" element={<NotFound />} />
     </Routes></>
