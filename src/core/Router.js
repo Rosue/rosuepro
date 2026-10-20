@@ -1,12 +1,12 @@
 import React from 'react'
-import { Route, Routes, useLocation } from 'react-router-dom'
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
+import ContactPageFooter from '../components/ContactPageFooter';
 import Seo from '../components/Seo';
 import About from '../pages/About';
 import NotFound from '../pages/NotFound';
 import Landing from '../pages/Landing';
 import Portforlio from '../pages/Portforlio';
 import PortfolioProject from '../pages/PortfolioProject';
-import Resume from '../pages/Resume';
 import Blog from '../pages/Blog';
 import BasicTipsMarketMusic from '../pages/blog/BasicTipsMarketMusic';
 import PackMyCartHelpsJamaicanSupermarkets from '../pages/blog/PackMyCartHelpsJamaicanSupermarkets';
@@ -29,7 +29,7 @@ export default function Router() {
         <Route path='/' element={<Landing />} />
         <Route path='/portfolio' element={<Portforlio />} />
         <Route path='/portfolio/:slug' element={<PortfolioProject />} />
-        <Route path='/resume' element={<Resume />} />
+        <Route path='/resume' element={<Navigate to="/" replace />} />
         <Route path='/blog' element={<Blog />} />
         <Route path='/blog/basic-tips-market-music' element={<BasicTipsMarketMusic />} />
         <Route path='/blog/pack-my-cart-helps-jamaican-supermarkets' element={<PackMyCartHelpsJamaicanSupermarkets />} />
@@ -46,6 +46,8 @@ export default function Router() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/tutoring" element={<Tutoring />} />
         <Route path="*" element={<NotFound />} />
-    </Routes></>
+    </Routes>
+    <ContactPageFooter />
+    </>
   )
 }

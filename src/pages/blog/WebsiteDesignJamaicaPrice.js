@@ -1,7 +1,6 @@
 import React from 'react'
 import TopNavbar from '../../components/TopNavbar'
 import { Container } from 'react-bootstrap'
-import Footer from '../../components/Footer'
 import BlogPublishedDate from '../../components/BlogPublishedDate'
 import BlogArticleShare from '../../components/BlogArticleShare'
 import BlogRosueQuote from '../../components/BlogRosueQuote'
@@ -99,7 +98,6 @@ export default function WebsiteDesignJamaicaPrice() {
           </div>
       </Container>
     </Container>
-    <Footer/>
     </>
   )
 }

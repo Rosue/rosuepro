@@ -1,6 +1,5 @@
 import React from 'react'
 import TopNavbar from '../components/TopNavbar'
-import Footer from '../components/Footer'
 import ServiceOfferings from '../components/ServiceOfferings'
 import PortfolioShowcase from '../components/PortfolioShowcase'
 import HomeShareSection from '../components/HomeShareSection'
@@ -18,7 +17,6 @@ export default function Landing() {
 
       </main>
       <HomeShareSection />
-      <Footer />
     </>
   )
 }

@@ -15,11 +15,6 @@
     "description": "Explore RosuePro website projects, including Vybz Meter, memorial websites, tour booking, appointment scheduling, and supermarket platforms.",
     "label": "Portfolio"
   },
-  "/resume": {
-    "title": "Software Development Experience & Skills | RosuePro",
-    "description": "Explore the software development experience behind RosuePro, including Java, Spring Boot, React, databases, API development, and technical training.",
-    "label": "Experience"
-  },
   "/blog": {
     "title": "Website & WhatsApp Guides for Small Businesses | RosuePro Blog",
     "description": "Practical guides on website design, WhatsApp chatbots, online supermarkets, restaurants, salons, and funeral homes — from RosuePro, fully remote worldwide.",

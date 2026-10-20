@@ -178,7 +178,7 @@ export default function TopNavbar() {
             >
               Chat on WhatsApp
             </a>
-            <small className="site-nav-sheet-note">Blog · Tutoring · Resume live in the footer</small>
+            <small className="site-nav-sheet-note">Blog · Tutoring live in the footer</small>
           </div>,
           document.body
         )}

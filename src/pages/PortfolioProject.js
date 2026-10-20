@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import TopNavbar from '../components/TopNavbar';
-import Footer from '../components/Footer';
 import ProjectShareActions from '../components/ProjectShareActions';
 import PackMyCartDemoVideo from '../components/PackMyCartDemoVideo';
 import FuneralTemplateDemoVideo from '../components/FuneralTemplateDemoVideo';
@@ -104,7 +103,6 @@ export default function PortfolioProject() {
           </div>
         </div>
       </main>
-      <Footer />
     </>
   );
 }
