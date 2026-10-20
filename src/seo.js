@@ -15,7 +15,7 @@ const websiteDesignJamaicaFaq = [
   {
     question: 'How much does website design cost in Jamaica?',
     answer:
-      'It depends on the size and complexity of the site. At RosuePro, landing pages start from J$25,000 and website fixes start from J$8,000. Larger or more complex projects are quoted based on scope.',
+      'It depends on the size and complexity of the site. RosuePro quotes landing pages, website fixes, and larger builds based on scope — message us on WhatsApp or email for a quote.',
   },
   {
     question: 'Is a landing page enough for my business?',
@@ -25,17 +25,17 @@ const websiteDesignJamaicaFaq = [
   {
     question: 'What does a WhatsApp chatbot do?',
     answer:
-      'It automatically replies to customer messages on WhatsApp, answering common questions and collecting enquiry details, so customers get a quick response even when you are unavailable. RosuePro AI and WhatsApp chatbots start from J$28,000.',
+      'It automatically replies to customer messages on WhatsApp, answering common questions and collecting enquiry details, so customers get a quick response even when you are unavailable. Get a quote from RosuePro for a scoped chatbot.',
   },
   {
     question: 'Can you fix my existing website instead of building a new one?',
     answer:
-      'Yes. If your current site is broken, slow or out of date, a repair may be all you need. Website fixes and repairs start from J$8,000, depending on what needs doing.',
+      'Yes. If your current site is broken, slow or out of date, a repair may be all you need. Website fixes are quoted based on what needs doing — contact RosuePro on WhatsApp.',
   },
   {
     question: 'Where is RosuePro based?',
     answer:
-      'RosuePro is based in Kingston, Jamaica, and offers web design, chatbot and AI automation services to local businesses island-wide.',
+      'RosuePro is a fully remote studio serving small businesses worldwide, with a registered business address in Discovery Bay, St. Ann, Jamaica.',
   },
 ];
 
@@ -82,8 +82,16 @@ function allPublicRoutes() {
   return [...Object.keys(pages), ...allProjectSeoPages().map((page) => page.path)];
 }
 
+const DEFAULT_OG_IMAGE_PATH = '/og-image.png';
+const DEFAULT_OG_IMAGE_URL = absoluteImageUrl(DEFAULT_OG_IMAGE_PATH) + '?v=3';
+const DEFAULT_OG_IMAGE_ALT =
+  'RosuePro: landing pages and AI chatbots for small businesses worldwide';
+
 function absoluteAsset(assetPath) {
-  return absoluteImageUrl(assetPath || '/social-preview.png');
+  if (!assetPath) {
+    return DEFAULT_OG_IMAGE_URL;
+  }
+  return absoluteImageUrl(assetPath);
 }
 
 function organizationNode() {
@@ -112,7 +120,6 @@ function professionalServiceNode() {
     email: ROSUEPRO_EMAIL,
     address: ROSUEPRO_ADDRESS,
     areaServed: ROSUEPRO_AREA_SERVED,
-    priceRange: 'J$8,000 – J$45,000+',
   };
 }
 
@@ -251,6 +258,7 @@ function applyMetadata(doc, pathname) {
   setMeta('name', 'description', page.description);
   setMeta('name', 'robots', page.noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large');
   const asset = absoluteAsset(page.image);
+  const imageAlt = page.imageAlt || (page.image ? 'RosuePro Website Development' : DEFAULT_OG_IMAGE_ALT);
   for (const [key, value] of Object.entries({
     title: page.title,
     description: page.description,
@@ -258,9 +266,15 @@ function applyMetadata(doc, pathname) {
     type: page.type || 'website',
     site_name: 'RosuePro',
     image: asset,
-    'image:alt': page.imageAlt || 'RosuePro Website Development',
+    'image:alt': imageAlt,
   })) {
     setMeta('property', 'og:' + key, value);
+  }
+  if (!page.image) {
+    setMeta('property', 'og:image:width', '1200');
+    setMeta('property', 'og:image:height', '630');
+  } else {
+    doc.querySelectorAll('meta[property="og:image:width"], meta[property="og:image:height"]').forEach((tag) => tag.remove());
   }
   setMeta('name', 'twitter:card', 'summary_large_image');
   for (const key of ['title', 'description', 'image', 'image:alt']) {

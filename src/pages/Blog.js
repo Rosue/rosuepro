@@ -15,7 +15,7 @@ export default function Blog() {
     <Container as="main" id="main-content" className='main-content'>
       <h1 className='text-center txt-dark'>Jamaica website &amp; WhatsApp guides</h1>
       <p className="text-center text-muted mx-auto" style={{ maxWidth: '40rem' }}>
-        Practical articles on website pricing, WhatsApp chatbots, and online tools for Jamaican small businesses — from RosuePro in Kingston and island-wide.
+        Practical articles on website pricing, WhatsApp chatbots, and online tools for small businesses — from RosuePro, fully remote worldwide.
       </p>
       <BlogPromoVideo />
       <div className='blog-article-cards d-flex flex-wrap justify-content-center gap-4 w-100 mt-4 mb-5'>

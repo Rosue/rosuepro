@@ -8,10 +8,10 @@ const address = {
   addressCountry: 'JM',
 };
 
-const areaServed = [
-  { '@type': 'City', name: 'Kingston' },
-  { '@type': 'Country', name: 'Jamaica' },
-];
+const areaServed = {
+  '@type': 'Place',
+  name: 'Worldwide',
+};
 
 const sameAs = [
   'https://www.facebook.com/RosuePro',
@@ -24,12 +24,10 @@ const serviceCatalog = [
     id: 'landing-page-whatsapp-chatbot',
     name: 'Landing page + WhatsApp chatbot setup',
     description:
-      'Template-based landing page plus WhatsApp chatbot setup for Jamaican small businesses, with handoff rules when a person should take over.',
+      'Template-based landing page plus WhatsApp chatbot setup for small businesses worldwide, with handoff rules when a person should take over.',
     offer: {
-      price: '45000',
-      priceCurrency: 'JMD',
       description:
-        'J$45,000 one-time setup, then J$4,000/month chatbot service. The monthly fee covers ongoing chatbot service only — not website hosting, domain, or e-commerce platform fees.',
+        'Get a quote on WhatsApp. The monthly chatbot service covers ongoing chatbot service only — not website hosting, domain, or e-commerce platform fees.',
     },
   },
   {
@@ -38,7 +36,7 @@ const serviceCatalog = [
     description:
       'Business websites built around your services, branding, and contact details so people can find you on Google and reach out.',
     offer: {
-      description: 'From J$25,000 for an agreed business website scope.',
+      description: 'Get a quote for an agreed business website scope.',
     },
   },
   {
@@ -47,15 +45,15 @@ const serviceCatalog = [
     description:
       'Help claiming and verifying a Google Business Profile on Google Maps, then customising the listing with description, categories, hours, and contact details.',
     offer: {
-      description: 'Ask for a price — scope confirmed before work begins.',
+      description: 'Get a quote — scope confirmed before work begins.',
     },
   },
   {
     id: 'promo-videos',
     name: 'Promo videos',
-    description: 'Short promo videos for WhatsApp Status, Reels and your feed. Price confirmed after scoping.',
+    description: 'Short promo videos for WhatsApp Status, Reels and your feed. Quote confirmed after scoping.',
     offer: {
-      description: 'Ask for a price — scope confirmed before work begins.',
+      description: 'Get a quote — scope confirmed before work begins.',
     },
   },
   {
@@ -64,7 +62,7 @@ const serviceCatalog = [
     description:
       'Focused automations connected to the tools your business already uses, such as intake, follow-ups, or data entry.',
     offer: {
-      description: 'From J$35,000 per agreed workflow or integration.',
+      description: 'Get a quote per agreed workflow or integration.',
     },
   },
   {
@@ -73,15 +71,15 @@ const serviceCatalog = [
     description:
       'Website or WhatsApp chatbots that answer FAQs, capture leads, and hand off to a person when needed.',
     offer: {
-      description: 'From J$28,000 for a scoped website or WhatsApp bot.',
+      description: 'Get a quote for a scoped website or WhatsApp bot.',
     },
   },
   {
     id: 'java-tutoring',
     name: 'Java tutoring & guided debugging',
-    description: 'Online Java tutoring and guided debugging for learners in Jamaica.',
+    description: 'Online Java tutoring and guided debugging for learners worldwide.',
     offer: {
-      description: 'J$3,500 per 60-minute online session — evenings and Saturdays by appointment.',
+      description: 'Get a quote per session — message us anytime on WhatsApp or email.',
     },
   },
 ];

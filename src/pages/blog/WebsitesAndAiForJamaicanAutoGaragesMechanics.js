@@ -4,8 +4,8 @@ import { Container } from 'react-bootstrap'
 import Footer from '../../components/Footer'
 import BlogPublishedDate from '../../components/BlogPublishedDate'
 import BlogArticleShare from '../../components/BlogArticleShare'
-
-const rosueProWhatsAppQuoteHref = 'https://wa.me/18765667328' // pragma: allowlist secret
+import BlogRosueQuote from '../../components/BlogRosueQuote'
+import { GET_QUOTE_HREF } from '../../constants/quote'
 
 export default function WebsitesAndAiForJamaicanAutoGaragesMechanics() {
   return (
@@ -45,7 +45,7 @@ export default function WebsitesAndAiForJamaicanAutoGaragesMechanics() {
 <li className='mb-3'><b>How to book or request a quote</b>: a big WhatsApp button so the customer can message you in one tap</li>
 <li className='mb-3'><b>Photos of your real workshop and team</b> that you supply, so people know you are a genuine, established business</li>
 </ul>
-<p>For many garages, a single landing page is the right starting point. RosuePro <b>landing pages start from J$25,000</b>. If you already have a website that is slow, broken on phones or out of date, <b>website fixes start from J$8,000</b>.</p>
+<p>For many garages, a single landing page is the right starting point. If you already have a website that is slow, broken on phones or out of date, a scoped repair may be enough — <a href={GET_QUOTE_HREF} target="_blank" rel="noopener noreferrer">get a quote</a> on WhatsApp.</p>
 
 <h2>WhatsApp chatbots for bookings, quotes and &quot;is my car ready?&quot;</h2>
 <p>Your customers already use WhatsApp. A RosuePro AI chatbot works on your website and on WhatsApp Business (where supported), answering from information you give it: your services, hours, location and booking rules. When a question needs a mechanic&apos;s judgement, it hands the conversation to you.</p>
@@ -58,7 +58,7 @@ export default function WebsitesAndAiForJamaicanAutoGaragesMechanics() {
 <li className='mb-3'><b>Handle &quot;is my car ready?&quot;</b>: once your team updates a job&apos;s status, the chatbot or an automation can tell the customer whether the car is still being worked on, waiting on parts or ready for collection</li>
 </ul>
 <p>You stay in control of prices. The chatbot can tell customers that a mechanic will confirm the quote before any work starts, so nobody is promised a figure you have not approved.</p>
-<p className='mb-4'>RosuePro <b>chatbots start from J$28,000</b>. If you want to see how a friendly chatbot feels on a phone, try the Blacka chat demo on <a href="https://pack-my-cart.web.app" target="_blank" rel="noreferrer">pack-my-cart.web.app</a>. It is built for a grocery shop, but the experience is the same idea: quick answers to common questions, any time of day.</p>
+<p className='mb-4'><a href={GET_QUOTE_HREF} target="_blank" rel="noopener noreferrer">Get a quote</a> for a chatbot. If you want to see how a friendly chatbot feels on a phone, try the Blacka chat demo on <a href="https://pack-my-cart.web.app" target="_blank" rel="noreferrer">pack-my-cart.web.app</a>. It is built for a grocery shop, but the experience is the same idea: quick answers to common questions, any time of day.</p>
 
 <h2>AI automations that bring customers back</h2>
 <p>Automations handle the repeatable messages that slip when the workshop is busy. RosuePro maps one process at a time with you, then sets it up using the tools you already use. Useful first workflows for a garage include:</p>
@@ -70,25 +70,11 @@ export default function WebsitesAndAiForJamaicanAutoGaragesMechanics() {
 <li className='mb-3'><b>Review requests</b>: after the car is collected, a short message asking satisfied customers to leave a Google review, which helps the next driver searching in Kingston find you</li>
 <li className='mb-3'><b>Parts enquiries logged in one place</b>: if you also sell parts, enquiries can be captured with the part, vehicle and contact details instead of getting lost in chat</li>
 </ul>
-<p className='mb-4'>RosuePro <b>automations start from J$35,000</b>. Start with the one process that wastes the most time, then add more once it is working.</p>
+<p className='mb-4'><a href={GET_QUOTE_HREF} target="_blank" rel="noopener noreferrer">Get a quote</a> for automations. Start with the one process that wastes the most time, then add more once it is working.</p>
 
 <h2>The lead package: landing page plus chatbot</h2>
-<p>If you want the simplest way to start, the RosuePro lead package combines a landing page with a chatbot:</p>
-<ul>
-<li className='mb-3'><b>J$45,000</b> for the landing page and chatbot setup</li>
-<li className='mb-3'>then <b>J$4,000 per month</b> for the chatbot service</li>
-</ul>
+<p>If you want the simplest way to start, the RosuePro lead package combines a landing page with a chatbot. <BlogRosueQuote className="mb-3" /></p>
 <p className='mb-4'>Your landing page gives drivers a clear place to find your services and location. The chatbot answers them straight away and collects booking and quote details. Together, they turn more of your searches, Facebook clicks and referrals into actual jobs on the lift.</p>
-
-<h2>RosuePro prices at a glance</h2>
-<ul>
-<li className='mb-3'><b>Website fixes:</b> from J$8,000</li>
-<li className='mb-3'><b>Landing pages:</b> from J$25,000</li>
-<li className='mb-3'><b>AI and WhatsApp chatbots:</b> from J$28,000</li>
-<li className='mb-3'><b>AI automations:</b> from J$35,000</li>
-<li className='mb-3'><b>Lead package (landing page and chatbot setup):</b> J$45,000, then J$4,000 per month for the chatbot service</li>
-</ul>
-<p className='mb-4'>These are starting prices. Every project is scoped with you first, and you will know exactly what is included before any work begins. Domain, hosting and extra integrations are quoted separately where needed.</p>
 
 <h2>How it works, fully remote</h2>
 <p>You do not need to close the shop or sit through long meetings. Everything is arranged over WhatsApp:</p>
@@ -120,7 +106,7 @@ export default function WebsitesAndAiForJamaicanAutoGaragesMechanics() {
 
 <h2>Get a quote for your garage</h2>
 <p>If your phone rings while your hands are full, and customers keep asking whether their car is ready, start with a landing page and a chatbot for the questions you answer every day. Tell RosuePro about your garage, and you will get a clear, scope-based quote.</p>
-<p><a href={rosueProWhatsAppQuoteHref} target="_blank" rel="noreferrer"><b>Message RosuePro on WhatsApp: +1 876 566 7328</b></a>, or find out more at <a href="https://rosue.pro" target="_blank" rel="noreferrer">rosue.pro</a>.</p>
+<p><a href={GET_QUOTE_HREF} target="_blank" rel="noreferrer"><b>Message RosuePro on WhatsApp: +1 876 566 7328</b></a>, or find out more at <a href="https://rosue.pro" target="_blank" rel="noreferrer">rosue.pro</a>.</p>
 
           <BlogArticleShare variant="footer" />
           </div>

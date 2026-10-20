@@ -9,7 +9,7 @@ import {
   shouldSkipAutoload,
 } from './heroVideoSources';
 
-const CAPTION = '18-second video ad: RosuePro builds websites and WhatsApp chatbots for Jamaican businesses';
+const CAPTION = '18-second video ad: RosuePro builds websites and WhatsApp chatbots for small businesses worldwide';
 
 function env() {
   if (typeof window === 'undefined') return { width: 1440, dpr: 1 };

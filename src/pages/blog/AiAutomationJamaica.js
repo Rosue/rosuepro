@@ -4,8 +4,8 @@ import { Container } from 'react-bootstrap'
 import Footer from '../../components/Footer'
 import BlogPublishedDate from '../../components/BlogPublishedDate'
 import BlogArticleShare from '../../components/BlogArticleShare'
-
-const rosueProWhatsAppQuoteHref = 'https://wa.me/18765667328' // pragma: allowlist secret
+import BlogRosueQuote from '../../components/BlogRosueQuote'
+import { GET_QUOTE_HREF } from '../../constants/quote'
 
 export default function AiAutomationJamaica() {
   return (
@@ -56,16 +56,8 @@ export default function AiAutomationJamaica() {
 </ul>
 <p className='mb-4'>If your enquiries are rare, start with discovery first — a clear landing page and a WhatsApp chatbot often help. If your phone and inbox are busy with the same few tasks, automation is usually the smarter next step.</p>
 
-<h2>RosuePro prices: clear starting points</h2>
-<p>RosuePro is a web and AI services business based in Kingston, Jamaica. Here are our starting prices:</p>
-<ul>
-<li className='mb-3'><b>Website fixes and repairs:</b> from J$8,000</li>
-<li className='mb-3'><b>Landing pages:</b> from J$25,000</li>
-<li className='mb-3'><b>AI and WhatsApp chatbots:</b> from J$28,000</li>
-<li className='mb-3'><b>AI automations:</b> from J$35,000</li>
-</ul>
-<p>Our lead offer is a <b>landing page plus WhatsApp chatbot</b> package: J$45,000 for the landing page and chatbot setup, then J$4,000 a month for the chatbot service.</p>
-<p className='mb-4'>These are starting prices, not fixed packages. Every quote depends on the scope of your project, and we will always explain what is included before any work begins.</p>
+<h2>RosuePro quotes</h2>
+<BlogRosueQuote />
 
 <h2>Why pair AI automation with a landing page and chatbot?</h2>
 <p>Automation works best when people can find you and start a conversation easily. A landing page helps new customers discover you. A WhatsApp chatbot answers them quickly. Automation then handles the follow-ups, reminders and status updates that would otherwise fall through the cracks.</p>
@@ -96,7 +88,7 @@ export default function AiAutomationJamaica() {
 <p>It means using software to handle repetitive business tasks for a Jamaican company — for example lead capture, appointment reminders, order follow-ups and invoice or status updates — so you do less of that work by hand.</p>
 
 <h3>How much does AI automation Kingston cost with RosuePro?</h3>
-<p>RosuePro AI automations start from J$35,000. Chatbots start from J$28,000. The landing page plus WhatsApp chatbot package is J$45,000 for setup, then J$4,000 a month for the chatbot service.</p>
+<p><a href={GET_QUOTE_HREF} target="_blank" rel="noopener noreferrer">Get a quote</a> on WhatsApp for AI automations, chatbots, or the landing page plus WhatsApp chatbot package.</p>
 
 <h3>Do I need to be a tech expert?</h3>
 <p>No. We set the workflow up with you. You review what goes out, and you stay in charge of anything that needs a human decision.</p>
@@ -112,7 +104,7 @@ export default function AiAutomationJamaica() {
 
 <h2>Get an AI automation quote</h2>
 <p>If you want AI automation for your business in Jamaica, the quickest way is to message us. Tell us about your business, the repetitive tasks that take the most time, and whether you also need a landing page or chatbot. We will come back with a clear, scope-based quote.</p>
-<p><a href={rosueProWhatsAppQuoteHref} target="_blank" rel="noreferrer"><b>Message RosuePro on WhatsApp: +1 876 566 7328</b></a></p>
+<p><a href={GET_QUOTE_HREF} target="_blank" rel="noreferrer"><b>Message RosuePro on WhatsApp: +1 876 566 7328</b></a></p>
 <p>Or find out more at <a href="https://rosue.pro" target="_blank" rel="noreferrer">rosue.pro</a>.</p>
 
           <BlogArticleShare variant="footer" />

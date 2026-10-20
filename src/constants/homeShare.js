@@ -4,7 +4,7 @@ export const ROSUE_PRO_HOME_URL = 'https://rosue.pro';
 export const HOME_SHARE_QR_SRC = `${process.env.PUBLIC_URL || ''}/home-share-qr.svg`;
 
 export const HOME_SHARE_SOCIAL_TEXT =
-  'RosuePro — landing pages + WhatsApp chatbots for Jamaican small businesses';
+  'RosuePro — landing pages + AI chatbots for small businesses worldwide';
 
 export function homeShareWhatsAppMessage() {
   return `${HOME_SHARE_SOCIAL_TEXT} ${ROSUE_PRO_HOME_URL}`;

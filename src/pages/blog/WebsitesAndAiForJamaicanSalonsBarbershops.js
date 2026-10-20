@@ -76,7 +76,7 @@ export default function WebsitesAndAiForJamaicanSalonsBarbershops() {
 </ul>
 
 <h2>How to get started with RosuePro</h2>
-<p>RosuePro works with Jamaican businesses on websites, memorial and ceremony sites, AI Automations, AI Chatbots, and ongoing support. Appointments are evenings and Saturdays by arrangement, Jamaica time. Prices are listed in Jamaican dollars on <a href="https://rosue.pro" target="_blank" rel="noreferrer">rosue.pro</a>.</p>
+<p>RosuePro works with Jamaican businesses on websites, memorial and ceremony sites, AI Automations, AI Chatbots, and ongoing support. Message us anytime on WhatsApp or email — get a quote at <a href="https://rosue.pro" target="_blank" rel="noreferrer">rosue.pro</a>.</p>
 <p>If you run a salon or barbershop and your phone never stops, start with a clear landing page and a scoped chatbot for the questions you answer every day. Describe what you need, agree scope and price, then book an available evening or Saturday.</p>
 <p>Learn more or enquire at <a href="https://rosue.pro" target="_blank" rel="noreferrer">rosue.pro</a> (<a href="mailto:RosuePro@gmail.com">RosuePro@gmail.com</a>).</p>
 

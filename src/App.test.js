@@ -4,18 +4,31 @@ import { BrowserRouter, MemoryRouter, Route, Routes } from 'react-router-dom';
 import App from './App';
 import Portforlio from './pages/Portforlio';
 import PortfolioProject from './pages/PortfolioProject';
+import { GET_QUOTE_LABEL } from './constants/quote';
 
-test('lists custom website offering from J$25,000 on the home page', () => {
+test('lists custom website offering with get a quote on the home page', () => {
   render(<App />);
   expect(screen.getByRole('heading', { name: 'Custom websites' })).toBeInTheDocument();
-  expect(screen.getByText('From J$25,000')).toBeInTheDocument();
+  expect(screen.getAllByText(GET_QUOTE_LABEL).length).toBeGreaterThanOrEqual(1);
   expect(screen.getByText(/find you on Google/i)).toBeInTheDocument();
 });
 
-test('lists Google Business Profile help with ask-for-a-price on the home page', () => {
+test('home hero promotes global positioning and WhatsApp CTA', () => {
+  render(<App />);
+  expect(
+    screen.getByRole('heading', {
+      name: 'Landing pages and AI chatbots that turn visitors into customers',
+    })
+  ).toBeInTheDocument();
+  expect(screen.getByText(/small businesses anywhere/i)).toBeInTheDocument();
+  expect(screen.getAllByRole('link', { name: 'Chat on WhatsApp' })[0]).toHaveAttribute('href', expect.stringContaining('wa.me'));
+  expect(screen.getByRole('link', { name: 'See our work' })).toHaveAttribute('href', '/#portfolio');
+});
+
+test('lists Google Business Profile help with get a quote on the home page', () => {
   render(<App />);
   expect(screen.getByRole('heading', { name: 'Google Business Profile (Google Maps)' })).toBeInTheDocument();
-  expect(screen.getAllByText('Ask for a price')).toHaveLength(2);
+  expect(screen.getAllByText(GET_QUOTE_LABEL).length).toBeGreaterThanOrEqual(6);
   expect(screen.getByText(/never claims a listing for someone who does not own the business/i)).toBeInTheDocument();
   expect(screen.getByText(/Customise your profile: business description, categories, hours/i)).toBeInTheDocument();
   expect(screen.getByRole('link', { name: 'Ask about Google Business Profile' })).toBeInTheDocument();
@@ -183,7 +196,7 @@ describe('copy link on portfolio page', () => {
   });
 });
 
-test('lists Promo videos with ask-for-a-price and no website fixes card', () => {
+test('lists Promo videos with get a quote and no website fixes card', () => {
   render(<App />);
   expect(screen.getByRole('heading', { name: 'Promo videos' })).toBeInTheDocument();
   expect(screen.getByText(/burned-in captions that work without sound/i)).toBeInTheDocument();

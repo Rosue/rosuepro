@@ -6,9 +6,9 @@ import { getShareUrl, projectShareUrl } from './data/portfolioProjects';
 
 test('updates metadata during client navigation without leaving duplicate tags', async () => {
   render(<MemoryRouter initialEntries={['/']}><Router /></MemoryRouter>);
-  await waitFor(() => expect(document.title).toBe('Landing Page + WhatsApp Chatbot for Jamaican Small Businesses | RosuePro'));
+  await waitFor(() => expect(document.title).toBe('RosuePro | Landing Pages + AI Chatbots for Small Businesses'));
   fireEvent.click(screen.getByRole('link', { name: 'Portfolio', exact: true }));
-  await waitFor(() => expect(document.title).toBe('Website Development Portfolio | RosuePro Jamaica'));
+  await waitFor(() => expect(document.title).toBe('Website Development Portfolio | RosuePro'));
   expect(document.querySelectorAll('link[rel="canonical"]')).toHaveLength(1);
   expect(document.querySelector('link[rel="canonical"]').href).toBe('https://rosue.pro/portfolio');
   expect(document.querySelectorAll('#seo-structured-data')).toHaveLength(1);
@@ -47,11 +47,11 @@ test('share links always use the RosuePro portfolio page for social previews', (
   );
 });
 
-test('blog index metadata matches Jamaica website and WhatsApp guides', () => {
+test('blog index metadata matches website and WhatsApp guides', () => {
   applyMetadata(document, '/blog');
-  expect(document.title).toBe('Jamaica Website & WhatsApp Guides | RosuePro Blog');
+  expect(document.title).toBe('Website & WhatsApp Guides for Small Businesses | RosuePro Blog');
   expect(document.querySelector('meta[name="description"]').content).toMatch(/WhatsApp chatbots/i);
-  expect(document.querySelector('meta[name="description"]').content).toMatch(/Jamaican small businesses/i);
+  expect(document.querySelector('meta[name="description"]').content).toMatch(/worldwide/i);
 });
 
 test('website design Jamaica price article includes Article and FAQ structured data', () => {
@@ -72,8 +72,24 @@ test('homepage includes ProfessionalService and service offers in structured dat
   const services = graph.filter((item) => item['@type'] === 'Service');
   expect(services.length).toBeGreaterThanOrEqual(7);
   const leadPackage = services.find((item) => item.name === 'Landing page + WhatsApp chatbot setup');
-  expect(leadPackage.offers.price).toBe('45000');
+  expect(leadPackage.offers.description).toMatch(/Get a quote/i);
+  expect(leadPackage.offers.price).toBeUndefined();
   expect(document.querySelector('link[rel="preload"][href="/Slide1.webp"]')).toBeNull();
+});
+
+test('homepage social preview uses og-image.png with dimensions', () => {
+  applyMetadata(document, '/');
+  expect(document.querySelector('meta[property="og:image"]').content).toBe(
+    'https://rosue.pro/og-image.png?v=3'
+  );
+  expect(document.querySelector('meta[property="og:image:width"]').content).toBe('1200');
+  expect(document.querySelector('meta[property="og:image:height"]').content).toBe('630');
+  expect(document.querySelector('meta[property="og:image:alt"]').content).toBe(
+    'RosuePro: landing pages and AI chatbots for small businesses worldwide'
+  );
+  expect(document.querySelector('meta[name="twitter:image"]').content).toBe(
+    'https://rosue.pro/og-image.png?v=3'
+  );
 });
 
 test('portfolio detail breadcrumbs include Portfolio parent', () => {

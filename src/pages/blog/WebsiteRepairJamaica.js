@@ -4,8 +4,8 @@ import { Container } from 'react-bootstrap'
 import Footer from '../../components/Footer'
 import BlogPublishedDate from '../../components/BlogPublishedDate'
 import BlogArticleShare from '../../components/BlogArticleShare'
-
-const rosueProWhatsAppQuoteHref = 'https://wa.me/[REDACTED]' // pragma: allowlist secret
+import BlogRosueQuote from '../../components/BlogRosueQuote'
+import { GET_QUOTE_HREF } from '../../constants/quote'
 
 export default function WebsiteRepairJamaica() {
   return (
@@ -21,7 +21,7 @@ export default function WebsiteRepairJamaica() {
           <div className="card-body">
 
           <p className="lead">Your website is often the first place a customer checks before they call, visit or send a WhatsApp message. If it loads slowly, looks broken on a phone, shows an old price list or throws a security warning, many people simply close the tab and pick the next business on Google. The good news is that most of these problems can be fixed without starting again from scratch.</p>
-          <p>RosuePro is a Kingston-based web and AI studio that repairs, updates and supports websites for Jamaican businesses. <b>Website fixes start from J$8,000</b>, and the whole process can be handled remotely over WhatsApp.</p>
+          <p>RosuePro is a fully remote web and AI studio that repairs, updates and supports websites for Jamaican businesses. <b><a href={GET_QUOTE_HREF} target="_blank" rel="noopener noreferrer">Get a quote</a></b> for website fixes — the whole process can be handled over WhatsApp.</p>
 
 <h2>Signs your website needs repair</h2>
 <p>You may not need a brand-new site. You may just need the current one fixed. Common warning signs include:</p>
@@ -50,25 +50,18 @@ export default function WebsiteRepairJamaica() {
 </ul>
 <p className='mb-4'>RosuePro can work on sites built by other developers as well as its own. If a site is genuinely beyond saving, you will be told honestly and given a clear quote for a replacement instead.</p>
 
-<h2>Website repair prices in Jamaica</h2>
-<p>These are RosuePro&apos;s starting prices. Every job is scoped with you first, so you know exactly what is included before any work begins.</p>
-<ul>
-<li className='mb-3'><b>Website fixes:</b> from J$8,000</li>
-<li className='mb-3'><b>Landing pages (new single-page sites):</b> from J$25,000</li>
-<li className='mb-3'><b>AI and WhatsApp chatbots:</b> from J$28,000</li>
-<li className='mb-3'><b>AI automations:</b> from J$35,000</li>
-<li className='mb-3'><b>Lead package:</b> J$45,000 for a landing page and chatbot setup, then J$4,000 per month for the chatbot service</li>
-</ul>
-<p className='mb-4'>Small fixes, such as updating content or repairing a broken button, sit at the lower end. Larger jobs, such as cleaning up a hacked site or rebuilding a mobile layout, are quoted based on the work involved. Domain, hosting and third-party fees are quoted separately where needed.</p>
+<h2>Website repair quotes</h2>
+<BlogRosueQuote />
+<p className='mb-4'>Small fixes, such as updating content or repairing a broken button, are scoped separately from larger jobs, such as cleaning up a hacked site or rebuilding a mobile layout. Domain, hosting and third-party fees are quoted separately where needed.</p>
 
 <h2>Repair or rebuild?</h2>
 <p>A repair makes sense when the design is still reasonable and the problems are technical: speed, mobile layout, forms, security or outdated content.</p>
-<p>A rebuild makes more sense when the site is very old, built on software that can no longer be updated, or simply does not reflect the business any more. For many small Jamaican businesses, a fast, modern <b>landing page from J$25,000</b> is a better investment than patching an old, multi-page site that nobody visits.</p>
+<p>A rebuild makes more sense when the site is very old, built on software that can no longer be updated, or simply does not reflect the business any more. For many small Jamaican businesses, a fast, modern <b>landing page</b> is a better investment than patching an old, multi-page site that nobody visits — <a href={GET_QUOTE_HREF} target="_blank" rel="noopener noreferrer">get a quote</a> to compare options.</p>
 <p className='mb-4'>Either way, you will get a straight recommendation based on your goals and budget.</p>
 
 <h2>Add a chatbot while you are fixing the site</h2>
 <p>Once the site works properly, it is a good moment to make it work harder. A RosuePro AI chatbot can sit on your website and on WhatsApp Business (where supported), answering common questions about your prices, hours, location and services, and collecting enquiries when you are busy or closed. You can try a live example with the Blacka chat demo on <a href="https://pack-my-cart.web.app" target="_blank" rel="noreferrer">pack-my-cart.web.app</a>.</p>
-<p className='mb-4'>Chatbots start from <b>J$28,000</b>, or you can choose the <b>lead package</b> at J$45,000 for a landing page plus chatbot setup, then J$4,000 per month.</p>
+<p className='mb-4'><a href={GET_QUOTE_HREF} target="_blank" rel="noopener noreferrer">Get a quote</a> for a chatbot or the lead landing page plus WhatsApp chatbot package.</p>
 
 <h2>How it works, fully remote</h2>
 <p>You do not need a meeting or an office visit. Everything happens over WhatsApp:</p>
@@ -84,7 +77,7 @@ export default function WebsiteRepairJamaica() {
 <h2>Frequently asked questions</h2>
 
 <h3>How much does website repair cost in Jamaica?</h3>
-<p>At RosuePro, website fixes start from J$8,000. The final price depends on what needs fixing, and you get a clear quote before any work starts.</p>
+<p>At RosuePro, website fixes are quoted based on what needs fixing, and you get a clear quote before any work starts — <a href={GET_QUOTE_HREF} target="_blank" rel="noopener noreferrer">message us on WhatsApp</a>.</p>
 
 <h3>How long does a website repair take?</h3>
 <p>Simple fixes, such as content updates or a broken button, can often be done quickly once access is sorted. Larger jobs, such as speed work, mobile layout fixes or hack clean-ups, take longer, and you will be given a realistic timeline with your quote.</p>
@@ -100,7 +93,7 @@ export default function WebsiteRepairJamaica() {
 
 <h2>Get your website fixed</h2>
 <p>If your website is slow, broken on phones, insecure or out of date, it may be costing you customers every day. Send RosuePro the link and a short description of the problem, and you will get a clear, scope-based quote.</p>
-<p><a href={rosueProWhatsAppQuoteHref} target="_blank" rel="noreferrer"><b>Message RosuePro on WhatsApp: +1 876 566 7328</b></a>, or find out more at <a href="https://rosue.pro" target="_blank" rel="noreferrer">rosue.pro</a>.</p>
+<p><a href={GET_QUOTE_HREF} target="_blank" rel="noreferrer"><b>Message RosuePro on WhatsApp: +1 876 566 7328</b></a>, or find out more at <a href="https://rosue.pro" target="_blank" rel="noreferrer">rosue.pro</a>.</p>
 
           <BlogArticleShare variant="footer" />
           </div>

@@ -1,16 +1,17 @@
 {
   "/": {
-    "title": "Landing Page + WhatsApp Chatbot for Jamaican Small Businesses | RosuePro",
-    "description": "RosuePro landing page + WhatsApp chatbot setup for Jamaican small businesses: J$45,000 one-time, then J$4,000/month chatbot service (not hosting). Kingston and island-wide — evenings and Saturdays by appointment.",
-    "label": "Home"
+    "title": "RosuePro | Landing Pages + AI Chatbots for Small Businesses",
+    "description": "Fast, clean landing pages with a built-in WhatsApp AI chatbot for small businesses worldwide. Fully remote. Chat with RosuePro on WhatsApp or email.",
+    "label": "Home",
+    "imageAlt": "RosuePro: landing pages and AI chatbots for small businesses worldwide"
   },
   "/tutoring": {
-    "title": "Java Tutoring & Guided Debugging in Jamaica | RosuePro",
-    "description": "Online Java tutoring and guided debugging for learners in Jamaica. J$3,500 per 60-minute session — evenings and Saturdays by appointment with RosuePro.",
+    "title": "Java Tutoring & Guided Debugging | RosuePro",
+    "description": "Online Java tutoring and guided debugging for learners worldwide. Fully remote sessions with RosuePro — message us on WhatsApp or email for a quote.",
     "label": "Java tutoring"
   },
   "/portfolio": {
-    "title": "Website Development Portfolio | RosuePro Jamaica",
+    "title": "Website Development Portfolio | RosuePro",
     "description": "Explore RosuePro website projects, including Vybz Meter, memorial websites, tour booking, appointment scheduling, and supermarket platforms.",
     "label": "Portfolio"
   },
@@ -20,8 +21,8 @@
     "label": "Experience"
   },
   "/blog": {
-    "title": "Jamaica Website & WhatsApp Guides | RosuePro Blog",
-    "description": "Practical guides for Jamaican small businesses on website design pricing, WhatsApp chatbots, online supermarkets, restaurants, salons, and funeral homes — from RosuePro in Kingston and island-wide.",
+    "title": "Website & WhatsApp Guides for Small Businesses | RosuePro Blog",
+    "description": "Practical guides on website design, WhatsApp chatbots, online supermarkets, restaurants, salons, and funeral homes — from RosuePro, fully remote worldwide.",
     "label": "Blog"
   },
   "/blog/basic-tips-market-music": {
@@ -66,7 +67,7 @@
   },
   "/blog/whatsapp-chatbot-for-business-jamaica": {
     "title": "WhatsApp Chatbot for Business Jamaica | RosuePro",
-    "description": "Looking for a WhatsApp chatbot for business Jamaica? RosuePro AI chatbots in Kingston from J$28,000, plus the J$45,000 landing page and chatbot package.",
+    "description": "Looking for a WhatsApp chatbot for business Jamaica? RosuePro builds AI chatbots and landing pages for Kingston small businesses — get a quote on WhatsApp.",
     "label": "WhatsApp chatbot for business Jamaica",
     "image": "/whatsapp-chatbot-for-business-jamaica.webp",
     "imageAlt": "Smartphone showing a WhatsApp business chatbot conversation for a Jamaican small business",
@@ -74,7 +75,7 @@
   },
   "/blog/website-design-jamaica-price": {
     "title": "Website Design Jamaica Price: 2026 Guide | RosuePro",
-    "description": "What does a website cost in Jamaica? RosuePro prices from J$8,000, plus a J$45,000 landing page and WhatsApp chatbot package in Kingston.",
+    "description": "What does a website cost in Jamaica? RosuePro explains what drives website cost, what a landing page is, and how to get a quote — fully remote.",
     "label": "Website design Jamaica price guide",
     "image": "/website-design-jamaica-price.webp",
     "imageAlt": "Kingston business owner reviewing a landing page on a laptop with WhatsApp open on her phone",
@@ -82,7 +83,7 @@
   },
   "/blog/ai-automation-jamaica": {
     "title": "AI Automation Jamaica | RosuePro",
-    "description": "Looking for AI automation Jamaica? RosuePro AI automations in Kingston from J$35,000, plus the J$45,000 landing page and chatbot package. WhatsApp us.",
+    "description": "Looking for AI automation Jamaica? RosuePro builds AI automations, chatbots, and landing pages for small businesses — get a quote on WhatsApp.",
     "label": "AI automation Jamaica",
     "image": "/ai-automation-jamaica.webp",
     "imageAlt": "Kingston small business owner using AI automation for reminders and follow-ups",
@@ -98,15 +99,15 @@
   },
   "/blog/website-repair-jamaica": {
     "title": "Website Repair Jamaica: Fix a Slow or Broken Site | RosuePro",
-    "description": "Website repair in Jamaica from J$8,000. RosuePro in Kingston fixes slow, broken, hacked or outdated business websites, fully remote over WhatsApp.",
+    "description": "Website repair in Jamaica from RosuePro — fixes slow, broken, hacked or outdated business websites, fully remote over WhatsApp. Get a quote.",
     "label": "Website repair Jamaica",
     "image": "/website-repair-jamaica.webp",
     "imageAlt": "Laptop showing a broken business website on one side and the repaired, mobile-friendly version on the other, beside a phone and repair tools in a Jamaican home office",
     "type": "article"
   },
   "/about-us": {
-    "title": "About RosuePro | Websites & WhatsApp Chatbots in Jamaica",
-    "description": "Meet RosuePro — landing pages, website repairs, AI automations, and WhatsApp chatbots for Jamaican small businesses, plus Java tutoring for learners. Based in Kingston, serving Jamaica.",
+    "title": "About RosuePro | Landing Pages & AI Chatbots Worldwide",
+    "description": "Meet RosuePro — landing pages, website repairs, AI automations, and WhatsApp chatbots for small businesses worldwide, plus Java tutoring for learners. Fully remote.",
     "label": "About RosuePro"
   }
 }
