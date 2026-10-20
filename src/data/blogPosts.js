@@ -1,6 +1,18 @@
 /** Publish dates from the git commits that added each article (YYYY-MM-DD). */
 const blogPosts = [
   {
+    path: '/blog/websites-and-ai-for-kingston-medical-dental-clinics',
+    datePublished: '2026-10-20',
+    cardTitle:
+      'Websites and AI for Kingston Medical and Dental Clinics: Fewer No-Shows, Easier Bookings',
+    cardExcerpt:
+      'How Kingston doctors\' offices and dental clinics use a simple website, a WhatsApp chatbot and AI reminders to answer patients faster and cut no-shows.',
+    image: '/websites-and-ai-for-kingston-medical-dental-clinics.webp',
+    imageAlt:
+      'Receptionist at a bright Kingston medical and dental clinic front desk while a patient books an appointment on her phone',
+    ctaLabel: 'Read the clinic guide',
+  },
+  {
     path: '/blog/website-repair-jamaica',
     datePublished: '2026-10-17',
     cardTitle:
