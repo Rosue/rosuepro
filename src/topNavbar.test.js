@@ -59,6 +59,8 @@ test('burger click opens mobile sheet and toggles aria-expanded', () => {
   expect(sheet).toHaveAttribute('aria-hidden', 'false');
   expect(sheet).toHaveTextContent('Services');
   expect(sheet).toHaveTextContent('Portfolio');
+  expect(sheet).toHaveTextContent('Blog · Tutoring live in the footer');
+  expect(sheet).not.toHaveTextContent('Resume');
 });
 
 test('rapid double click does not leave menu closed', () => {

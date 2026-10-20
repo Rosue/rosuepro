@@ -12,7 +12,6 @@ export default function ContactPageFooter() {
           <nav aria-label="Footer">
             <Link to="/blog">Blog</Link>
             <Link to="/tutoring">Tutoring</Link>
-            <Link to="/resume">Resume</Link>
             <Link to="/about-us">About</Link>
           </nav>
         </div>

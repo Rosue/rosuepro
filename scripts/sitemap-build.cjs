@@ -8,7 +8,6 @@ const root = path.join(__dirname, '..');
 const routeSourceFiles = {
   '/': 'src/pages/Landing.js',
   '/portfolio': 'src/pages/Portforlio.js',
-  '/resume': 'src/pages/Resume.js',
   '/blog': 'src/pages/Blog.js',
   '/about-us': 'src/pages/About.js',
   '/tutoring': 'src/pages/Tutoring.js',

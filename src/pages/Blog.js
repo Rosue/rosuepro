@@ -1,7 +1,6 @@
 import React from 'react'
 import TopNavbar from '../components/TopNavbar'
 import { Container } from 'react-bootstrap'
-import Footer from '../components/Footer'
 import { Link } from 'react-router-dom'
 import BlogPromoVideo from '../components/BlogPromoVideo'
 import { blogPostsByNewest, formatPublishedDate } from '../data/blogPosts'
@@ -46,7 +45,6 @@ export default function Blog() {
         ))}
     </div>
     </Container>
-    <Footer/>
     </>
   )
 }

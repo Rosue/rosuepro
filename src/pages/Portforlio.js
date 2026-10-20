@@ -1,7 +1,6 @@
 import React from 'react'
 import TopNavbar from '../components/TopNavbar'
 import { Container } from 'react-bootstrap'
-import Footer from '../components/Footer'
 import PortfolioProjectCard from '../components/PortfolioProjectCard'
 import PortfolioDemosSection from '../components/PortfolioDemosSection'
 import { clientPortfolioProjects } from '../data/portfolioProjects'
@@ -32,7 +31,6 @@ export default function Portforlio() {
 
       <PortfolioDemosSection />
 
-      <Footer />
     </>
   )
 }

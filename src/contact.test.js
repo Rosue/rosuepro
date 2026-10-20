@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import Contact from './pages/Contact';
+import Router from './core/Router';
 import { applyMetadata } from './seo';
 import {
   CONTACT_MAILTO_HREF,
@@ -11,8 +11,8 @@ import { buildWhatsAppUrl } from './constants/whatsapp';
 
 function renderContact() {
   return render(
-    <MemoryRouter>
-      <Contact />
+    <MemoryRouter initialEntries={['/contact']}>
+      <Router />
     </MemoryRouter>
   );
 }
@@ -39,11 +39,7 @@ test('contact page WhatsApp and email actions use project enquiry links', () => 
 });
 
 test('contact nav link is current on the contact page', () => {
-  render(
-    <MemoryRouter initialEntries={['/contact']}>
-      <Contact />
-    </MemoryRouter>
-  );
+  renderContact();
   expect(screen.getByRole('link', { name: 'Contact' })).toHaveAttribute('aria-current', 'page');
 });
 

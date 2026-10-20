@@ -1,7 +1,6 @@
 import React from 'react'
 import TopNavbar from '../../components/TopNavbar'
 import { Container } from 'react-bootstrap'
-import Footer from '../../components/Footer'
 import BlogPublishedDate from '../../components/BlogPublishedDate'
 import BlogArticleShare from '../../components/BlogArticleShare'
 
@@ -84,7 +83,6 @@ export default function WebsitesAndAiForJamaicanRestaurantsCookshops() {
           </div>
       </Container>
     </Container>
-    <Footer/>
     </>
   )
 }

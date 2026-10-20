@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import TopNavbar from '../components/TopNavbar';
-import Footer from '../components/Footer';
 import { EmailWhatsAppActions } from '../components/ContactActions';
 
 export default function About() {
@@ -12,7 +11,7 @@ export default function About() {
       <p className="lead">Landing pages, WhatsApp chatbots, and practical website support for small businesses worldwide — plus Java tutoring for learners.</p>
       <p>RosuePro builds template-based business landing pages, scoped website repairs, AI automations, and WhatsApp or website chatbots for small businesses. Message us anytime on WhatsApp or email; scope and quote are agreed before work begins.</p>
       <h2>Development experience</h2>
-      <p>Our work draws on experience with Java, Spring Boot, React, databases, and API integrations. <Link to="/resume">Explore our software development experience and skills.</Link></p>
+      <p>Our work draws on experience with Java, Spring Boot, React, databases, and API integrations.</p>
       <h2>See our work</h2>
       <p>Our portfolio includes supermarket platforms, memorial websites, tour booking, appointment scheduling, and interactive maps. <Link to="/portfolio">Browse the website development portfolio.</Link></p>
       <h2>Tell us what you need</h2>
@@ -25,6 +24,5 @@ export default function About() {
       <p className="small text-secondary">Registered business address: Discovery Bay, St. Ann, Jamaica.</p>
       <p><Link to="/tutoring">Java tutoring for learners</Link> is listed separately.</p>
     </main>
-    <Footer />
   </>;
 }

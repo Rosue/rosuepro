@@ -1,6 +1,5 @@
 import React from 'react';
 import TopNavbar from '../components/TopNavbar';
-import ContactPageFooter from '../components/ContactPageFooter';
 import { WhatsAppButton } from '../components/ContactActions';
 import {
   CONTACT_EMAIL,
@@ -72,7 +71,6 @@ export default function Contact() {
           </div>
         </section>
       </main>
-      <ContactPageFooter />
     </div>
   );
 }
