@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import TopNavbar from '../components/TopNavbar';
+import useReplacePathWhen from '../hooks/useReplacePathWhen';
 import { WhatsAppButton } from '../components/ContactActions';
 import { CONTACT_WHATSAPP_MESSAGE } from '../constants/contactPage';
 import {
@@ -11,6 +12,7 @@ import {
 } from '../constants/aboutPage';
 
 export default function About() {
+  useReplacePathWhen('/about-us', '/about');
   const workStrip = getAboutWorkStrip();
 
   return (
