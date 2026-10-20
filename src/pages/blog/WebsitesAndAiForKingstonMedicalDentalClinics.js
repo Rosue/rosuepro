@@ -42,7 +42,7 @@ export default function WebsitesAndAiForKingstonMedicalDentalClinics() {
 <li className='mb-3'>A booking request form and a big WhatsApp button</li>
 <li className='mb-3'>Clear Google-friendly pages so you show up for searches like &quot;dental clinic Kingston&quot; or &quot;doctor in New Kingston&quot;</li>
 </ul>
-<p>RosuePro builds clinic landing pages from <b>J$25,000</b>. Already have a site that&apos;s slow, broken or out of date? Website fixes start from <b>J$8,000</b>.</p>
+<p>RosuePro builds clinic landing pages and can repair sites that are slow, broken or out of date. <a href={rosueProWhatsAppQuoteHref} target="_blank" rel="noreferrer">Contact RosuePro for a quote on WhatsApp at <b>+1 876 566 7328</b></a>.</p>
 
 <h2>2. An AI chatbot that answers while you treat patients</h2>
 <p>An AI chatbot on your website or WhatsApp can handle the routine questions 24 hours a day:</p>
@@ -53,7 +53,7 @@ export default function WebsitesAndAiForKingstonMedicalDentalClinics() {
 <li className='mb-3'>&quot;Can I book for Thursday afternoon?&quot;</li>
 </ul>
 <p>It collects the patient&apos;s name, number, preferred day and reason for visit, then passes the booking to your staff to confirm. Anything clinical is handed straight to a person. The chatbot does <b>not</b> give medical advice, and anyone describing an emergency is told to call <b>110</b> or go to the nearest emergency room.</p>
-<p className='mb-4'>Chatbots start from <b>J$28,000</b>.</p>
+<p className='mb-4'><a href={rosueProWhatsAppQuoteHref} target="_blank" rel="noreferrer">Contact RosuePro for a quote on WhatsApp at <b>+1 876 566 7328</b></a>.</p>
 
 <h2>3. AI automations that cut no-shows and bring patients back</h2>
 <p>Automations are the quiet helpers running in the background:</p>
@@ -64,7 +64,7 @@ export default function WebsitesAndAiForKingstonMedicalDentalClinics() {
 <li className='mb-3'><b>Google review requests</b> after a visit, so happy patients help you rank higher</li>
 <li className='mb-3'><b>A morning summary</b> of the day&apos;s bookings for the team</li>
 </ul>
-<p className='mb-4'>Automations start from <b>J$35,000</b>.</p>
+<p className='mb-4'><a href={rosueProWhatsAppQuoteHref} target="_blank" rel="noreferrer">Contact RosuePro for a quote on WhatsApp at <b>+1 876 566 7328</b></a>.</p>
 
 <h2>Keeping patient information safe</h2>
 <p>Health information is sensitive, so we keep the chatbot to booking details only: name, contact number, preferred time and a short reason for the visit. It doesn&apos;t ask for medical histories or test results, access is limited to your team, and we set things up with Jamaica&apos;s Data Protection Act in mind.</p>
@@ -77,11 +77,11 @@ export default function WebsitesAndAiForKingstonMedicalDentalClinics() {
 <ul>
 <li className='mb-3'>A professional clinic landing page</li>
 <li className='mb-3'>An AI chatbot set up for your services, fees, hours and booking process</li>
-<li className='mb-3'>All for <b>J$45,000</b> setup, then <b>J$4,000 a month</b> for hosting, updates and ongoing support</li>
+<li className='mb-3'>Hosting, updates and ongoing support scoped to your clinic — <a href={rosueProWhatsAppQuoteHref} target="_blank" rel="noreferrer">contact RosuePro for a quote on WhatsApp at <b>+1 876 566 7328</b></a></li>
 </ul>
 
 <h2>How we work</h2>
-<p>We work remotely over WhatsApp and video call, so you don&apos;t need to close the clinic for a meeting. Send us your current website or Facebook page, your services and your opening hours, and we&apos;ll come back with a clear plan and price. You review everything before it goes live.</p>
+<p>We work remotely over WhatsApp and video call, so you don&apos;t need to close the clinic for a meeting. Send us your current website or Facebook page, your services and your opening hours, and we&apos;ll come back with a clear plan and quote. You review everything before it goes live.</p>
 
 <h2>Frequently asked questions</h2>
 
@@ -95,7 +95,7 @@ export default function WebsitesAndAiForKingstonMedicalDentalClinics() {
 <p>Yes. We can connect it through WhatsApp Business and talk you through the options for your clinic&apos;s number.</p>
 
 <h3>What does it cost?</h3>
-<p className='mb-4'>Landing pages from J$25,000, chatbots from J$28,000, automations from J$35,000, and website fixes from J$8,000. The lead package is J$45,000 setup plus J$4,000 a month.</p>
+<p className='mb-4'>Every clinic is different. <a href={rosueProWhatsAppQuoteHref} target="_blank" rel="noreferrer">Contact RosuePro for a quote on WhatsApp at <b>+1 876 566 7328</b></a> and we will scope landing pages, chatbots, automations, website fixes or the full lead package for you.</p>
 
 <h2>Ready to stop missing patients?</h2>
 <p>Message RosuePro on WhatsApp at <a href={rosueProWhatsAppQuoteHref} target="_blank" rel="noreferrer"><b>+1 876 566 7328</b></a> and tell us about your clinic. You can also see our work at <a href="https://rosue.pro" target="_blank" rel="noreferrer">rosue.pro</a>.</p>
