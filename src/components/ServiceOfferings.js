@@ -1,37 +1,39 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { EmailWhatsAppActions } from './ContactActions';
+import { EmailWhatsAppActions, WhatsAppButton } from './ContactActions';
 import HeroVideo from './HeroVideo';
 import {
   LEAD_PACKAGE_CHATBOT_SERVICE_NOTE,
-  LEAD_PACKAGE_PRICE_SUMMARY,
   LEAD_PACKAGE_TITLE,
 } from '../constants/leadPackage';
-import { WHATSAPP_DEFAULT_MESSAGE } from '../constants/whatsapp';
+import { GET_QUOTE_HREF, GET_QUOTE_LABEL } from '../constants/quote';
+import { WHATSAPP_DEFAULT_MESSAGE, buildWhatsAppUrl } from '../constants/whatsapp';
 
 const offers = [
   {
     title: LEAD_PACKAGE_TITLE,
     leadPackage: true,
-    price: 'J$45,000',
-    unit: 'one-time setup · chatbot service J$4,000/month',
+    quoteHref: buildWhatsAppUrl(WHATSAPP_DEFAULT_MESSAGE),
+    unit: 'landing page + WhatsApp chatbot setup',
     description:
-      'Our lead package for Jamaican small businesses: a template-based landing page plus WhatsApp chatbot setup so customers can learn about you and start a conversation 24/7.',
+      'Our lead package for small businesses: a template-based landing page plus WhatsApp chatbot setup so customers can learn about you and start a conversation 24/7.',
     includes: [
       'Responsive landing page with your services, details, and supplied images',
       'WhatsApp chatbot wired to your FAQs and enquiry flow',
       'Handoff rules so a person takes over when needed',
     ],
-    note: `${LEAD_PACKAGE_CHATBOT_SERVICE_NOTE} Standalone landing pages without a chatbot remain available from J$25,000 — ask if you only need the page.`,
+    note: `${LEAD_PACKAGE_CHATBOT_SERVICE_NOTE} Standalone landing pages without a chatbot are also available — ask if you only need the page.`,
     action: 'Enquire about this package',
     subject: 'Landing page + WhatsApp chatbot package',
     body:
-      'Hi RosuePro,\n\nI am interested in the landing page + WhatsApp chatbot package (J$45,000 setup + J$4,000/month chatbot service).\nBusiness name and services: \nMain questions for the chatbot: \nDo you have text, logo, and images ready? \nPreferred deadline: ',
+      'Hi RosuePro,\n\nI am interested in the landing page + WhatsApp chatbot package.\nBusiness name and services: \nMain questions for the chatbot: \nDo you have text, logo, and images ready? \nPreferred deadline: ',
     whatsappMessage: WHATSAPP_DEFAULT_MESSAGE,
   },
   {
     title: 'Custom websites',
-    price: 'From J$25,000',
+    quoteHref: buildWhatsAppUrl(
+      'Hi RosuePro,\n\nI would like a custom website for my business.\nBusiness name and what you do: \nPages or sections you need: \nDo you have logo, text, and images ready? \nPreferred deadline: '
+    ),
     unit: 'for an agreed business website scope',
     description:
       'A website built around your business—your services, branding, and contact details—so people can find you on Google, learn what you offer, and reach out when they are ready. Showing up online helps more customers discover you and can lead to more sales for your business.',
@@ -40,18 +42,18 @@ const offers = [
       'Clear service or product information visitors and search engines can read',
       'Contact details and enquiry paths so interested customers can reach you',
     ],
-    note: 'Scope, number of pages, and final price are confirmed before build. Domain, hosting renewal, and ongoing content updates are quoted separately unless agreed upfront.',
+    note: 'Scope, number of pages, and final quote are confirmed before build. Domain, hosting renewal, and ongoing content updates are quoted separately unless agreed upfront.',
     action: 'Enquire about a custom website',
     subject: 'Custom website enquiry',
     body:
-      'Hi RosuePro,\n\nI would like a custom website for my business (from J$25,000 for agreed scope).\nBusiness name and what you do: \nPages or sections you need: \nDo you have logo, text, and images ready? \nPreferred deadline: ',
+      'Hi RosuePro,\n\nI would like a custom website for my business.\nBusiness name and what you do: \nPages or sections you need: \nDo you have logo, text, and images ready? \nPreferred deadline: ',
   },
   {
     title: 'Google Business Profile (Google Maps)',
-    price: 'Ask for a price',
+    quoteHref: GET_QUOTE_HREF,
     unit: 'scope confirmed before we begin',
     description:
-      'Claim and verify your business on Google Maps, then set up and customise your Google Business Profile so people can find you and contact you. Rosue walks Jamaican owners who own the business through finding or creating the listing, requesting ownership, and completing Google’s verification (you do the check yourself—for example video, phone, or postcard). After it is claimed, we help you shape the listing with your description, categories, hours, and the details customers look for.',
+      'Claim and verify your business on Google Maps, then set up and customise your Google Business Profile so people can find you and contact you. Rosue walks business owners who own the business through finding or creating the listing, requesting ownership, and completing Google’s verification (you do the check yourself—for example video, phone, or postcard). After it is claimed, we help you shape the listing with your description, categories, hours, and the details customers look for.',
     includes: [
       'Find your existing Google Maps listing or create one, then request ownership and complete Google’s verification (you complete the check)',
       'Customise your profile: business description, categories, hours, services or products, photos and logo, and attributes',
@@ -67,34 +69,34 @@ const offers = [
   {
     title: 'Promo videos',
     playBadge: true,
-    price: 'Ask for a price',
+    quoteHref: GET_QUOTE_HREF,
     unit: 'scope confirmed before we begin',
     description:
       'Short, eye-catching videos that show off your business, offer, or website, made for WhatsApp Status, Instagram and Facebook Reels, and your Facebook feed.',
     includes: [
       'Vertical 9:16 for Reels, Stories and WhatsApp Status, plus a 16:9 cut for the feed and your website',
-      'Your offer, prices, logo, and contact details on screen, with burned-in captions that work without sound',
+      'Your offer, logo, and contact details on screen, with burned-in captions that work without sound',
       'Background music and a clear call to action (WhatsApp or website)',
     ],
-    note: 'You supply the details, photos, or screen recordings. Length, number of versions, and price are confirmed before we start.',
+    note: 'You supply the details, photos, or screen recordings. Length, number of versions, and quote are confirmed before we start.',
     action: 'Request a video quote',
     subject: 'Promo video quote',
     body: 'Hi RosuePro,\n\nI would like a promo video for my business.\nBusiness name and what to promote: \nWhere it will be posted (WhatsApp Status, Reels, Facebook, website): \nDo you have photos, logo, or screen recordings ready? \nPreferred deadline: ',
   },
   {
     title: 'AI automations',
-    price: 'From J$35,000',
+    quoteHref: GET_QUOTE_HREF,
     unit: 'per agreed workflow or integration',
     description: 'Reduce repetitive admin with a focused automation connected to the tools your business already uses.',
     includes: ['One business process mapped and automated (e.g. intake, follow-ups, reminders, data entry)', 'Connections between email, forms, spreadsheets, or your website where needed', 'Testing, simple documentation, and a walkthrough when it goes live'],
-    note: 'Tell us what you do manually today. Scope, tools, and price are confirmed before build; hosting fees and ongoing changes are quoted separately.',
+    note: 'Tell us what you do manually today. Scope, tools, and quote are confirmed before build; hosting fees and ongoing changes are quoted separately.',
     action: 'Discuss an automation',
     subject: 'AI automation enquiry',
     body: 'Hi RosuePro,\n\nI would like help automating a task.\nWhat happens today (step by step): \nTools involved (email, WhatsApp, website, Excel, etc.): \nHow often: \nPreferred deadline: ',
   },
   {
     title: 'AI chatbots',
-    price: 'From J$28,000',
+    quoteHref: GET_QUOTE_HREF,
     unit: 'for a scoped website or WhatsApp bot',
     description: 'Handle common customer questions, capture leads, or support staff—with clear rules on when a person takes over.',
     includes: ['Answers based on your FAQs and business details', 'Lead capture or handoff to email or WhatsApp', 'Setup for a website chat widget or WhatsApp Business (where supported)'],
@@ -105,30 +107,36 @@ const offers = [
   },
 ];
 
-const defaultMailto = `mailto:rosuepro@gmail.com?subject=${encodeURIComponent('Landing page + WhatsApp chatbot package')}&body=${encodeURIComponent(WHATSAPP_DEFAULT_MESSAGE)}`;
+function QuoteLink({ href, className = 'service-price mt-3 mb-0 d-inline-block' }) {
+  return (
+    <a className={className} href={href} target="_blank" rel="noopener noreferrer">
+      {GET_QUOTE_LABEL}
+    </a>
+  );
+}
 
 export default function ServiceOfferings() {
   return (
     <section className="service-offerings pb-5" id="services" aria-labelledby="services-heading">
       <HeroVideo>
             <div className="services-intro mx-auto text-center mb-4">
-              <p className="service-eyebrow">ROSUEPRO · JAMAICAN SMALL BUSINESS WEBSITES</p>
+              <p className="service-eyebrow">ROSUEPRO · LANDING PAGES &amp; AI CHATBOTS</p>
               <h1 id="services-heading">
-                Landing page + WhatsApp chatbot packages<br />for Jamaican small businesses.
+                Landing pages and AI chatbots that turn visitors into customers
               </h1>
               <p className="lead mt-3">
-                Get a professional landing page and a WhatsApp chatbot that answers common questions and captures leads — built for businesses in Kingston and across Jamaica.
+                RosuePro builds fast, clean websites with a built-in WhatsApp chatbot for small businesses anywhere. Remote, start to finish.
               </p>
-              <p className="service-lead-price fw-semibold mt-2">{LEAD_PACKAGE_PRICE_SUMMARY}.</p>
               <p className="small text-secondary mb-0">{LEAD_PACKAGE_CHATBOT_SERVICE_NOTE}</p>
-              <p className="service-availability mt-3">Evenings &amp; Saturdays · By appointment · Jamaica time</p>
-              <EmailWhatsAppActions
-                className="contact-actions d-flex flex-column flex-sm-row flex-wrap gap-2 justify-content-center mt-4"
-                mailtoHref={defaultMailto}
-                mailLabel="Email enquiry"
-                whatsappLabel="WhatsApp enquiry"
-                whatsappMessage={WHATSAPP_DEFAULT_MESSAGE}
-              />
+              <p className="service-availability mt-3">Message us anytime on WhatsApp or email</p>
+              <div className="contact-actions d-flex flex-column flex-sm-row flex-wrap gap-2 justify-content-center mt-4">
+                <WhatsAppButton className="btn btn-whatsapp btn-whatsapp-pair" message={WHATSAPP_DEFAULT_MESSAGE}>
+                  Chat on WhatsApp
+                </WhatsAppButton>
+                <Link to={{ pathname: '/', hash: '#portfolio' }} className="btn btn-primary btn-whatsapp-pair">
+                  See our work
+                </Link>
+              </div>
             </div>
       </HeroVideo>
       <div className="container pt-5">
@@ -148,7 +156,7 @@ export default function ServiceOfferings() {
                     ) : null}
                     {offer.title}
                   </h2>
-                  <p className="service-price mt-3 mb-0">{offer.price}</p>
+                  <QuoteLink href={offer.quoteHref} />
                   <p className="small text-secondary">{offer.unit}</p>
                   <p>{offer.description}</p>
                   <ul className="ps-3">{offer.includes.map((item) => <li className="mb-2" key={item}>{item}</li>)}</ul>
@@ -167,7 +175,7 @@ export default function ServiceOfferings() {
           ))}
         </div>
         <p className="text-center small mt-4 mb-0">
-          All prices in Jamaican dollars. Enquiries open your email app or WhatsApp; appointments are confirmed personally.
+          {GET_QUOTE_LABEL} on WhatsApp or email — we confirm scope and timing personally.
         </p>
         <p className="text-center mt-4">
           <Link to={{ pathname: '/', hash: '#portfolio' }}>View portfolio examples</Link> or <Link to="/about-us">learn more about RosuePro</Link>.
@@ -175,7 +183,7 @@ export default function ServiceOfferings() {
         <div className="service-next-steps mt-4 p-4">
           <h2 className="h4">A simple way to get started</h2>
           <p className="mb-2">
-            Choose an offer and describe what you need. We’ll agree on the scope, price, and an available evening or Saturday before booking.
+            Choose an offer and describe what you need. We’ll agree on scope and timing before we start.
           </p>
           <EmailWhatsAppActions
             className="contact-actions d-flex flex-column flex-sm-row flex-wrap gap-2 mb-3"

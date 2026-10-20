@@ -4,8 +4,8 @@ import { Container } from 'react-bootstrap'
 import Footer from '../../components/Footer'
 import BlogPublishedDate from '../../components/BlogPublishedDate'
 import BlogArticleShare from '../../components/BlogArticleShare'
-
-const rosueProWhatsAppQuoteHref = 'https://wa.me/18765667328' // pragma: allowlist secret
+import BlogRosueQuote from '../../components/BlogRosueQuote'
+import { GET_QUOTE_HREF } from '../../constants/quote'
 
 export default function WhatsappChatbotForBusinessJamaica() {
   return (
@@ -56,16 +56,8 @@ export default function WhatsappChatbotForBusinessJamaica() {
 </ul>
 <p className='mb-4'>If your WhatsApp is quiet, fix your discovery first (a clear landing page and Google Business Profile help). If your WhatsApp is busy and repetitive, a chatbot is usually the smarter next step.</p>
 
-<h2>RosuePro prices: clear starting points</h2>
-<p>RosuePro is a web and AI services business based in Kingston, Jamaica. Here are our starting prices:</p>
-<ul>
-<li className='mb-3'><b>Website fixes and repairs:</b> from J$8,000</li>
-<li className='mb-3'><b>Landing pages:</b> from J$25,000</li>
-<li className='mb-3'><b>AI and WhatsApp chatbots:</b> from J$28,000</li>
-<li className='mb-3'><b>AI automations:</b> from J$35,000</li>
-</ul>
-<p>Our lead offer is a <b>landing page plus WhatsApp chatbot</b> package: J$45,000 for the landing page and chatbot setup, then J$4,000 a month for the chatbot service.</p>
-<p className='mb-4'>These are starting prices, not fixed packages. Every quote depends on the scope of your project, and we will always explain what is included before any work begins.</p>
+<h2>RosuePro quotes</h2>
+<BlogRosueQuote />
 
 <h2>Why pair a WhatsApp chatbot with a landing page?</h2>
 <p>A chatbot answers people who already have your number. A landing page helps new customers find you, trust you and tap through to WhatsApp in the first place.</p>
@@ -96,7 +88,7 @@ export default function WhatsappChatbotForBusinessJamaica() {
 <p>It is an automated assistant on WhatsApp that replies to customer messages for a Jamaican business — answering common questions, collecting enquiry details and handing complex chats to a person when needed.</p>
 
 <h3>How much does a WhatsApp chatbot Jamaica cost with RosuePro?</h3>
-<p>RosuePro AI and WhatsApp chatbots start from J$28,000. The landing page plus WhatsApp chatbot package is J$45,000 for setup, then J$4,000 a month for the chatbot service.</p>
+<p><a href={GET_QUOTE_HREF} target="_blank" rel="noopener noreferrer">Get a quote</a> on WhatsApp for a scoped chatbot or the landing page plus WhatsApp chatbot package.</p>
 
 <h3>Can an AI chatbot in Kingston work after closing hours?</h3>
 <p>Yes. That is one of the main benefits. The chatbot can answer routine questions overnight or while you are with a customer, so people still get a useful reply.</p>
@@ -112,7 +104,7 @@ export default function WhatsappChatbotForBusinessJamaica() {
 
 <h2>Get a WhatsApp chatbot quote</h2>
 <p>If you want a WhatsApp chatbot for your business in Jamaica, the quickest way is to message us. Tell us about your business, the questions customers ask most, and whether you also need a landing page. We will come back with a clear, scope-based quote.</p>
-<p><a href={rosueProWhatsAppQuoteHref} target="_blank" rel="noreferrer"><b>Message RosuePro on WhatsApp: +1 876 566 7328</b></a></p>
+<p><a href={GET_QUOTE_HREF} target="_blank" rel="noreferrer"><b>Message RosuePro on WhatsApp: +1 876 566 7328</b></a></p>
 <p>Or find out more at <a href="https://rosue.pro" target="_blank" rel="noreferrer">rosue.pro</a>.</p>
 
           <BlogArticleShare variant="footer" />

@@ -4,8 +4,8 @@ import { Container } from 'react-bootstrap'
 import Footer from '../../components/Footer'
 import BlogPublishedDate from '../../components/BlogPublishedDate'
 import BlogArticleShare from '../../components/BlogArticleShare'
-
-const rosueProWhatsAppQuoteHref = 'https://wa.me/18765667328' // pragma: allowlist secret
+import BlogRosueQuote from '../../components/BlogRosueQuote'
+import { GET_QUOTE_HREF } from '../../constants/quote'
 
 export default function WebsiteDesignJamaicaPrice() {
   return (
@@ -47,16 +47,8 @@ export default function WebsiteDesignJamaicaPrice() {
 </ul>
 <p className='mb-4'>If you are looking for a landing page in Kingston, the key question is simple: do you need a full website yet, or do you need one page that turns visitors into enquiries? For many small businesses, the second option is the smarter place to start.</p>
 
-<h2>RosuePro prices: clear starting points</h2>
-<p>RosuePro is a web and AI services business based in Kingston, Jamaica. Here are our starting prices:</p>
-<ul>
-<li className='mb-3'><b>Website fixes and repairs:</b> from J$8,000</li>
-<li className='mb-3'><b>Landing pages:</b> from J$25,000</li>
-<li className='mb-3'><b>AI and WhatsApp chatbots:</b> from J$28,000</li>
-<li className='mb-3'><b>AI automations:</b> from J$35,000</li>
-</ul>
-<p>Our lead offer is a <b>landing page plus WhatsApp chatbot</b> package: J$45,000 for the landing page and chatbot setup, then J$4,000 a month for the chatbot service.</p>
-<p className='mb-4'>These are starting prices, not fixed packages. Every quote depends on the scope of your project, and we will always explain what is included before any work begins.</p>
+<h2>RosuePro quotes</h2>
+<BlogRosueQuote />
 
 <h2>Why pair a landing page with a WhatsApp chatbot?</h2>
 <p>In Jamaica, WhatsApp is where a lot of business conversations already happen. Customers would often rather send a quick message than fill in a form or make a phone call. A landing page on its own gets people interested; a WhatsApp chatbot helps you respond to them.</p>
@@ -84,23 +76,23 @@ export default function WebsiteDesignJamaicaPrice() {
 <h2>Frequently asked questions</h2>
 
 <h3>How much does website design cost in Jamaica?</h3>
-<p>It depends on the size and complexity of the site. At RosuePro, landing pages start from J$25,000 and website fixes start from J$8,000. Larger or more complex projects are quoted based on scope.</p>
+<p>It depends on the size and complexity of the site. RosuePro quotes landing pages, website fixes, and larger builds based on scope — <a href={GET_QUOTE_HREF} target="_blank" rel="noopener noreferrer">get a quote</a> on WhatsApp.</p>
 
 <h3>Is a landing page enough for my business?</h3>
 <p>For many small businesses, yes, especially at the start. If your main goal is to get customers to contact you or book, a focused landing page can do that job well. You can always expand into a larger website later.</p>
 
 <h3>What does a WhatsApp chatbot do?</h3>
-<p>It automatically replies to customer messages on WhatsApp, answering common questions and collecting enquiry details, so customers get a quick response even when you are unavailable. RosuePro&apos;s AI and WhatsApp chatbots start from J$28,000.</p>
+<p>It automatically replies to customer messages on WhatsApp, answering common questions and collecting enquiry details, so customers get a quick response even when you are unavailable. <a href={GET_QUOTE_HREF} target="_blank" rel="noopener noreferrer">Get a quote</a> from RosuePro for a scoped chatbot.</p>
 
 <h3>Can you fix my existing website instead of building a new one?</h3>
-<p>Yes. If your current site is broken, slow or out of date, a repair may be all you need. Website fixes and repairs start from J$8,000, depending on what needs doing.</p>
+<p>Yes. If your current site is broken, slow or out of date, a repair may be all you need. Website fixes are quoted based on what needs doing — <a href={GET_QUOTE_HREF} target="_blank" rel="noopener noreferrer">get a quote</a> on WhatsApp.</p>
 
 <h3>Where is RosuePro based?</h3>
 <p className='mb-4'>RosuePro is based in Kingston, Jamaica, and offers web design, chatbot and AI automation services to local businesses.</p>
 
 <h2>Get a clear quote on WhatsApp</h2>
 <p>If you want a straight answer on what your website will cost, the quickest way is to message us. Tell us about your business and what you need, and we will come back with a clear, scope-based quote.</p>
-<p><a href={rosueProWhatsAppQuoteHref} target="_blank" rel="noreferrer"><b>Message RosuePro on WhatsApp: +1 876 566 7328</b></a></p>
+<p><a href={GET_QUOTE_HREF} target="_blank" rel="noreferrer"><b>Message RosuePro on WhatsApp: +1 876 566 7328</b></a></p>
 <p>Or find out more at <a href="https://rosue.pro" target="_blank" rel="noreferrer">rosue.pro</a>.</p>
 
           <BlogArticleShare variant="footer" />

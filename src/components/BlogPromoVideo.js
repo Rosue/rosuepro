@@ -11,7 +11,7 @@ import {
 
 export const BLOG_VIDEO_CAPTION = 'A 30-second tour of the RosuePro blog';
 const DESCRIPTION =
-  'Video: free RosuePro guides for Jamaican small businesses, covering what a website really costs, WhatsApp chatbots, and guides for garages, salons and restaurants. Read free guides at rosue.pro/blog.';
+  'Video: free RosuePro guides for small businesses, covering what a website really costs, WhatsApp chatbots, and guides for garages, salons and restaurants. Read free guides at rosue.pro/blog.';
 
 function env() {
   if (typeof window === 'undefined') return { width: 1440, dpr: 1 };

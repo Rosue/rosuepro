@@ -4,8 +4,8 @@ import { Container } from 'react-bootstrap'
 import Footer from '../../components/Footer'
 import BlogPublishedDate from '../../components/BlogPublishedDate'
 import BlogArticleShare from '../../components/BlogArticleShare'
-
-const rosueProWhatsAppQuoteHref = 'https://wa.me/18765667328' // pragma: allowlist secret
+import BlogRosueQuote from '../../components/BlogRosueQuote'
+import { GET_QUOTE_HREF } from '../../constants/quote'
 
 export default function WebsitesAndAiForJamaicanFuneralHomesMemorials() {
   return (
@@ -44,7 +44,8 @@ export default function WebsitesAndAiForJamaicanFuneralHomesMemorials() {
 <li className='mb-3'>Photos of your chapel, reception area, or grounds that you supply — warm and professional, never graphic</li>
 </ul>
 <p>You supply the wording, logo, and images. Domain, hosting, and extras are scoped separately. Memorial and ceremony sites are a real RosuePro offering: they centre the family&apos;s need for clear information while protecting the tone your profession requires.</p>
-<p className='mb-4'>Indicative starting points (Jamaican dollars, confirmed before build): landing pages from J$25,000; chatbots from J$28,000; automations from J$35,000; fixes from J$8,000. A common lead package is a landing page plus chatbot for J$45,000 setup, then J$4,000 per month for chatbot service. Exact scope is always agreed in writing.</p>
+<BlogRosueQuote />
+<p className='mb-4'>Exact scope is always agreed in writing before build.</p>
 
 <h2>WhatsApp chatbots that answer the questions staff already know by heart</h2>
 <p>RosuePro AI chatbots are scoped for your website or WhatsApp Business (where supported). They answer from your FAQs and house details, capture the enquiry, and hand off to a person when a family needs a director — not a script.</p>
@@ -79,9 +80,9 @@ export default function WebsitesAndAiForJamaicanFuneralHomesMemorials() {
 </ul>
 
 <h2>How to get started with RosuePro</h2>
-<p>RosuePro works with Jamaican businesses on professional websites, memorial and ceremony sites, AI Automations, AI Chatbots, and ongoing support. Services are offered in Kingston. Appointments are evenings and Saturdays by arrangement, Jamaica time. Prices are listed in Jamaican dollars on <a href="https://rosue.pro" target="_blank" rel="noreferrer">rosue.pro</a>.</p>
+<p>RosuePro works with Jamaican businesses on professional websites, memorial and ceremony sites, AI Automations, AI Chatbots, and ongoing support. Message us anytime on WhatsApp or email — <a href={GET_QUOTE_HREF} target="_blank" rel="noreferrer">get a quote</a> at <a href="https://rosue.pro" target="_blank" rel="noreferrer">rosue.pro</a>.</p>
 <p>If you run a funeral home, undertaker&apos;s, or memorial service and your phone never stops while families are waiting for answers, start with a clear landing page and a scoped chatbot for the questions you already answer every day. Describe what you need, agree scope and price, then book an available evening or Saturday.</p>
-<p><a href={rosueProWhatsAppQuoteHref} target="_blank" rel="noreferrer"><b>Message RosuePro on WhatsApp: +1 876 566 7328</b></a></p>
+<p><a href={GET_QUOTE_HREF} target="_blank" rel="noreferrer"><b>Message RosuePro on WhatsApp: +1 876 566 7328</b></a></p>
 <p>Or learn more at <a href="https://rosue.pro" target="_blank" rel="noreferrer">rosue.pro</a>.</p>
 
           <BlogArticleShare variant="footer" />
