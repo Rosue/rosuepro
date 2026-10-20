@@ -117,5 +117,10 @@
     "title": "About RosuePro | Landing Pages & AI Chatbots Worldwide",
     "description": "Meet RosuePro — landing pages, website repairs, AI automations, and WhatsApp chatbots for small businesses worldwide, plus Java tutoring for learners. Fully remote.",
     "label": "About RosuePro"
+  },
+  "/contact": {
+    "title": "Contact | RosuePro",
+    "description": "Contact RosuePro on WhatsApp or email about landing pages and AI chatbots for your business.",
+    "label": "Contact"
   }
 }
