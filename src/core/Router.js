@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
+import { Route, Routes, useLocation } from 'react-router-dom'
 import ContactPageFooter from '../components/ContactPageFooter';
 import Seo from '../components/Seo';
 import About from '../pages/About';
@@ -29,7 +29,7 @@ export default function Router() {
         <Route path='/' element={<Landing />} />
         <Route path='/portfolio' element={<Portforlio />} />
         <Route path='/portfolio/:slug' element={<PortfolioProject />} />
-        <Route path='/resume' element={<Navigate to="/" replace />} />
+        <Route path='/resume' element={<Landing />} />
         <Route path='/blog' element={<Blog />} />
         <Route path='/blog/basic-tips-market-music' element={<BasicTipsMarketMusic />} />
         <Route path='/blog/pack-my-cart-helps-jamaican-supermarkets' element={<PackMyCartHelpsJamaicanSupermarkets />} />
