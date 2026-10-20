@@ -19,10 +19,23 @@ const buildDir = path.join(__dirname, '..', 'build');
 const routes = [...allPublicRoutes(), '/404', '/about-us', '/resume'];
 const port = Number(process.env.HYDRATION_CHECK_PORT) || 3766;
 
+function contentTypeFor(filePath) {
+  if (filePath.endsWith('.js')) return 'application/javascript; charset=utf-8';
+  if (filePath.endsWith('.css')) return 'text/css; charset=utf-8';
+  if (filePath.endsWith('.svg')) return 'image/svg+xml';
+  if (filePath.endsWith('.json')) return 'application/json; charset=utf-8';
+  return 'text/html; charset=utf-8';
+}
+
 function resolveFile(urlPath) {
   let pathname = urlPath.split('?')[0];
   if (pathname.endsWith('/')) pathname = pathname.slice(0, -1);
   if (pathname === '') pathname = '/';
+
+  const assetPath = path.join(buildDir, pathname);
+  if (pathname !== '/' && fs.existsSync(assetPath) && fs.statSync(assetPath).isFile()) {
+    return assetPath;
+  }
 
   const candidates = [
     pathname === '/' ? path.join(buildDir, 'index.html') : path.join(buildDir, pathname + '.html'),
@@ -39,7 +52,7 @@ function startFirebaseLikeServer() {
   return new Promise((resolve) => {
     const server = http.createServer((req, res) => {
       const file = resolveFile(req.url || '/');
-      res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+      res.writeHead(200, { 'Content-Type': contentTypeFor(file) });
       res.end(fs.readFileSync(file));
     });
     server.listen(port, '127.0.0.1', () => resolve(server));

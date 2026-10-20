@@ -72,7 +72,8 @@ export default function WebsitesAndAiForJamaicanAutoGaragesMechanics() {
 <p className='mb-4'><a href={GET_QUOTE_HREF} target="_blank" rel="noopener noreferrer">Get a quote</a> for automations. Start with the one process that wastes the most time, then add more once it is working.</p>
 
 <h2>The lead package: landing page plus chatbot</h2>
-<p>If you want the simplest way to start, the RosuePro lead package combines a landing page with a chatbot. <BlogRosueQuote className="mb-3" /></p>
+<p>If you want the simplest way to start, the RosuePro lead package combines a landing page with a chatbot.</p>
+          <BlogRosueQuote className="mb-3" />
 <p className='mb-4'>Your landing page gives drivers a clear place to find your services and location. The chatbot answers them straight away and collects booking and quote details. Together, they turn more of your searches, Facebook clicks and referrals into actual jobs on the lift.</p>
 
 <h2>How it works, fully remote</h2>
