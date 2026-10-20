@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../src/custom-styles/colour-pallets.css';
 import '../src/custom-styles/top-navbar.css';
 import '../src/custom-styles/contact-page.css';
+import '../src/custom-styles/about-page.css';
 
 const container = document.getElementById('root');
 const app = (
