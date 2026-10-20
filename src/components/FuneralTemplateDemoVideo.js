@@ -38,8 +38,13 @@ export function shouldSkipFuneralAutoplay() {
 export default function FuneralTemplateDemoVideo() {
   const rootRef = useRef(null);
   const videoRef = useRef(null);
-  const [ratio, setRatio] = useState(() => getFuneralRatio());
-  const [skipAuto] = useState(() => shouldSkipFuneralAutoplay());
+  const [ratio, setRatio] = useState('landscape');
+  const [skipAuto, setSkipAuto] = useState(true);
+
+  useEffect(() => {
+    setRatio(getFuneralRatio());
+    setSkipAuto(shouldSkipFuneralAutoplay());
+  }, []);
   const [started, setStarted] = useState(false); // user tapped Play (reduced motion / saveData)
   const [muted, setMuted] = useState(true);
   const [paused, setPaused] = useState(true);

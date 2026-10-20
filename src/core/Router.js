@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
+import { Route, Routes, useLocation } from 'react-router-dom'
 import ContactPageFooter from '../components/ContactPageFooter';
 import ScrollToTop from '../components/ScrollToTop';
 import Seo from '../components/Seo';
@@ -30,7 +30,7 @@ export default function Router() {
         <Route path='/' element={<Landing />} />
         <Route path='/portfolio' element={<Portforlio />} />
         <Route path='/portfolio/:slug' element={<PortfolioProject />} />
-        <Route path='/resume' element={<Navigate to="/" replace />} />
+        <Route path='/resume' element={<Landing />} />
         <Route path='/blog' element={<Blog />} />
         <Route path='/blog/basic-tips-market-music' element={<BasicTipsMarketMusic />} />
         <Route path='/blog/pack-my-cart-helps-jamaican-supermarkets' element={<PackMyCartHelpsJamaicanSupermarkets />} />
@@ -44,7 +44,7 @@ export default function Router() {
         <Route path='/blog/website-repair-jamaica' element={<WebsiteRepairJamaica />} />
         <Route path='/blog/websites-and-ai-for-kingston-medical-dental-clinics' element={<WebsitesAndAiForKingstonMedicalDentalClinics />} />
         <Route path="/about" element={<About />} />
-        <Route path="/about-us" element={<Navigate to="/about" replace />} />
+        <Route path="/about-us" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/tutoring" element={<Tutoring />} />
         <Route path="*" element={<NotFound />} />
