@@ -1,4 +1,5 @@
-import React, { useCallback, useEffect, useId, useState } from 'react';
+import React, { useCallback, useEffect, useId, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { Link, useLocation } from 'react-router-dom';
 import { buildWhatsAppUrl } from '../constants/whatsapp';
 
@@ -51,6 +52,8 @@ export default function TopNavbar() {
   const sheetId = useId().replace(/:/g, '');
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const lastLocationRef = useRef({ pathname: location.pathname, hash: location.hash });
+  const lastToggleAtRef = useRef(0);
   const whatsappHref = buildWhatsAppUrl();
 
   useEffect(() => {
@@ -61,7 +64,11 @@ export default function TopNavbar() {
   }, []);
 
   useEffect(() => {
-    setMenuOpen(false);
+    const prev = lastLocationRef.current;
+    if (prev.pathname !== location.pathname || prev.hash !== location.hash) {
+      setMenuOpen(false);
+      lastLocationRef.current = { pathname: location.pathname, hash: location.hash };
+    }
   }, [location.pathname, location.hash]);
 
   useEffect(() => {
@@ -80,7 +87,12 @@ export default function TopNavbar() {
   }, []);
 
   const closeMenu = useCallback(() => setMenuOpen(false), []);
-  const toggleMenu = useCallback(() => setMenuOpen((open) => !open), []);
+  const toggleMenu = useCallback(() => {
+    const now = Date.now();
+    if (now - lastToggleAtRef.current < 400) return;
+    lastToggleAtRef.current = now;
+    setMenuOpen((open) => !open);
+  }, []);
 
   const linkProps = (item) => {
     const active = item.isActive(location.pathname);
@@ -93,7 +105,11 @@ export default function TopNavbar() {
       <a className="site-nav-skip" href="#main-content">
         Skip to content
       </a>
-      <header className={`site-nav-header${scrolled ? ' site-nav-header--scrolled' : ''}`}>
+      <header
+        className={`site-nav-header${scrolled ? ' site-nav-header--scrolled' : ''}${
+          menuOpen ? ' site-nav-header--menu-open' : ''
+        }`}
+      >
         <nav className="site-nav-bar" aria-label="Main">
           <Link className="site-nav-logo" to="/" aria-label="RosuePro home">
             Rosue<span>Pro</span>
@@ -135,34 +151,37 @@ export default function TopNavbar() {
             <BurgerIcon open={menuOpen} />
           </button>
         </nav>
-
-        <div
-          className={`site-nav-sheet${menuOpen ? ' site-nav-sheet--open' : ''}`}
-          id={sheetId}
-          aria-hidden={menuOpen ? 'false' : 'true'}
-        >
-          <ul className="site-nav-sheet-list">
-            {NAV_LINKS.map((item) => (
-              <li key={item.label}>
-                <Link className="site-nav-sheet-row" {...linkProps(item)} onClick={closeMenu}>
-                  {item.label}
-                  <span aria-hidden="true">›</span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <a
-            className="site-nav-wa site-nav-wa--sheet"
-            href={whatsappHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={closeMenu}
-          >
-            Chat on WhatsApp
-          </a>
-          <small className="site-nav-sheet-note">Blog · Tutoring · Resume live in the footer</small>
-        </div>
       </header>
+      {typeof document !== 'undefined' &&
+        createPortal(
+          <div
+            className={`site-nav-sheet${menuOpen ? ' site-nav-sheet--open' : ''}`}
+            id={sheetId}
+            aria-hidden={menuOpen ? 'false' : 'true'}
+          >
+            <ul className="site-nav-sheet-list">
+              {NAV_LINKS.map((item) => (
+                <li key={item.label}>
+                  <Link className="site-nav-sheet-row" {...linkProps(item)} onClick={closeMenu}>
+                    {item.label}
+                    <span aria-hidden="true">›</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <a
+              className="site-nav-wa site-nav-wa--sheet"
+              href={whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={closeMenu}
+            >
+              Chat on WhatsApp
+            </a>
+            <small className="site-nav-sheet-note">Blog · Tutoring · Resume live in the footer</small>
+          </div>,
+          document.body
+        )}
     </>
   );
 }

@@ -46,6 +46,10 @@
   box-shadow: 0 4px 16px rgba(16, 44, 108, 0.06);
 }
 
+.site-nav-header--menu-open {
+  z-index: 51;
+}
+
 .site-nav-bar {
   max-width: 1240px;
   margin: 0 auto;
@@ -167,6 +171,10 @@
   cursor: pointer;
   color: var(--site-nav-royal-d);
   padding: 0;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+  z-index: 2;
 }
 
 .site-nav-sheet {
@@ -248,6 +256,7 @@
     padding: 16px;
     border-top: 1px solid var(--site-nav-border);
     overflow-y: auto;
+    z-index: 50;
   }
 
   .site-nav-sheet--open {
