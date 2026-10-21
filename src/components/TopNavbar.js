@@ -52,9 +52,14 @@ export default function TopNavbar() {
   const sheetId = useId().replace(/:/g, '');
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [menuPortalReady, setMenuPortalReady] = useState(false);
   const lastLocationRef = useRef({ pathname: location.pathname, hash: location.hash });
   const lastToggleAtRef = useRef(0);
   const whatsappHref = buildWhatsAppUrl();
+
+  useEffect(() => {
+    setMenuPortalReady(true);
+  }, []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 4);
@@ -152,7 +157,7 @@ export default function TopNavbar() {
           </button>
         </nav>
       </header>
-      {typeof document !== 'undefined' &&
+      {menuPortalReady &&
         createPortal(
           <div
             className={`site-nav-sheet${menuOpen ? ' site-nav-sheet--open' : ''}`}

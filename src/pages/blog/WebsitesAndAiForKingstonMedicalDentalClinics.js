@@ -3,8 +3,7 @@ import TopNavbar from '../../components/TopNavbar'
 import { Container } from 'react-bootstrap'
 import BlogPublishedDate from '../../components/BlogPublishedDate'
 import BlogArticleShare from '../../components/BlogArticleShare'
-
-const rosueProWhatsAppQuoteHref = 'https://wa.me/18765667328' // pragma: allowlist secret
+import { GET_QUOTE_HREF } from '../../constants/quote'
 
 export default function WebsitesAndAiForKingstonMedicalDentalClinics() {
   return (
@@ -41,7 +40,7 @@ export default function WebsitesAndAiForKingstonMedicalDentalClinics() {
 <li className='mb-3'>A booking request form and a big WhatsApp button</li>
 <li className='mb-3'>Clear Google-friendly pages so you show up for searches like &quot;dental clinic Kingston&quot; or &quot;doctor in New Kingston&quot;</li>
 </ul>
-<p>RosuePro builds clinic landing pages and can repair sites that are slow, broken or out of date. <a href={rosueProWhatsAppQuoteHref} target="_blank" rel="noreferrer">Contact RosuePro for a quote on WhatsApp at <b>+1 876 566 7328</b></a>.</p>
+<p>RosuePro builds clinic landing pages and can repair sites that are slow, broken or out of date. <a href={GET_QUOTE_HREF} target="_blank" rel="noreferrer">Contact RosuePro for a quote on WhatsApp at <b>+1 876 566 7328</b></a>.</p>
 
 <h2>2. An AI chatbot that answers while you treat patients</h2>
 <p>An AI chatbot on your website or WhatsApp can handle the routine questions 24 hours a day:</p>
@@ -52,7 +51,7 @@ export default function WebsitesAndAiForKingstonMedicalDentalClinics() {
 <li className='mb-3'>&quot;Can I book for Thursday afternoon?&quot;</li>
 </ul>
 <p>It collects the patient&apos;s name, number, preferred day and reason for visit, then passes the booking to your staff to confirm. Anything clinical is handed straight to a person. The chatbot does <b>not</b> give medical advice, and anyone describing an emergency is told to call <b>110</b> or go to the nearest emergency room.</p>
-<p className='mb-4'><a href={rosueProWhatsAppQuoteHref} target="_blank" rel="noreferrer">Contact RosuePro for a quote on WhatsApp at <b>+1 876 566 7328</b></a>.</p>
+<p className='mb-4'><a href={GET_QUOTE_HREF} target="_blank" rel="noreferrer">Contact RosuePro for a quote on WhatsApp at <b>+1 876 566 7328</b></a>.</p>
 
 <h2>3. AI automations that cut no-shows and bring patients back</h2>
 <p>Automations are the quiet helpers running in the background:</p>
@@ -63,7 +62,7 @@ export default function WebsitesAndAiForKingstonMedicalDentalClinics() {
 <li className='mb-3'><b>Google review requests</b> after a visit, so happy patients help you rank higher</li>
 <li className='mb-3'><b>A morning summary</b> of the day&apos;s bookings for the team</li>
 </ul>
-<p className='mb-4'><a href={rosueProWhatsAppQuoteHref} target="_blank" rel="noreferrer">Contact RosuePro for a quote on WhatsApp at <b>+1 876 566 7328</b></a>.</p>
+<p className='mb-4'><a href={GET_QUOTE_HREF} target="_blank" rel="noreferrer">Contact RosuePro for a quote on WhatsApp at <b>+1 876 566 7328</b></a>.</p>
 
 <h2>Keeping patient information safe</h2>
 <p>Health information is sensitive, so we keep the chatbot to booking details only: name, contact number, preferred time and a short reason for the visit. It doesn&apos;t ask for medical histories or test results, access is limited to your team, and we set things up with Jamaica&apos;s Data Protection Act in mind.</p>
@@ -76,7 +75,7 @@ export default function WebsitesAndAiForKingstonMedicalDentalClinics() {
 <ul>
 <li className='mb-3'>A professional clinic landing page</li>
 <li className='mb-3'>An AI chatbot set up for your services, fees, hours and booking process</li>
-<li className='mb-3'>Hosting, updates and ongoing support scoped to your clinic — <a href={rosueProWhatsAppQuoteHref} target="_blank" rel="noreferrer">contact RosuePro for a quote on WhatsApp at <b>+1 876 566 7328</b></a></li>
+<li className='mb-3'>Hosting, updates and ongoing support scoped to your clinic — <a href={GET_QUOTE_HREF} target="_blank" rel="noreferrer">contact RosuePro for a quote on WhatsApp at <b>+1 876 566 7328</b></a></li>
 </ul>
 
 <h2>How we work</h2>
@@ -94,10 +93,10 @@ export default function WebsitesAndAiForKingstonMedicalDentalClinics() {
 <p>Yes. We can connect it through WhatsApp Business and talk you through the options for your clinic&apos;s number.</p>
 
 <h3>What does it cost?</h3>
-<p className='mb-4'>Every clinic is different. <a href={rosueProWhatsAppQuoteHref} target="_blank" rel="noreferrer">Contact RosuePro for a quote on WhatsApp at <b>+1 876 566 7328</b></a> and we will scope landing pages, chatbots, automations, website fixes or the full lead package for you.</p>
+<p className='mb-4'>Every clinic is different. <a href={GET_QUOTE_HREF} target="_blank" rel="noreferrer">Contact RosuePro for a quote on WhatsApp at <b>+1 876 566 7328</b></a> and we will scope landing pages, chatbots, automations, website fixes or the full lead package for you.</p>
 
 <h2>Ready to stop missing patients?</h2>
-<p>Message RosuePro on WhatsApp at <a href={rosueProWhatsAppQuoteHref} target="_blank" rel="noreferrer"><b>+1 876 566 7328</b></a> and tell us about your clinic. You can also see our work at <a href="https://rosue.pro" target="_blank" rel="noreferrer">rosue.pro</a>.</p>
+<p>Message RosuePro on WhatsApp at <a href={GET_QUOTE_HREF} target="_blank" rel="noreferrer"><b>+1 876 566 7328</b></a> and tell us about your clinic. You can also see our work at <a href="https://rosue.pro" target="_blank" rel="noreferrer">rosue.pro</a>.</p>
 
           <BlogArticleShare variant="footer" />
           </div>

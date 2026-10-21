@@ -20,9 +20,9 @@ test('unknown routes are noindex and returning to a public route restores indexi
   applyMetadata(document, '/does-not-exist');
   expect(document.querySelector('meta[name="robots"]').content).toBe('noindex, follow');
   expect(document.querySelector('link[rel="canonical"]')).toBeNull();
-  applyMetadata(document, '/about-us');
+  applyMetadata(document, '/about');
   expect(document.querySelector('meta[name="robots"]').content).not.toContain('noindex');
-  expect(document.querySelector('link[rel="canonical"]').href).toBe('https://rosue.pro/about-us');
+  expect(document.querySelector('link[rel="canonical"]').href).toBe('https://rosue.pro/about');
 });
 
 test('portfolio project pages expose per-project social metadata', () => {

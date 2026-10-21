@@ -23,11 +23,13 @@ export default function BlogPromoVideo() {
   const rootRef = useRef(null);
   const videoRef = useRef(null);
   const [format, setFormat] = useState(WIDE_FORMAT); // matches prerender; corrected after mount
-  const [skipAuto] = useState(
-    () =>
-      typeof window === 'undefined' ||
+  const [skipAuto, setSkipAuto] = useState(true);
+
+  useEffect(() => {
+    setSkipAuto(
       shouldSkipAutoload({ matchMedia: window.matchMedia, connection: navigator.connection })
-  );
+    );
+  }, []);
   const [started, setStarted] = useState(false);
   const [muted, setMuted] = useState(true);
   const [paused, setPaused] = useState(true);

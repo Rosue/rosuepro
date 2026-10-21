@@ -150,7 +150,7 @@ function shouldIncludeBusinessSchema(page) {
   if (page.noindex) return false;
   return (
     page.path === '/' ||
-    page.path === '/about-us' ||
+    page.path === '/about' ||
     page.path === '/portfolio' ||
     page.path.startsWith('/portfolio/')
   );
@@ -212,7 +212,7 @@ function schemaFor(page) {
 
   if (shouldIncludeBusinessSchema(page)) {
     graph.push(professionalServiceNode());
-    if (page.path === '/' || page.path === '/about-us') {
+    if (page.path === '/' || page.path === '/about') {
       graph.push(...serviceSchemaNodes(organization['@id'], page.path));
     }
   }

@@ -17,18 +17,33 @@ const Router = require('../src/core/Router').default;
 const { applyMetadata, allPublicRoutes } = require('../src/seo');
 const { buildSitemapXml, buildRobotsTxt } = require('./sitemap-build.cjs');
 const template = fs.readFileSync('build/index.html','utf8');
-for (const route of [...allPublicRoutes(), '/404']) {
+
+const LEGACY_ALIAS_ROUTES = [
+  { route: '/about-us', metadataRoute: '/about' },
+  { route: '/resume', metadataRoute: '/' },
+];
+
+function prerenderRoute(route, metadataRoute = route) {
   const dom = new JSDOM(template);
   const doc = dom.window.document;
-  applyMetadata(doc, route);
+  applyMetadata(doc, metadataRoute);
   const root = doc.getElementById('root');
-  root.innerHTML = renderToString(React.createElement(StaticRouter, { location: route }, React.createElement(Router)));
-  root.setAttribute('data-prerendered','true');
+  root.innerHTML = renderToString(
+    React.createElement(StaticRouter, { location: route }, React.createElement(Router))
+  );
+  root.setAttribute('data-prerendered', 'true');
   doc.querySelector('noscript')?.remove();
   const file = route === '/' ? 'build/index.html' : path.join('build', route + '.html');
-  fs.mkdirSync(path.dirname(file), {recursive:true});
-  fs.writeFileSync(file,dom.serialize());
+  fs.mkdirSync(path.dirname(file), { recursive: true });
+  fs.writeFileSync(file, dom.serialize());
   console.log('Prerendered ' + route);
+}
+
+for (const route of [...allPublicRoutes(), '/404']) {
+  prerenderRoute(route);
+}
+for (const { route, metadataRoute } of LEGACY_ALIAS_ROUTES) {
+  prerenderRoute(route, metadataRoute);
 }
 fs.writeFileSync('build/sitemap.xml', buildSitemapXml());
 fs.writeFileSync('build/robots.txt', buildRobotsTxt());

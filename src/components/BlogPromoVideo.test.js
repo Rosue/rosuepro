@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import BlogPromoVideo, { BLOG_VIDEO_CAPTION } from './BlogPromoVideo';
 import { getBlogVideoSrc, PORTRAIT_QUERY } from './heroVideoSources';
 
@@ -30,20 +30,27 @@ describe('BlogPromoVideo', () => {
     expect(getBlogVideoSrc('16x9', { dpr: 1, viewportWidth: 1440 })).toMatch(/16x9-1080p-v4/);
   });
 
-  test('portrait: 9:16 poster, muted, preload none, lazy src, autoplay at 50%', () => {
+  test('portrait: 9:16 poster, muted, preload none, lazy src, autoplay at 50%', async () => {
     window.matchMedia = mm(true);
     render(<BlogPromoVideo />);
     expect(screen.getByText(BLOG_VIDEO_CAPTION)).toBeInTheDocument();
     const video = screen.getByTestId('blog-promo-video');
     expect(video).toHaveAttribute('aria-hidden', 'true');
     expect(video).toHaveAttribute('preload', 'none');
-    expect(video.getAttribute('poster')).toMatch(/poster-title-9x16/);
+    await waitFor(() => expect(video.getAttribute('poster')).toMatch(/poster-title-9x16/));
     expect(video.muted).toBe(true);
     expect(video).not.toHaveAttribute('src');
-    expect(observers.some((o) => o.opts.rootMargin === '200px')).toBe(true);
-    const half = observers.find((o) => Array.isArray(o.opts.threshold));
-    half.cb([{ isIntersecting: true, intersectionRatio: 0.6 }]);
-    expect(video.getAttribute('src')).toMatch(/9x16-720p-v4\.mp4/);
+    await waitFor(() => expect(observers.some((o) => o.opts.rootMargin === '200px')).toBe(true));
+    await waitFor(
+      () => {
+        const half = observers.filter((o) => Array.isArray(o.opts.threshold)).pop();
+        expect(half).toBeTruthy();
+        half.cb([{ isIntersecting: true, intersectionRatio: 0.6 }]);
+        expect(video.getAttribute('src')).toMatch(/9x16-720p-v4\.mp4/);
+      },
+      { timeout: 3000 }
+    );
+    const half = observers.filter((o) => Array.isArray(o.opts.threshold)).pop();
     expect(window.HTMLMediaElement.prototype.play).toHaveBeenCalled();
     half.cb([{ isIntersecting: false, intersectionRatio: 0 }]);
     expect(window.HTMLMediaElement.prototype.pause).toHaveBeenCalled();

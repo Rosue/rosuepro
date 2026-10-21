@@ -21,10 +21,13 @@ export default function HeroVideo({ children }) {
   const videoRef = useRef(null);
   const frameRef = useRef(null);
   const [ratio, setRatio] = useState(WIDE_FORMAT);
-  const [skipAuto] = useState(() =>
-    typeof window !== 'undefined' &&
-    shouldSkipAutoload({ matchMedia: window.matchMedia, connection: navigator.connection })
-  );
+  const [skipAuto, setSkipAuto] = useState(false);
+
+  useEffect(() => {
+    setSkipAuto(
+      shouldSkipAutoload({ matchMedia: window.matchMedia, connection: navigator.connection })
+    );
+  }, []);
   const [loaded, setLoaded] = useState(false);
   const [muted, setMuted] = useState(true);
   const [paused, setPaused] = useState(false);

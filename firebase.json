@@ -13,6 +13,11 @@
         "source": "/resume",
         "destination": "/",
         "type": 301
+      },
+      {
+        "source": "/about-us",
+        "destination": "/about",
+        "type": 301
       }
     ],
     "headers": [
