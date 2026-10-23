@@ -20,6 +20,7 @@ import WebsitesAndAiForJamaicanFuneralHomesMemorials from '../pages/blog/Website
 import WebsitesAndAiForJamaicanAutoGaragesMechanics from '../pages/blog/WebsitesAndAiForJamaicanAutoGaragesMechanics';
 import WebsiteRepairJamaica from '../pages/blog/WebsiteRepairJamaica';
 import WebsitesAndAiForKingstonMedicalDentalClinics from '../pages/blog/WebsitesAndAiForKingstonMedicalDentalClinics';
+import LandingPageKingston from '../pages/blog/LandingPageKingston';
 import Tutoring from '../pages/Tutoring';
 import Contact from '../pages/Contact';
 
@@ -43,6 +44,7 @@ export default function Router() {
         <Route path='/blog/websites-and-ai-for-jamaican-auto-garages-mechanics' element={<WebsitesAndAiForJamaicanAutoGaragesMechanics />} />
         <Route path='/blog/website-repair-jamaica' element={<WebsiteRepairJamaica />} />
         <Route path='/blog/websites-and-ai-for-kingston-medical-dental-clinics' element={<WebsitesAndAiForKingstonMedicalDentalClinics />} />
+        <Route path='/blog/landing-page-kingston' element={<LandingPageKingston />} />
         <Route path="/about" element={<About />} />
         <Route path="/about-us" element={<About />} />
         <Route path="/contact" element={<Contact />} />

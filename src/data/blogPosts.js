@@ -1,6 +1,18 @@
 /** Publish dates from the git commits that added each article (YYYY-MM-DD). */
 const blogPosts = [
   {
+    path: '/blog/landing-page-kingston',
+    datePublished: '2026-10-23',
+    cardTitle:
+      'Landing Page Design in Kingston: Turn Clicks into WhatsApp Enquiries',
+    cardExcerpt:
+      'Need a landing page in Kingston? Learn what a high-converting landing page needs, how it links to WhatsApp and ads, and get a quote from RosuePro.',
+    image: '/landing-page-kingston.webp',
+    imageAlt:
+      'A Kingston shop owner holding a phone showing a landing page with a WhatsApp button, next to a laptop displaying the same page, with the Blue Mountains behind.',
+    ctaLabel: 'Read the landing page guide',
+  },
+  {
     path: '/blog/websites-and-ai-for-kingston-medical-dental-clinics',
     datePublished: '2026-10-20',
     cardTitle:
