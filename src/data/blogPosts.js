@@ -1,6 +1,18 @@
 /** Publish dates from the git commits that added each article (YYYY-MM-DD). */
 const blogPosts = [
   {
+    path: '/blog/websites-and-ai-for-kingston-real-estate-agents',
+    datePublished: '2026-10-26',
+    cardTitle:
+      'Websites and AI for Kingston Real Estate Agents: More Qualified Leads, Fewer Missed Enquiries',
+    cardExcerpt:
+      'How Kingston realtors and property managers can use a listings website, an AI chatbot and WhatsApp automations to capture more serious buyers and tenants.',
+    image: '/websites-and-ai-for-kingston-real-estate-agents.webp',
+    imageAlt:
+      'A smiling Kingston real estate agent outside a modern townhouse holding a phone that shows property listings and a WhatsApp button, with the Blue Mountains behind.',
+    ctaLabel: 'Read the real estate guide',
+  },
+  {
     path: '/blog/websites-and-ai-for-kingston-medical-dental-clinics',
     datePublished: '2026-10-20',
     cardTitle:
