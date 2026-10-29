@@ -1,6 +1,17 @@
 /** Publish dates from the git commits that added each article (YYYY-MM-DD). */
 const blogPosts = [
   {
+    path: '/blog/online-booking-system-kingston',
+    datePublished: '2026-10-29',
+    cardTitle: 'Online booking system in Kingston: let customers book 24/7',
+    cardExcerpt:
+      'How Kingston businesses can take bookings around the clock, send WhatsApp reminders and cut no-shows with a RosuePro online booking system, chatbot and automations.',
+    image: '/online-booking-system-kingston.webp',
+    imageAlt:
+      'A laptop showing an online booking calendar with free time slots and a phone showing a WhatsApp booking confirmation, on a desk with a clock, a palm tree and the Blue Mountains behind.',
+    ctaLabel: 'Read online booking guide',
+  },
+  {
     path: '/blog/websites-and-ai-for-kingston-medical-dental-clinics',
     datePublished: '2026-10-20',
     cardTitle:
