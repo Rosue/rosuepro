@@ -1,6 +1,18 @@
 /** Publish dates from the git commits that added each article (YYYY-MM-DD). */
 const blogPosts = [
   {
+    path: '/blog/websites-and-ai-for-kingston-gyms-fitness-trainers',
+    datePublished: '2026-11-01',
+    cardTitle:
+      'Websites and AI for Kingston Gyms and Personal Trainers: More Sign-Ups, Fewer Missed Messages',
+    cardExcerpt:
+      'How Kingston gyms, fitness studios and personal trainers can use a website, online class bookings, an AI chatbot and WhatsApp automations to sign up more members and keep them coming back.',
+    image: '/websites-and-ai-for-kingston-gyms-fitness-trainers.webp',
+    imageAlt:
+      'A smiling Kingston personal trainer in a green and gold shirt holds up a phone showing a class booking calendar and a chat bubble, while a group fitness class trains with kettlebells in a bright gym with palm trees and the Blue Mountains behind.',
+    ctaLabel: 'Read the gym guide',
+  },
+  {
     path: '/blog/websites-and-ai-for-kingston-medical-dental-clinics',
     datePublished: '2026-10-20',
     cardTitle:
